@@ -2,6 +2,8 @@ import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { NavBar } from "@/components/navbar/navbar"
+import { Footer } from "@/components/footer"
 import { cn } from "@/lib/utils"
 
 const cormorant = Cormorant_Garamond({
@@ -44,7 +46,11 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/tkt6gli.css" />
       </head>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <NavBar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )
