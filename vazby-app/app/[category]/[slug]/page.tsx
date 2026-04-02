@@ -11,31 +11,111 @@ import {
 import { ProductCard } from "@/components/product-card"
 import { QuantitySelector } from "@/components/quantity-selector"
 import { QuickOrderForm } from "@/components/quick-order-form"
+import { Hero } from "@/components/hero"
 import {
   products,
+  subcategories,
   getProductBySlug,
+  getProductsBySubcategory,
   getRelatedProducts,
 } from "@/lib/products.data"
 
-interface ProductPageProps {
+interface PageProps {
   params: Promise<{ category: string; slug: string }>
 }
 
 export function generateStaticParams() {
-  return products.map((p) => ({
+  const productParams = products.map((p) => ({
     category: p.category,
     slug: p.slug,
   }))
+
+  const subcategoryParams = Object.entries(subcategories).map(([key]) => {
+    const [category, slug] = key.split("/")
+    return { category, slug }
+  })
+
+  return [...productParams, ...subcategoryParams]
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
+export default async function Page({ params }: PageProps) {
   const { category, slug } = await params
+
+  // Check if this is a subcategory page
+  const subcategoryKey = `${category}/${slug}`
+  const subcategoryMeta = subcategories[subcategoryKey]
+
+  if (subcategoryMeta) {
+    return <SubcategoryPage category={category} slug={slug} />
+  }
+
+  // Otherwise treat as product detail page
   const product = getProductBySlug(category, slug)
 
   if (!product) {
     notFound()
   }
 
+  return <ProductDetailPage category={category} slug={slug} />
+}
+
+function SubcategoryPage({
+  category,
+  slug,
+}: {
+  category: string
+  slug: string
+}) {
+  const subcategoryKey = `${category}/${slug}`
+  const meta = subcategories[subcategoryKey]!
+  const subcategoryProducts = getProductsBySubcategory(category, slug)
+
+  return (
+    <main>
+      <Hero heading={meta.label} subheading={meta.description} variant="sub" />
+
+      <section className="py-[var(--spacing-section-y)]">
+        <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">
+          <div className="mb-8 flex items-end justify-between">
+            <span className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
+              {subcategoryProducts.length} produktů
+            </span>
+          </div>
+
+          {subcategoryProducts.length > 0 ? (
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {subcategoryProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  title={product.name}
+                  price={product.price}
+                  badge={product.badge}
+                  slug={product.slug}
+                  category={product.category}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-col items-center gap-4 py-20">
+              <p className="text-[length:var(--font-size-body)] text-muted-foreground">
+                V této kategorii zatím nejsou produkty.
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+    </main>
+  )
+}
+
+function ProductDetailPage({
+  category,
+  slug,
+}: {
+  category: string
+  slug: string
+}) {
+  const product = getProductBySlug(category, slug)!
   const related = getRelatedProducts(product)
   const isFuneral = product.category === "smutecni"
 
@@ -48,18 +128,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
   return (
     <main>
       <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] py-12">
-        {/* Two-column layout */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          {/* Left — Gallery */}
           <div className="lg:col-span-7">
-            {/* Main image */}
             <div className="flex aspect-[4/5] items-center justify-center rounded-sm bg-plum-10">
               <span className="text-[length:var(--font-size-body)] text-plum-50">
                 Hlavní foto produktu
               </span>
             </div>
-
-            {/* Thumbnails */}
             <div className="mt-3 grid grid-cols-4 gap-3">
               {[1, 2, 3, 4].map((i) => (
                 <div
@@ -74,16 +149,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
           </div>
 
-          {/* Right — Info (sticky) */}
           <div className="flex flex-col gap-6 lg:sticky lg:top-24 lg:col-span-5 lg:self-start">
-            {/* Badge */}
             {product.badge && (
               <span className="self-start rounded-sm bg-deep-plum px-2.5 py-1 text-[length:var(--font-size-caption)] font-[30] text-neutral-white">
                 {product.badge}
               </span>
             )}
 
-            {/* Name & price */}
             <div className="flex flex-col gap-2">
               <h1 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-foreground">
                 {product.name}
@@ -93,12 +165,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </span>
             </div>
 
-            {/* Description */}
             <p className="text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
               {product.description}
             </p>
 
-            {/* Variant selector placeholder */}
             <div className="flex flex-col gap-2">
               <span className="text-[length:var(--font-size-body-sm)] font-[30] text-muted-foreground">
                 Velikost
@@ -119,7 +189,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
             </div>
 
-            {/* Quantity */}
             <div className="flex flex-col gap-2">
               <span className="text-[length:var(--font-size-body-sm)] font-[30] text-muted-foreground">
                 Počet kusů
@@ -127,17 +196,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <QuantitySelector />
             </div>
 
-            {/* Add to cart */}
             <Button size="lg" className="w-full">
               Přidat do košíku
             </Button>
 
-            {/* Funeral quick order */}
             {isFuneral && <QuickOrderForm />}
           </div>
         </div>
 
-        {/* Accordion — below fold */}
         <div className="mt-16 max-w-[var(--max-width-narrow)]">
           <Accordion type="single" collapsible>
             <AccordionItem value="popis">
@@ -168,7 +234,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
       </div>
 
-      {/* Related products */}
       {related.length > 0 && (
         <section className="border-t border-border py-[var(--spacing-section-y)]">
           <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">
