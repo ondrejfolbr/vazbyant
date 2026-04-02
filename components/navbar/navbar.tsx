@@ -53,7 +53,7 @@ function NavBar() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-heading text-[length:var(--font-size-h4)] font-[60] tracking-wide text-foreground"
+            className="font-heading text-[length:var(--font-size-h4)] font-[40] tracking-wide text-foreground"
           >
             VAZBY KVĚTIN
           </Link>
@@ -69,7 +69,7 @@ function NavBar() {
                 <Link
                   href={cat.href}
                   className={cn(
-                    "rounded-sm px-3 py-2 text-[length:var(--font-size-body-sm)] font-medium text-muted-foreground transition-colors duration-[var(--transition-fast)] hover:bg-deep-plum-10 hover:text-foreground",
+                    "rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-muted-foreground transition-colors duration-[var(--transition-fast)] hover:bg-deep-plum-10 hover:text-foreground",
                     activeMenu === cat.label &&
                       "bg-deep-plum-10 text-foreground",
                   )}
@@ -82,7 +82,7 @@ function NavBar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="rounded-sm px-3 py-2 text-[length:var(--font-size-body-sm)] font-medium text-muted-foreground transition-colors duration-[var(--transition-fast)] hover:bg-deep-plum-10 hover:text-foreground"
+                className="rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-muted-foreground transition-colors duration-[var(--transition-fast)] hover:bg-deep-plum-10 hover:text-foreground"
               >
                 {link.label}
               </Link>
@@ -114,7 +114,7 @@ function NavBar() {
                 <circle cx="9" cy="17" r="1" />
                 <circle cx="15" cy="17" r="1" />
               </svg>
-              <span className="absolute -top-0.5 -right-0.5 flex size-4 items-center justify-center rounded-full bg-deep-plum text-[10px] font-medium text-neutral-white">
+              <span className="absolute -top-0.5 -right-0.5 flex size-4 items-center justify-center rounded-full bg-deep-plum text-[10px] font-[30] text-neutral-white">
                 0
               </span>
             </Link>
@@ -203,7 +203,7 @@ function MegaMenuPanel({
           {category.cta && (
             <Link
               href={category.cta.href}
-              className="mt-2 inline-flex items-center rounded-sm border border-deep-plum px-4 py-2 text-[length:var(--font-size-body-sm)] font-medium text-deep-plum transition-colors hover:bg-deep-plum-10"
+              className="mt-2 inline-flex items-center rounded-sm border border-deep-plum px-4 py-2 text-[length:var(--font-size-body)] font-[30] text-deep-plum transition-colors hover:bg-deep-plum-10"
             >
               {category.cta.label}
             </Link>
@@ -230,7 +230,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
             <Link
               href={cat.href}
               onClick={onClose}
-              className="py-3 font-heading text-[length:var(--font-size-h3)] font-[50] text-foreground"
+              className="py-3 font-heading text-[length:var(--font-size-h3)] font-[40] text-foreground"
             >
               {cat.label}
             </Link>
@@ -253,7 +253,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
             key={link.label}
             href={link.href}
             onClick={onClose}
-            className="py-3 font-heading text-[length:var(--font-size-h3)] font-[50] text-foreground"
+            className="py-3 font-heading text-[length:var(--font-size-h3)] font-[40] text-foreground"
           >
             {link.label}
           </Link>

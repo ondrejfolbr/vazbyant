@@ -36,14 +36,14 @@ function ProductCard({
         </div>
 
         {badge && (
-          <span className="absolute top-3 left-3 rounded-sm bg-deep-plum px-2.5 py-1 text-[length:var(--font-size-caption)] font-medium text-neutral-white">
+          <span className="absolute top-3 left-3 rounded-sm bg-deep-plum px-2.5 py-1 text-[length:var(--font-size-caption)] font-[30] text-neutral-white">
             {badge}
           </span>
         )}
 
         {/* Hover overlay with CTA */}
         <div className="absolute inset-0 flex items-end justify-center bg-deep-plum/0 pb-4 transition-[background-color] duration-[var(--transition-base)] group-hover:bg-deep-plum/40">
-          <span className="translate-y-2 rounded-sm bg-neutral-white px-4 py-2.5 text-[length:var(--font-size-body-sm)] font-medium text-deep-plum opacity-0 transition-all duration-[var(--transition-base)] group-hover:translate-y-0 group-hover:opacity-100">
+          <span className="translate-y-2 rounded-sm bg-neutral-white px-4 py-2.5 text-[length:var(--font-size-body-sm)] font-[30] text-deep-plum opacity-0 transition-all duration-[var(--transition-base)] group-hover:translate-y-0 group-hover:opacity-100">
             Do košíku
           </span>
         </div>
@@ -54,7 +54,7 @@ function ProductCard({
         <h4 className="font-heading text-[length:var(--font-size-h4)] leading-snug text-foreground">
           {title}
         </h4>
-        <span className="font-mono text-[length:var(--font-size-body)] font-semibold text-muted-foreground">
+        <span className="font-mono text-[length:var(--font-size-body)] font-[30] text-muted-foreground">
           {new Intl.NumberFormat("cs-CZ", {
             style: "currency",
             currency: "CZK",

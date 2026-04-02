@@ -78,17 +78,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="flex flex-col gap-6 lg:sticky lg:top-24 lg:col-span-5 lg:self-start">
             {/* Badge */}
             {product.badge && (
-              <span className="self-start rounded-sm bg-deep-plum px-2.5 py-1 text-[length:var(--font-size-caption)] font-medium text-neutral-white">
+              <span className="self-start rounded-sm bg-deep-plum px-2.5 py-1 text-[length:var(--font-size-caption)] font-[30] text-neutral-white">
                 {product.badge}
               </span>
             )}
 
             {/* Name & price */}
             <div className="flex flex-col gap-2">
-              <h1 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[50] text-foreground">
+              <h1 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-foreground">
                 {product.name}
               </h1>
-              <span className="font-mono text-[length:var(--font-size-h3)] font-semibold text-muted-foreground">
+              <span className="font-mono text-[length:var(--font-size-h3)] font-[30] text-muted-foreground">
                 {formattedPrice}
               </span>
             </div>
@@ -100,14 +100,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
             {/* Variant selector placeholder */}
             <div className="flex flex-col gap-2">
-              <span className="text-[length:var(--font-size-body-sm)] font-medium text-muted-foreground">
+              <span className="text-[length:var(--font-size-body-sm)] font-[30] text-muted-foreground">
                 Velikost
               </span>
               <div className="flex gap-2">
                 {["S", "M", "L"].map((size, i) => (
                   <div
                     key={size}
-                    className={`flex h-10 w-14 items-center justify-center rounded-sm border text-[length:var(--font-size-body-sm)] font-medium transition-colors ${
+                    className={`flex h-10 w-14 items-center justify-center rounded-sm border text-[length:var(--font-size-body-sm)] font-[30] transition-colors ${
                       i === 1
                         ? "border-deep-plum bg-deep-plum text-neutral-white"
                         : "border-border text-muted-foreground hover:border-deep-plum-80 hover:text-foreground"
@@ -121,7 +121,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
             {/* Quantity */}
             <div className="flex flex-col gap-2">
-              <span className="text-[length:var(--font-size-body-sm)] font-medium text-muted-foreground">
+              <span className="text-[length:var(--font-size-body-sm)] font-[30] text-muted-foreground">
                 Počet kusů
               </span>
               <QuantitySelector />

@@ -211,7 +211,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans font-[35];
+    @apply bg-background text-foreground font-sans font-[30];
   }
   html {
     @apply font-sans;

@@ -28,7 +28,7 @@ function SectionHeading({
           {overline}
         </span>
       )}
-      <h2 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[50] text-foreground">
+      <h2 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
         {heading}
       </h2>
       {body && (

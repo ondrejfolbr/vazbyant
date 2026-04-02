@@ -18,7 +18,7 @@ function Footer({ className }: FooterProps) {
           <div className="flex flex-col gap-5">
             <Link
               href="/"
-              className="font-heading text-[length:var(--font-size-h4)] font-[60] tracking-wide text-foreground"
+              className="font-heading text-[length:var(--font-size-h4)] font-[40] tracking-wide text-foreground"
             >
               VAZBY KVĚTIN
             </Link>
@@ -30,7 +30,7 @@ function Footer({ className }: FooterProps) {
               {["Fb", "Ig", "Li"].map((icon) => (
                 <div
                   key={icon}
-                  className="flex size-9 items-center justify-center rounded-full border border-deep-plum-80/30 text-[length:var(--font-size-caption)] font-medium text-plum-50 transition-colors hover:border-deep-plum hover:bg-deep-plum hover:text-neutral-white"
+                  className="flex size-9 items-center justify-center rounded-full border border-deep-plum-80/30 text-[length:var(--font-size-caption)] font-[30] text-foreground transition-colors hover:border-deep-plum hover:bg-deep-plum hover:text-neutral-white"
                 >
                   {icon}
                 </div>
