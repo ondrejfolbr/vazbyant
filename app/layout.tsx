@@ -1,14 +1,27 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'})
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-heading-fallback",
+  display: "swap",
+})
 
-const fontMono = Geist_Mono({
+const dmSans = DM_Sans({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
+  variable: "--font-sans",
+  display: "swap",
+})
+
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  display: "swap",
 })
 
 export default function RootLayout({
@@ -18,10 +31,18 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="cs"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
+      className={cn(
+        "antialiased",
+        cormorant.variable,
+        dmSans.variable,
+        jetbrainsMono.variable,
+      )}
     >
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/tkt6gli.css" />
+      </head>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
