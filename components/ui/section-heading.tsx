@@ -24,11 +24,11 @@ function SectionHeading({
       )}
     >
       {overline && (
-        <span className="text-[length:var(--font-size-overline)] font-medium uppercase tracking-widest text-plum-50">
+        <span className="text-[length:var(--font-size-overline)] font-[40] uppercase tracking-widest text-foreground">
           {overline}
         </span>
       )}
-      <h2 className="font-heading text-[length:var(--font-size-h2)] leading-tight font-semibold text-foreground">
+      <h2 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[50] text-foreground">
         {heading}
       </h2>
       {body && (

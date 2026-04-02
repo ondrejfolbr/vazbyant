@@ -2,7 +2,6 @@ import { Hero } from "@/components/hero"
 import { CategoryCard } from "@/components/category-card"
 import { ProductCard } from "@/components/product-card"
 import { SectionHeading } from "@/components/ui/section-heading"
-import { TrustStrip } from "@/components/trust-strip"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -93,13 +92,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Sekce 5: Trust strip */}
-      <TrustStrip
-        text="Součást ekosystému pohřební služby PEGAS"
-        linkText="pohrebpegas.cz"
-        linkHref="https://pohrebpegas.cz"
-      />
-
       {/* Sekce 6: Sezónní highlight */}
       <section className="relative flex min-h-[50vh] items-center overflow-hidden">
         <div className="absolute inset-0 bg-deep-plum-80">
@@ -113,7 +105,7 @@ export default function Page() {
             <span className="text-[length:var(--font-size-overline)] font-medium uppercase tracking-widest text-plum-30">
               Sezónní nabídka
             </span>
-            <h2 className="font-heading text-[length:var(--font-size-h2)] leading-tight font-semibold text-neutral-white">
+            <h2 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[50] text-neutral-white">
               Dušičky 2025
             </h2>
             <p className="text-[length:var(--font-size-body)] leading-relaxed text-plum-30">

@@ -53,7 +53,7 @@ function NavBar() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-heading text-[length:var(--font-size-h4)] font-semibold tracking-wide text-foreground"
+            className="font-heading text-[length:var(--font-size-h4)] font-[60] tracking-wide text-foreground"
           >
             VAZBY KVĚTIN
           </Link>
@@ -230,7 +230,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
             <Link
               href={cat.href}
               onClick={onClose}
-              className="py-3 font-heading text-[length:var(--font-size-h3)] font-semibold text-foreground"
+              className="py-3 font-heading text-[length:var(--font-size-h3)] font-[50] text-foreground"
             >
               {cat.label}
             </Link>
@@ -253,7 +253,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
             key={link.label}
             href={link.href}
             onClick={onClose}
-            className="py-3 font-heading text-[length:var(--font-size-h3)] font-semibold text-foreground"
+            className="py-3 font-heading text-[length:var(--font-size-h3)] font-[50] text-foreground"
           >
             {link.label}
           </Link>

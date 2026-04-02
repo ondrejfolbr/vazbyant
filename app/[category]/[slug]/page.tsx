@@ -85,7 +85,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
             {/* Name & price */}
             <div className="flex flex-col gap-2">
-              <h1 className="font-heading text-[length:var(--font-size-h1)] leading-tight font-semibold text-foreground">
+              <h1 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[50] text-foreground">
                 {product.name}
               </h1>
               <span className="font-mono text-[length:var(--font-size-h3)] font-semibold text-muted-foreground">

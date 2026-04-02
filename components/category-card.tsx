@@ -35,7 +35,7 @@ function CategoryCard({
 
       {/* Text content */}
       <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-6 transition-transform duration-[var(--transition-base)] group-hover:-translate-y-2">
-        <h3 className="font-heading text-[length:var(--font-size-h3)] leading-tight font-semibold text-neutral-white">
+        <h3 className="font-heading text-[length:var(--font-size-h3)] leading-snug font-[50] text-neutral-white">
           {title}
         </h3>
         <p className="text-[length:var(--font-size-body-sm)] text-plum-30">

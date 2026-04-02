@@ -18,7 +18,7 @@ function Footer({ className }: FooterProps) {
           <div className="flex flex-col gap-5">
             <Link
               href="/"
-              className="font-heading text-[length:var(--font-size-h4)] font-semibold tracking-wide text-foreground"
+              className="font-heading text-[length:var(--font-size-h4)] font-[60] tracking-wide text-foreground"
             >
               VAZBY KVĚTIN
             </Link>
@@ -40,7 +40,7 @@ function Footer({ className }: FooterProps) {
 
           {/* Column 2: Navigation */}
           <div className="flex flex-col gap-4">
-            <span className="text-[length:var(--font-size-overline)] font-medium uppercase tracking-widest text-plum-50">
+            <span className="text-[length:var(--font-size-overline)] font-[40] uppercase tracking-widest text-foreground">
               Navigace
             </span>
             <nav className="flex flex-col gap-2.5">
@@ -58,7 +58,7 @@ function Footer({ className }: FooterProps) {
 
           {/* Column 3: Contact */}
           <div className="flex flex-col gap-4">
-            <span className="text-[length:var(--font-size-overline)] font-medium uppercase tracking-widest text-plum-50">
+            <span className="text-[length:var(--font-size-overline)] font-[40] uppercase tracking-widest text-foreground">
               Kontakt
             </span>
             <div className="flex flex-col gap-2.5 text-[length:var(--font-size-body-sm)] text-muted-foreground">
@@ -79,7 +79,7 @@ function Footer({ className }: FooterProps) {
               >
                 info@vazbykvetin.cz
               </a>
-              <p className="text-plum-50/70">Po–Pá 8:00–18:00</p>
+              <p className="text-foreground">Po–Pá 8:00–18:00</p>
             </div>
           </div>
         </div>
