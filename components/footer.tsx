@@ -30,7 +30,7 @@ function Footer({ className }: FooterProps) {
               {["Fb", "Ig", "Li"].map((icon) => (
                 <div
                   key={icon}
-                  className="flex size-9 items-center justify-center rounded-full border border-deep-plum-80/30 text-[length:var(--font-size-caption)] font-[30] text-foreground transition-colors hover:border-deep-plum hover:bg-deep-plum hover:text-neutral-white"
+                  className="flex size-9 items-center justify-center rounded-sm border border-deep-plum-80/30 text-[length:var(--font-size-caption)] font-[30] text-foreground transition-colors hover:border-deep-plum hover:bg-deep-plum hover:text-neutral-white"
                 >
                   {icon}
                 </div>
