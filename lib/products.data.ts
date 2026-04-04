@@ -4,6 +4,7 @@ export interface Product {
   slug: string
   price: number
   category: string
+  subcategory: string | null
   badge: string | null
   description: string
   composition: string
@@ -14,6 +15,12 @@ export interface Product {
 export interface CategoryMeta {
   label: string
   description: string
+}
+
+export interface SubcategoryMeta {
+  label: string
+  description: string
+  parentCategory: string
 }
 
 export const categories: Record<string, CategoryMeta> = {
@@ -34,6 +41,90 @@ export const categories: Record<string, CategoryMeta> = {
   },
 }
 
+export const subcategories: Record<string, SubcategoryMeta> = {
+  // Smuteční
+  "smutecni/kytice": {
+    label: "Pohřební kytice",
+    description:
+      "Jemné smuteční kytice pro poslední rozloučení — ručně vázané, v tlumených tónech.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/vence": {
+    label: "Smuteční věnce",
+    description:
+      "Tradiční i moderní věnce z čerstvých květin. Kruhový tvar symbolizuje věčnou vzpomínku.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/rakev": {
+    label: "Kytice na rakev",
+    description:
+      "Podélné kompozice určené k položení na rakev — elegantní, důstojné, na míru.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/urna": {
+    label: "Kytice na urnu",
+    description:
+      "Menší aranžmá určená k urně. Světlé tóny symbolizující naději a klid.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/dekorace": {
+    label: "Pietní dekorace",
+    description:
+      "Květinová výzdoba obřadních síní a smutečních míst — s citem a respektem.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/kose": {
+    label: "Květinové koše",
+    description:
+      "Květinové koše jako alternativa ke klasickým kyticím — vhodné k vystavení u kondolence.",
+    parentCategory: "smutecni",
+  },
+  // Svatební
+  "svatebni/kytice": {
+    label: "Svatební kytice",
+    description:
+      "Buketky pro nevěstu i družičky — romantické, přirozené, na míru vašemu dni.",
+    parentCategory: "svatebni",
+  },
+  "svatebni/dekorace": {
+    label: "Dekorace obřadu",
+    description:
+      "Výzdoba uličky, oltáře, vstupní brány a stolů — kompletní květinový servis pro svatbu.",
+    parentCategory: "svatebni",
+  },
+  "svatebni/doplnky": {
+    label: "Doplňky",
+    description:
+      "Stuhy, vazy, korsáže a další svatební doplňky k doladění detailů.",
+    parentCategory: "svatebni",
+  },
+  // Kytice & Dárky
+  "kytice/narozeniny": {
+    label: "Narozeninové kytice",
+    description:
+      "Veselé, barevné kytice k narozeninám — protože radost si zaslouží být vidět.",
+    parentCategory: "kytice",
+  },
+  "kytice/sezonni": {
+    label: "Sezónní květiny",
+    description:
+      "Valentýn, Dušičky, Vánoce — květiny, které patří ke svátku.",
+    parentCategory: "kytice",
+  },
+  "kytice/firemni": {
+    label: "Firemní květiny",
+    description:
+      "Elegantní kytice a pravidelné dodávky pro firemní prostory, recepce a obchodní partnery.",
+    parentCategory: "kytice",
+  },
+  "kytice/predplatne": {
+    label: "VK BOX — Předplatné",
+    description:
+      "Každý měsíc čerstvá sezónní kytice až k vašim dveřím. Překvapení od našich floristů.",
+    parentCategory: "kytice",
+  },
+}
+
 export const products: Product[] = [
   {
     id: 1,
@@ -41,6 +132,7 @@ export const products: Product[] = [
     slug: "smutecni-kytice-klid",
     price: 1490,
     category: "smutecni",
+    subcategory: "kytice",
     badge: null,
     description:
       "Jemná smuteční kytice v tlumených tónech bílé a krémové. Vyjadřuje úctu a tiché souznění.",
@@ -55,6 +147,7 @@ export const products: Product[] = [
     slug: "venec-vzpominka",
     price: 2890,
     category: "smutecni",
+    subcategory: "vence",
     badge: null,
     description:
       "Tradiční smuteční věnec z čerstvých květin. Kruhový tvar symbolizuje věčnost a nekonečnou vzpomínku.",
@@ -70,6 +163,7 @@ export const products: Product[] = [
     slug: "kytice-na-rakev-ticho",
     price: 3490,
     category: "smutecni",
+    subcategory: "rakev",
     badge: null,
     description:
       "Podélná kytice určená k položení na rakev. Elegantní a důstojná kompozice.",
@@ -84,6 +178,7 @@ export const products: Product[] = [
     slug: "kytice-na-urnu-svetlo",
     price: 1290,
     category: "smutecni",
+    subcategory: "urna",
     badge: null,
     description:
       "Menší aranžmá určené k urně. Světlé tóny symbolizují naději a klid.",
@@ -98,6 +193,7 @@ export const products: Product[] = [
     slug: "svatebni-kytice-harmonie",
     price: 2490,
     category: "svatebni",
+    subcategory: "kytice",
     badge: "Oblíbené",
     description:
       "Romantická svatební kytice v pastelových tónech. Ideální pro jarní a letní svatby.",
@@ -111,6 +207,7 @@ export const products: Product[] = [
     slug: "svatebni-kytice-ranni-rosa",
     price: 1990,
     category: "svatebni",
+    subcategory: "kytice",
     badge: null,
     description:
       "Něžná kytice inspirovaná ranní zahradou. Přirozený, lehce divoký styl.",
@@ -124,6 +221,7 @@ export const products: Product[] = [
     slug: "dekorace-obradu-elegance",
     price: 4990,
     category: "svatebni",
+    subcategory: "dekorace",
     badge: null,
     description:
       "Kompletní květinová dekorace obřadního místa. Zahrnuje výzdobu uličky, oltáře a vstupní brány.",
@@ -139,6 +237,7 @@ export const products: Product[] = [
     slug: "kytice-slunecni-den",
     price: 890,
     category: "kytice",
+    subcategory: "narozeniny",
     badge: "Novinka",
     description:
       "Veselá kytice plná slunečnic a žlutých tónů. Ideální dárek k narozeninám.",
@@ -152,6 +251,7 @@ export const products: Product[] = [
     slug: "kytice-polni-sen",
     price: 790,
     category: "kytice",
+    subcategory: "narozeniny",
     badge: null,
     description:
       "Kytice z lučních květin — přirozená, lehká, jako procházka polem.",
@@ -165,6 +265,7 @@ export const products: Product[] = [
     slug: "vk-box-mesicni-predplatne",
     price: 1290,
     category: "kytice",
+    subcategory: "predplatne",
     badge: "Předplatné",
     description:
       "Každý měsíc čerstvá sezónní kytice až k vašim dveřím. Překvapení od našich floristů.",
@@ -178,6 +279,7 @@ export const products: Product[] = [
     slug: "firemni-kytice-profesional",
     price: 1590,
     category: "kytice",
+    subcategory: "firemni",
     badge: null,
     description:
       "Elegantní kytice pro firemní prostory, recepce nebo jako dárek obchodním partnerům.",
@@ -192,6 +294,7 @@ export const products: Product[] = [
     slug: "sezonni-dusicky",
     price: 990,
     category: "kytice",
+    subcategory: "sezonni",
     badge: "Sezónní",
     description:
       "Pietní kytice pro vzpomínku na Dušičky. Tlumené barvy, přírodní materiály.",
@@ -199,10 +302,95 @@ export const products: Product[] = [
     delivery: "Doručení v Praze do 3 hodin. Mimo Prahu následující den.",
     care: "Obsahuje sušené prvky — vydrží déle než čerstvé květiny (10–14 dní).",
   },
+  {
+    id: 13,
+    name: "Pietní dekorace Harmonie",
+    slug: "pietni-dekorace-harmonie",
+    price: 3990,
+    category: "smutecni",
+    subcategory: "dekorace",
+    badge: null,
+    description:
+      "Květinová výzdoba obřadní síně — diskrétní, důstojná, na míru prostoru.",
+    composition: "Bílé chryzantémy, lilie, svíčky, zeleň, stuhy.",
+    delivery:
+      "Instalace v obřadní síni dle domluvy. Spolupráce s pohřební službou PEGAS.",
+    care: "O instalaci i úklid se postaráme.",
+  },
+  {
+    id: 14,
+    name: "Květinový koš Důstojnost",
+    slug: "kvetinovy-kos-dustojnost",
+    price: 1890,
+    category: "smutecni",
+    subcategory: "kose",
+    badge: null,
+    description:
+      "Proutěný koš aranžovaný čerstvými květinami — alternativa ke klasické kytici.",
+    composition: "Bílé a krémové růže, eustoma, zeleň, proutěný koš.",
+    delivery:
+      "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Koš obsahuje aranžovací hmotu — stačí dolévat vodu. Vydrží 5–7 dní.",
+  },
+  {
+    id: 15,
+    name: "Korsáž pro ženicha",
+    slug: "korsaz-pro-zenicha",
+    price: 390,
+    category: "svatebni",
+    subcategory: "doplnky",
+    badge: null,
+    description:
+      "Elegantní korsáž na klopy — sladěná se svatební kyticí nevěsty.",
+    composition: "Mini růže, eucalyptus, hedvábná stuha.",
+    delivery: "Součást svatební zakázky. Doručení v den svatby.",
+    care: "Uchovávejte v chladnu do obřadu.",
+  },
+  {
+    id: 16,
+    name: "Sezónní — Vánoční hvězda",
+    slug: "sezonni-vanocni-hvezda",
+    price: 690,
+    category: "kytice",
+    subcategory: "sezonni",
+    badge: "Sezónní",
+    description:
+      "Vánoční aranžmá s tradičními prvky — hvězda, jehličí, šišky.",
+    composition: "Vánoční hvězda, jedlové větvičky, šišky, skořice, stuha.",
+    delivery: "Doručení v Praze do 3 hodin. Mimo Prahu následující den.",
+    care: "Vánoční hvězdu zalévejte střídmě. Aranžmá vydrží 10–14 dní.",
+  },
 ]
 
 export function getProductsByCategory(category: string): Product[] {
   return products.filter((p) => p.category === category)
+}
+
+export function getProductsBySubcategory(
+  category: string,
+  subcategory: string,
+): Product[] {
+  return products.filter(
+    (p) => p.category === category && p.subcategory === subcategory,
+  )
+}
+
+export function getSubcategory(
+  category: string,
+  slug: string,
+): SubcategoryMeta | undefined {
+  return subcategories[`${category}/${slug}`]
+}
+
+export function getSubcategoriesForCategory(
+  category: string,
+): Array<{ slug: string; meta: SubcategoryMeta }> {
+  return Object.entries(subcategories)
+    .filter(([, meta]) => meta.parentCategory === category)
+    .map(([key, meta]) => ({
+      slug: key.split("/")[1],
+      meta,
+    }))
 }
 
 export function getProductBySlug(

@@ -79,7 +79,7 @@ export default function Page() {
               body="Známe prostředí loučení a víme, jak důležité je umět vyjádřit pocity ve chvílích, kdy na tom záleží. Budujeme květinářství, které těmto situacím rozumí. Neprodáváme jen květiny — nabízíme způsob, jak něco říct, když slova nestačí."
             />
             <div>
-              <Button asChild variant="ghost" size="md">
+              <Button asChild variant="outline" size="md">
                 <Link href="/o-nas/">Více o nás</Link>
               </Button>
             </div>

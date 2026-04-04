@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from "next/font/google"
+import { Cormorant_Garamond, DM_Sans } from "next/font/google"
 
 import "./globals.css"
 
@@ -36,12 +36,6 @@ const dmSans = DM_Sans({
   display: "swap",
 })
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-})
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -55,7 +49,6 @@ export default function RootLayout({
         "antialiased",
         cormorant.variable,
         dmSans.variable,
-        jetbrainsMono.variable,
       )}
     >
       <head>
