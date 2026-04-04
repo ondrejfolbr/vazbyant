@@ -59,6 +59,37 @@
   animation-delay: 300ms;
 }
 
+/* --- Card hover --------------------------------------------------------- */
+
+.card-image {
+  transition: transform var(--transition-card);
+}
+
+.card-cta {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
+}
+
+.card-overlay {
+  transition: background-color var(--transition-base);
+}
+
+.group:hover .card-image {
+  transform: scale(1.02);
+}
+
+.group:hover .card-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.group:hover .card-overlay {
+  background-color: rgba(82, 41, 83, 0.35);
+}
+
 /* --- Reduced motion ----------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {

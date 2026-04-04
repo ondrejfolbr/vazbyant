@@ -32,9 +32,9 @@ function ProductCard({
         className,
       )}
     >
-      {/* Image placeholder 1:1 */}
+      {/* Image */}
       <div className="relative aspect-square overflow-hidden rounded-sm bg-neutral-200 dark:bg-neutral-800">
-        <div className="flex h-full items-center justify-center text-[length:var(--font-size-caption)] text-neutral-400 transition-transform duration-[var(--transition-card)] group-hover:scale-[1.02]">
+        <div className="card-image flex h-full items-center justify-center text-[length:var(--font-size-caption)] text-neutral-400">
           Foto produktu
         </div>
 
@@ -44,9 +44,9 @@ function ProductCard({
           </span>
         )}
 
-        {/* Hover overlay with CTA */}
-        <div className="absolute inset-0 flex items-end justify-center bg-deep-plum/0 pb-4 transition-[background-color] duration-[var(--transition-base)] group-hover:bg-deep-plum/40">
-          <span className="translate-y-2 rounded-sm bg-neutral-white px-4 py-2.5 text-[length:var(--font-size-body-sm)] font-[30] text-deep-plum opacity-0 transition-all duration-[var(--transition-base)] group-hover:translate-y-0 group-hover:opacity-100">
+        {/* Hover overlay */}
+        <div className="card-overlay absolute inset-0 flex items-end justify-center pb-5">
+          <span className="card-cta rounded-sm bg-neutral-white px-4 py-2.5 text-[length:var(--font-size-body-sm)] font-[30] text-deep-plum">
             Do košíku
           </span>
         </div>
