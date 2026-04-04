@@ -46,7 +46,7 @@ function NavBar() {
         className={cn(
           "fixed top-0 right-0 left-0 z-50 transition-all duration-[var(--transition-base)]",
           scrolled
-            ? "bg-background/95 shadow-[var(--shadow-sm)] backdrop-blur-sm"
+            ? "bg-background/95 backdrop-blur-sm"
             : "bg-background",
         )}
       >

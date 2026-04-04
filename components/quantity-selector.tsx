@@ -27,7 +27,7 @@ function QuantitySelector({ className }: QuantitySelectorProps) {
       >
         −
       </button>
-      <span className="flex w-12 items-center justify-center font-mono text-[length:var(--font-size-body)] font-[30] text-foreground">
+      <span className="flex w-12 items-center justify-center font-sans text-[length:var(--font-size-body)] font-[30] text-foreground">
         {quantity}
       </span>
       <button

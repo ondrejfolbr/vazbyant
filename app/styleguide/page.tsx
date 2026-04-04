@@ -50,20 +50,6 @@ const SEMANTIC_COLORS = [
   { name: "Info", token: "--color-info", value: "#1565C0" },
 ]
 
-const BUTTON_COLORS = [
-  { name: "Btn Base", token: "--color-btn-base", value: "#2D1B2E" },
-  {
-    name: "Btn Gradient Start",
-    token: "--color-btn-gradient-start",
-    value: "#6B3F6E",
-  },
-  {
-    name: "Btn Gradient End",
-    token: "--color-btn-gradient-end",
-    value: "#9B6FA0",
-  },
-]
-
 const TYPOGRAPHY_SCALE = [
   {
     name: "Display XL",
@@ -144,13 +130,6 @@ const TYPOGRAPHY_SCALE = [
   },
 ]
 
-const SHADOWS = [
-  { name: "SM", token: "--shadow-sm", value: "0 1px 2px rgba(9,7,8,0.05)" },
-  { name: "MD", token: "--shadow-md", value: "0 4px 12px rgba(9,7,8,0.08)" },
-  { name: "LG", token: "--shadow-lg", value: "0 8px 24px rgba(9,7,8,0.12)" },
-  { name: "XL", token: "--shadow-xl", value: "0 16px 48px rgba(9,7,8,0.16)" },
-]
-
 /* ────────────────────────────────────────────────────────────────────────── */
 
 function ColorSwatch({
@@ -172,10 +151,10 @@ function ColorSwatch({
         <span className="text-[length:var(--font-size-body-sm)] font-[30] text-foreground">
           {name}
         </span>
-        <span className="font-mono text-[length:var(--font-size-caption)] text-muted-foreground">
+        <span className="font-sans text-[length:var(--font-size-caption)] text-muted-foreground">
           {value}
         </span>
-        <span className="font-mono text-[length:var(--font-size-caption)] text-muted-foreground/60">
+        <span className="font-sans text-[length:var(--font-size-caption)] text-muted-foreground/60">
           {token}
         </span>
       </div>
@@ -248,7 +227,6 @@ export default function StyleguidePage() {
           </h2>
           <ColorRow title="Brand — Deep Plum" colors={BRAND_COLORS} />
           <ColorRow title="Brand — Plum" colors={PLUM_COLORS} />
-          <ColorRow title="Button Gradient" colors={BUTTON_COLORS} />
           <ColorRow title="Neutral" colors={NEUTRAL_COLORS} />
           <ColorRow title="Semantic" colors={SEMANTIC_COLORS} />
         </section>
@@ -272,7 +250,7 @@ export default function StyleguidePage() {
                 <span className="font-heading text-[length:var(--font-size-h3)] font-[40]">
                   Latino Gothic Variable
                 </span>
-                <span className="font-mono text-[length:var(--font-size-caption)] text-muted-foreground">
+                <span className="font-sans text-[length:var(--font-size-caption)] text-muted-foreground">
                   font-heading
                 </span>
               </div>
@@ -283,19 +261,8 @@ export default function StyleguidePage() {
                 <span className="font-sans text-[length:var(--font-size-h3)] font-[30]">
                   Latino Gothic / DM Sans
                 </span>
-                <span className="font-mono text-[length:var(--font-size-caption)] text-muted-foreground">
+                <span className="font-sans text-[length:var(--font-size-caption)] text-muted-foreground">
                   font-sans
-                </span>
-              </div>
-              <div className="flex flex-col gap-2 rounded-sm border border-border p-5">
-                <span className="text-[length:var(--font-size-caption)] uppercase tracking-widest text-muted-foreground">
-                  Mono
-                </span>
-                <span className="font-mono text-[length:var(--font-size-h3)]">
-                  JetBrains Mono
-                </span>
-                <span className="font-mono text-[length:var(--font-size-caption)] text-muted-foreground">
-                  font-mono
                 </span>
               </div>
             </div>
@@ -316,7 +283,7 @@ export default function StyleguidePage() {
                     <span className="text-[length:var(--font-size-body-sm)] font-[30] text-foreground">
                       {t.name}
                     </span>
-                    <span className="font-mono text-[length:var(--font-size-caption)] text-muted-foreground">
+                    <span className="font-sans text-[length:var(--font-size-caption)] text-muted-foreground">
                       {t.value}
                     </span>
                   </div>
@@ -357,7 +324,7 @@ export default function StyleguidePage() {
                   <span className="w-24 shrink-0 text-[length:var(--font-size-body-sm)] font-[30] text-foreground">
                     {ls.name}
                   </span>
-                  <span className="font-mono text-[length:var(--font-size-caption)] text-muted-foreground">
+                  <span className="font-sans text-[length:var(--font-size-caption)] text-muted-foreground">
                     {ls.value}
                   </span>
                   <span
@@ -369,31 +336,6 @@ export default function StyleguidePage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* ── Shadows ─────────────────────────────────────────── */}
-        <section className="flex flex-col gap-8">
-          <h2 className="font-heading text-[length:var(--font-size-h2)] font-[40] text-foreground">
-            Shadows
-          </h2>
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-            {SHADOWS.map((s) => (
-              <div key={s.token} className="flex flex-col gap-3">
-                <div
-                  className="aspect-[4/3] rounded-sm border border-border bg-background"
-                  style={{ boxShadow: s.value }}
-                />
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-[length:var(--font-size-body-sm)] font-[30] text-foreground">
-                    {s.name}
-                  </span>
-                  <span className="font-mono text-[length:var(--font-size-caption)] text-muted-foreground">
-                    {s.token}
-                  </span>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
 
@@ -437,10 +379,10 @@ export default function StyleguidePage() {
                 <span className="w-40 shrink-0 text-[length:var(--font-size-body-sm)] font-[30] text-foreground">
                   {s.name}
                 </span>
-                <span className="font-mono text-[length:var(--font-size-caption)] text-muted-foreground">
+                <span className="font-sans text-[length:var(--font-size-caption)] text-muted-foreground">
                   {s.token}
                 </span>
-                <span className="font-mono text-[length:var(--font-size-caption)] text-muted-foreground/60">
+                <span className="font-sans text-[length:var(--font-size-caption)] text-muted-foreground/60">
                   {s.value}
                 </span>
               </div>
@@ -468,10 +410,10 @@ export default function StyleguidePage() {
                 <span className="w-24 shrink-0 text-[length:var(--font-size-body-sm)] font-[30] text-foreground">
                   {t.name}
                 </span>
-                <span className="font-mono text-[length:var(--font-size-caption)] text-muted-foreground">
+                <span className="font-sans text-[length:var(--font-size-caption)] text-muted-foreground">
                   {t.token}
                 </span>
-                <span className="font-mono text-[length:var(--font-size-caption)] text-muted-foreground/60">
+                <span className="font-sans text-[length:var(--font-size-caption)] text-muted-foreground/60">
                   {t.value}
                 </span>
               </div>
@@ -698,7 +640,7 @@ export default function StyleguidePage() {
             {[990, 1890, 2490, 3200].map((price) => (
               <span
                 key={price}
-                className="font-mono text-[length:var(--font-size-body)] font-[30] text-muted-foreground"
+                className="font-sans text-[length:var(--font-size-body)] font-[30] text-muted-foreground"
               >
                 {new Intl.NumberFormat("cs-CZ", {
                   style: "currency",

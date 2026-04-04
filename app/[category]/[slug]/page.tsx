@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
@@ -13,29 +14,174 @@ import { QuantitySelector } from "@/components/quantity-selector"
 import { QuickOrderForm } from "@/components/quick-order-form"
 import {
   products,
+  subcategories,
+  categories,
   getProductBySlug,
   getRelatedProducts,
+  getSubcategory,
+  getProductsBySubcategory,
 } from "@/lib/products.data"
 
-interface ProductPageProps {
+interface SlugPageProps {
   params: Promise<{ category: string; slug: string }>
 }
 
 export function generateStaticParams() {
-  return products.map((p) => ({
+  const productParams = products.map((p) => ({
     category: p.category,
     slug: p.slug,
   }))
+
+  const subcategoryParams = Object.keys(subcategories).map((key) => {
+    const [category, slug] = key.split("/")
+    return { category, slug }
+  })
+
+  return [...productParams, ...subcategoryParams]
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
+export default async function SlugPage({ params }: SlugPageProps) {
   const { category, slug } = await params
-  const product = getProductBySlug(category, slug)
 
+  // Check if this is a subcategory first
+  const subcategoryMeta = getSubcategory(category, slug)
+  if (subcategoryMeta) {
+    return <SubcategoryPage category={category} slug={slug} />
+  }
+
+  // Otherwise, try product
+  const product = getProductBySlug(category, slug)
   if (!product) {
     notFound()
   }
 
+  return <ProductDetailPage category={category} product={product} />
+}
+
+// --- Subcategory listing ---
+
+interface SubcategoryPageProps {
+  category: string
+  slug: string
+}
+
+function SubcategoryPage({ category, slug }: SubcategoryPageProps) {
+  const subcategoryMeta = getSubcategory(category, slug)
+  const categoryMeta = categories[category]
+
+  if (!subcategoryMeta || !categoryMeta) {
+    notFound()
+  }
+
+  const subcategoryProducts = getProductsBySubcategory(category, slug)
+
+  return (
+    <main>
+      {/* Breadcrumb-style header */}
+      <section className="bg-deep-plum-10 py-[var(--spacing-section-y)]">
+        <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">
+          <nav className="mb-4 flex items-center gap-2 text-[length:var(--font-size-body-sm)] text-muted-foreground">
+            <Link
+              href={`/${category}/`}
+              className="transition-colors hover:text-foreground"
+            >
+              {categoryMeta.label}
+            </Link>
+            <span>/</span>
+            <span className="text-foreground">{subcategoryMeta.label}</span>
+          </nav>
+          <SectionHeading
+            heading={subcategoryMeta.label}
+            body={subcategoryMeta.description}
+          />
+        </div>
+      </section>
+
+      <section className="py-[var(--spacing-section-y)]">
+        <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">
+          {/* Product count */}
+          <div className="mb-8 flex items-end justify-between">
+            <span className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
+              {subcategoryProducts.length}{" "}
+              {subcategoryProducts.length === 1 ? "produkt" : "produktů"}
+            </span>
+          </div>
+
+          {/* Filter bar */}
+          <div className="mb-10 flex flex-wrap items-center gap-3 border-y border-border py-4">
+            {["Typ vazby", "Cenový rozsah", "Barva", "Řazení"].map(
+              (filter) => (
+                <div
+                  key={filter}
+                  className="rounded-sm border border-border px-4 py-2 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:border-deep-plum-80 hover:text-foreground"
+                >
+                  {filter}
+                </div>
+              ),
+            )}
+          </div>
+
+          {/* Product grid */}
+          {subcategoryProducts.length > 0 ? (
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {subcategoryProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  title={product.name}
+                  price={product.price}
+                  badge={product.badge}
+                  slug={product.slug}
+                  category={product.category}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-col items-center gap-4 py-20 text-center">
+              <p className="text-[length:var(--font-size-body-lg)] text-muted-foreground">
+                Produkty v této kategorii připravujeme.
+              </p>
+              <Button asChild variant="outline" size="md">
+                <Link href={`/${category}/`}>
+                  Zpět na {categoryMeta.label.toLowerCase()}
+                </Link>
+              </Button>
+            </div>
+          )}
+
+          {/* Load more */}
+          {subcategoryProducts.length > 6 && (
+            <div className="mt-12 flex justify-center">
+              <Button variant="outline" size="md">
+                Načíst další
+              </Button>
+            </div>
+          )}
+        </div>
+      </section>
+    </main>
+  )
+}
+
+// --- Product detail ---
+
+interface ProductDetailPageProps {
+  category: string
+  product: {
+    id: number
+    name: string
+    slug: string
+    price: number
+    category: string
+    subcategory: string | null
+    badge: string | null
+    description: string
+    composition: string
+    delivery: string
+    care: string
+  }
+}
+
+function ProductDetailPage({ product }: ProductDetailPageProps) {
   const related = getRelatedProducts(product)
   const isFuneral = product.category === "smutecni"
 
@@ -88,7 +234,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <h1 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-foreground">
                 {product.name}
               </h1>
-              <span className="font-mono text-[length:var(--font-size-h3)] font-[30] text-muted-foreground">
+              <span className="font-sans text-[length:var(--font-size-h3)] font-[30] text-muted-foreground">
                 {formattedPrice}
               </span>
             </div>

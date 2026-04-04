@@ -28,7 +28,7 @@ function ProductCard({
     <Link
       href={href}
       className={cn(
-        "group relative flex flex-col shadow-[var(--shadow-sm)] transition-shadow duration-[var(--transition-card)] hover:shadow-[var(--shadow-md)]",
+        "group relative flex flex-col",
         className,
       )}
     >
@@ -57,7 +57,7 @@ function ProductCard({
         <h4 className="font-heading text-[length:var(--font-size-h4)] leading-snug text-foreground">
           {title}
         </h4>
-        <span className="font-mono text-[length:var(--font-size-body)] font-[30] text-muted-foreground">
+        <span className="font-sans text-[length:var(--font-size-body)] font-[30] text-muted-foreground">
           {new Intl.NumberFormat("cs-CZ", {
             style: "currency",
             currency: "CZK",
