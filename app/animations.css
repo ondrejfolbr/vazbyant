@@ -73,7 +73,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(82.3deg, var(--color-btn-gradient-start) 10.8%, var(--color-btn-gradient-end) 94.3%);
+  background-color: var(--color-btn-hover);
   border-radius: inherit;
   transform: scaleX(0);
   transform-origin: left center;
