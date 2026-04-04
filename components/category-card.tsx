@@ -24,7 +24,7 @@ function CategoryCard({
       )}
     >
       {/* Image placeholder */}
-      <div className="absolute inset-0 bg-deep-plum-80 transition-transform duration-[var(--transition-base)] group-hover:scale-[1.03]">
+      <div className="absolute inset-0 bg-deep-plum-80 transition-transform duration-[var(--transition-card)] group-hover:scale-[1.02]">
         <div className="flex h-full items-center justify-center text-[length:var(--font-size-body-sm)] text-deep-plum-70">
           Foto kategorie
         </div>

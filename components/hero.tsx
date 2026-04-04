@@ -40,16 +40,16 @@ function Hero({
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex w-full max-w-[var(--max-width-site)] flex-col gap-5 px-[var(--spacing-section-x)] pb-[var(--spacing-section-y)]">
-        <h1 className="max-w-3xl font-heading text-[length:var(--font-size-display)] leading-snug font-[40] text-neutral-white">
+        <h1 className="hero-stagger hero-stagger-1 max-w-3xl font-heading text-[length:var(--font-size-display)] leading-snug font-[40] text-neutral-white">
           {heading}
         </h1>
         {subheading && (
-          <p className="max-w-xl text-[length:var(--font-size-body-lg)] leading-relaxed text-plum-30">
+          <p className="hero-stagger hero-stagger-2 max-w-xl text-[length:var(--font-size-body-lg)] leading-relaxed text-plum-30">
             {subheading}
           </p>
         )}
         {ctaText && ctaHref && (
-          <div className="mt-2">
+          <div className="hero-stagger hero-stagger-3 mt-2">
             <Button
               asChild
               variant="outline"

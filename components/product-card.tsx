@@ -27,11 +27,14 @@ function ProductCard({
   return (
     <Link
       href={href}
-      className={cn("group relative flex flex-col", className)}
+      className={cn(
+        "group relative flex flex-col shadow-[var(--shadow-sm)] transition-shadow duration-[var(--transition-card)] hover:shadow-[var(--shadow-md)]",
+        className,
+      )}
     >
       {/* Image placeholder 1:1 */}
       <div className="relative aspect-square overflow-hidden rounded-sm bg-neutral-200 dark:bg-neutral-800">
-        <div className="flex h-full items-center justify-center text-[length:var(--font-size-caption)] text-neutral-400">
+        <div className="flex h-full items-center justify-center text-[length:var(--font-size-caption)] text-neutral-400 transition-transform duration-[var(--transition-card)] group-hover:scale-[1.02]">
           Foto produktu
         </div>
 

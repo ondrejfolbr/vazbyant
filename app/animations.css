@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Vazby Květin — Animation System
+   Reusable CSS-only animations. Timing and easing via custom properties
+   defined in globals.css (--ease-default, --transition-fast/base/slow/card).
+   ========================================================================== */
+
+/* --- Nav underline slide-in from left ----------------------------------- */
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms var(--ease-default);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* --- Hero fade-in stagger ----------------------------------------------- */
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-stagger {
+  opacity: 0;
+  animation: hero-fade-in 500ms var(--ease-default) forwards;
+}
+
+.hero-stagger-1 {
+  animation-delay: 0ms;
+}
+
+.hero-stagger-2 {
+  animation-delay: 150ms;
+}
+
+.hero-stagger-3 {
+  animation-delay: 300ms;
+}
+
+/* --- Reduced motion ----------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0ms !important;
+  }
+
+  .hero-stagger {
+    opacity: 1;
+  }
+}
