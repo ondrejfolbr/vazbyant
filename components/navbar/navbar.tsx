@@ -88,9 +88,12 @@ function NavBar() {
 
           {/* Utility nav */}
           <div className="flex items-center gap-4">
-            <span className="hidden text-[length:var(--font-size-body-sm)] text-muted-foreground md:block">
-              +420 XXX XXX XXX
-            </span>
+            <a
+              href="tel:+420604585271"
+              className="hidden text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:text-foreground md:block"
+            >
+              604 585 271
+            </a>
             <Link
               href="/kosik/"
               className="relative flex size-10 items-center justify-center rounded-sm text-foreground transition-colors hover:bg-deep-plum-10"
@@ -256,8 +259,13 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
           </Link>
         ))}
       </nav>
-      <div className="border-t border-border px-6 py-4 text-[length:var(--font-size-body-sm)] text-muted-foreground">
-        +420 XXX XXX XXX
+      <div className="border-t border-border px-6 py-4">
+        <a
+          href="tel:+420604585271"
+          className="text-[length:var(--font-size-body-sm)] text-muted-foreground"
+        >
+          604 585 271
+        </a>
       </div>
     </div>
   )

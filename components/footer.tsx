@@ -61,15 +61,15 @@ function Footer({ className }: FooterProps) {
             </span>
             <div className="flex flex-col gap-2.5 text-[length:var(--font-size-body-sm)] text-muted-foreground">
               <address className="not-italic leading-relaxed">
-                Ulice 123
+                Mirošovická 704
                 <br />
-                110 00 Praha 1
+                251 64 Mnichovice
               </address>
               <a
-                href="tel:+420000000000"
+                href="tel:+420604585271"
                 className="transition-colors hover:text-deep-plum"
               >
-                +420 XXX XXX XXX
+                604 585 271
               </a>
               <a
                 href="mailto:info@vazbykvetin.cz"
@@ -77,7 +77,9 @@ function Footer({ className }: FooterProps) {
               >
                 info@vazbykvetin.cz
               </a>
-              <p className="text-foreground">Po–Pá 8:00–18:00</p>
+              <p className="text-foreground">
+                Po–Pá 7:00–15:30 · Ne 7:00–12:00
+              </p>
             </div>
           </div>
         </div>
