@@ -10,18 +10,18 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-deep-plum text-neutral-white hover:bg-deep-plum-90 transition-colors duration-[var(--transition-base)]",
+          "bg-deep-plum text-neutral-white hover:bg-deep-plum-90",
         outline:
-          "border-deep-plum text-deep-plum hover:bg-deep-plum-10 transition-colors duration-[var(--transition-base)] dark:border-plum-30 dark:text-plum-30 dark:hover:bg-deep-plum/20",
+          "border-deep-plum text-deep-plum hover:bg-deep-plum-10 dark:border-plum-30 dark:text-plum-30 dark:hover:bg-deep-plum/20",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
         ghost:
-          "text-deep-plum underline-offset-4 hover:bg-deep-plum-10 transition-colors duration-[var(--transition-base)] dark:text-plum-30 dark:hover:bg-deep-plum/20",
+          "text-deep-plum underline-offset-4 hover:bg-deep-plum-10 dark:text-plum-30 dark:hover:bg-deep-plum/20",
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-deep-plum underline-offset-4 hover:underline dark:text-plum-30",
         accent:
-          "bg-plum-50 text-neutral-white hover:bg-deep-plum-70 transition-colors duration-[var(--transition-base)]",
+          "bg-plum-50 text-neutral-white hover:bg-deep-plum-70",
       },
       size: {
         default:

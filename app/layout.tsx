@@ -1,6 +1,22 @@
+import type { Metadata } from "next"
 import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from "next/font/google"
 
 import "./globals.css"
+
+export const metadata: Metadata = {
+  title: {
+    default: "Vazby Květin — Květiny pro chvíle, na kterých záleží",
+    template: "%s | Vazby Květin",
+  },
+  description:
+    "Smuteční, svatební a dárkové květiny s doručením po Praze. Součást ekosystému pohřební služby PEGAS.",
+  metadataBase: new URL("https://vazbykvetin.cz"),
+  openGraph: {
+    type: "website",
+    locale: "cs_CZ",
+    siteName: "Vazby Květin",
+  },
+}
 import { ThemeProvider } from "@/components/theme-provider"
 import { NavBar } from "@/components/navbar/navbar"
 import { Footer } from "@/components/footer"
