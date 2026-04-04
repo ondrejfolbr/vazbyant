@@ -13,13 +13,13 @@ export default function ONasPage() {
   return (
     <main>
       {/* 1. HERO */}
-      <section className="flex min-h-[60vh] items-end bg-deep-plum-80">
+      <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-deep-plum-80">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-30% to-neutral-black/60" />
         <div className="relative z-10 mx-auto w-full max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] pb-[var(--spacing-section-y)]">
           <h1 className="hero-stagger hero-stagger-1 max-w-2xl font-heading text-[length:var(--font-size-display)] leading-snug font-[40] text-neutral-white">
             Každá vazba nese něco, co slova nedokážou.
           </h1>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-30% to-neutral-black/60" />
       </section>
 
       {/* 2. KDO JSME */}
