@@ -59,6 +59,38 @@
   animation-delay: 300ms;
 }
 
+/* --- Button sweep overlay ------------------------------------------------ */
+
+.btn-sweep {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-btn-base);
+  border-radius: 8px;
+  color: #fff;
+}
+
+.btn-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(82.3deg, var(--color-btn-gradient-start) 10.8%, var(--color-btn-gradient-end) 94.3%);
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.475s var(--ease-default);
+  z-index: 0;
+}
+
+.btn-sweep:hover::before,
+.btn-sweep:focus-visible::before {
+  transform: scaleX(1);
+}
+
+.btn-sweep-label {
+  position: relative;
+  z-index: 1;
+}
+
 /* --- Card hover --------------------------------------------------------- */
 
 .card-image {
@@ -102,6 +134,17 @@
   }
 
   .hero-stagger {
+    opacity: 1;
+  }
+
+  .btn-sweep::before {
+    transform: scaleX(1);
+    opacity: 0;
+    transition: opacity 0.3s ease-out !important;
+  }
+
+  .btn-sweep:hover::before,
+  .btn-sweep:focus-visible::before {
     opacity: 1;
   }
 }

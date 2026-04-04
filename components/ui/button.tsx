@@ -9,8 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-deep-plum text-neutral-white hover:bg-deep-plum-90",
+        default: "btn-sweep text-neutral-white",
         outline:
           "border-deep-plum text-deep-plum hover:bg-deep-plum-10 dark:border-plum-30 dark:text-plum-30 dark:hover:bg-deep-plum/20",
         secondary:
@@ -20,8 +19,7 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-deep-plum underline-offset-4 hover:underline dark:text-plum-30",
-        accent:
-          "bg-plum-50 text-neutral-white hover:bg-deep-plum-70",
+        accent: "btn-sweep text-neutral-white",
       },
       size: {
         default:
@@ -43,16 +41,46 @@ const buttonVariants = cva(
   }
 )
 
+const SWEEP_VARIANTS = new Set(["default", "accent"])
+
 function Button({
   className,
   variant = "default",
   size = "default",
   asChild = false,
+  children,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean
   }) {
+  const hasSweep = SWEEP_VARIANTS.has(variant ?? "default")
+
+  if (asChild && hasSweep) {
+    return (
+      <Slot.Root
+        data-slot="button"
+        data-variant={variant}
+        data-size={size}
+        className={cn(buttonVariants({ variant, size, className }))}
+        {...props}
+      >
+        {React.isValidElement(children)
+          ? React.cloneElement(
+              children as React.ReactElement<{ children?: React.ReactNode }>,
+              undefined,
+              <span className="btn-sweep-label">
+                {
+                  (children as React.ReactElement<{ children?: React.ReactNode }>)
+                    .props.children
+                }
+              </span>
+            )
+          : children}
+      </Slot.Root>
+    )
+  }
+
   const Comp = asChild ? Slot.Root : "button"
 
   return (
@@ -62,7 +90,13 @@ function Button({
       data-size={size}
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
-    />
+    >
+      {hasSweep ? (
+        <span className="btn-sweep-label">{children}</span>
+      ) : (
+        children
+      )}
+    </Comp>
   )
 }
 
