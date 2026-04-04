@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
+import { Logo } from "@/components/logo"
 import { footerNav } from "@/components/navbar/navbar.data"
 
 interface FooterProps {
@@ -16,11 +17,8 @@ function Footer({ className }: FooterProps) {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Column 1: Logo + claim + social */}
           <div className="flex flex-col gap-5">
-            <Link
-              href="/"
-              className="font-heading text-[length:var(--font-size-h4)] font-[40] tracking-wide text-foreground"
-            >
-              VAZBY KVĚTIN
+            <Link href="/" aria-label="Vazby Květin — domů">
+              <Logo className="h-4" />
             </Link>
             <p className="max-w-xs text-[length:var(--font-size-body-sm)] leading-relaxed text-muted-foreground">
               Vazby mezi lidmi, které nekončí.

@@ -4,6 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
+import { Logo } from "@/components/logo"
 import {
   megaMenuCategories,
   simpleLinks,
@@ -51,11 +52,8 @@ function NavBar() {
       >
         <div className="mx-auto flex h-16 max-w-[var(--max-width-site)] items-center justify-between px-[var(--spacing-section-x)]">
           {/* Logo */}
-          <Link
-            href="/"
-            className="font-heading text-[length:var(--font-size-h4)] font-[40] tracking-wide text-foreground"
-          >
-            VAZBY KVĚTIN
+          <Link href="/" aria-label="Vazby Květin — domů">
+            <Logo className="h-5" />
           </Link>
 
           {/* Desktop nav */}
