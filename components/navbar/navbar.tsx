@@ -17,6 +17,8 @@ function NavBar() {
   const [activeMenu, setActiveMenu] = React.useState<string | null>(null)
   const closeTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null)
 
+  const megaMenuOpen = activeMenu !== null
+
   React.useEffect(() => {
     function onScroll() {
       setScrolled(window.scrollY > 10)
@@ -42,6 +44,18 @@ function NavBar() {
 
   return (
     <>
+      {/* Backdrop blur overlay */}
+      <div
+        className={cn(
+          "fixed inset-0 z-40 transition-all duration-500 ease-[var(--ease-default)]",
+          megaMenuOpen
+            ? "pointer-events-auto bg-neutral-black/20 backdrop-blur-sm"
+            : "pointer-events-none bg-transparent backdrop-blur-none",
+        )}
+        aria-hidden="true"
+        onMouseEnter={handleLeave}
+      />
+
       <header
         className={cn(
           "fixed top-0 right-0 left-0 z-50 transition-all duration-[var(--transition-base)]",
@@ -182,10 +196,10 @@ function MegaMenuPanel({
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
       className={cn(
-        "absolute right-0 left-0 overflow-hidden border-t border-border bg-background transition-all duration-[var(--transition-fast)]",
+        "absolute right-0 left-0 border-t border-border bg-background transition-all duration-300 ease-[var(--ease-default)]",
         open
-          ? "visible max-h-[400px] opacity-100"
-          : "invisible max-h-0 opacity-0",
+          ? "visible translate-y-0 opacity-100"
+          : "invisible -translate-y-2 opacity-0",
       )}
     >
       <div className="mx-auto grid max-w-[var(--max-width-site)] grid-cols-[1fr_1fr_1fr_1fr_300px] gap-8 px-[var(--spacing-section-x)] py-8">
