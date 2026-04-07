@@ -20,7 +20,7 @@ export default function Page() {
         subheading="Navrhujeme květiny pro chvíle, na kterých záleží."
         ctaText="Prohlédnout nabídku"
         ctaHref="/kytice/"
-        backgroundImage="/hero-mamut.png"
+        backgroundImages={["/hero-home.png", "/hero-home-2.png"]}
       />
 
       {/* Sekce 2: Vstupní rozcestník */}
@@ -91,12 +91,12 @@ export default function Page() {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-sm lg:col-span-7">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-neutral-100 lg:col-span-7">
             <Image
-              src="/about-photo.png"
-              alt="Květinový set v přírodním prostředí"
+              src="/hero-mamut.png"
+              alt="Mamut — maskot Vazby Květin"
               fill
-              className="object-cover"
+              className="object-contain"
               sizes="(min-width: 1024px) 58vw, 100vw"
             />
           </div>
