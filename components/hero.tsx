@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
@@ -8,6 +9,7 @@ interface HeroProps {
   subheading?: string
   ctaText?: string
   ctaHref?: string
+  backgroundImage?: string
   variant?: "full" | "sub"
   className?: string
 }
@@ -17,6 +19,7 @@ function Hero({
   subheading,
   ctaText,
   ctaHref,
+  backgroundImage,
   variant = "full",
   className,
 }: HeroProps) {
@@ -28,12 +31,23 @@ function Hero({
         className,
       )}
     >
-      {/* Image placeholder */}
-      <div className="absolute inset-0 bg-deep-plum-80">
-        <div className="flex h-full items-center justify-center text-[length:var(--font-size-body)] text-deep-plum-70">
-          Hero fotografie
+      {/* Background image */}
+      {backgroundImage ? (
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-deep-plum-80">
+          <div className="flex h-full items-center justify-center text-[length:var(--font-size-body)] text-deep-plum-70">
+            Hero fotografie
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent from-30% to-neutral-black/70" />
