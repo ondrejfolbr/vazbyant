@@ -254,7 +254,7 @@ function MegaMenuPanel({
         {/* Featured image */}
         <div className="relative overflow-hidden rounded-sm">
           <Image
-            src="/category-kytice.png"
+            src="/category-kytice.jpg"
             alt=""
             fill
             className="object-cover"

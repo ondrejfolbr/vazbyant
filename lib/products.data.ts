@@ -135,7 +135,7 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "kytice",
     badge: null,
-    image: "/category-kytice.png",
+    image: "/category-kytice.jpg",
     description:
       "Jemná smuteční kytice v tlumených tónech bílé a krémové. Vyjadřuje úctu a tiché souznění.",
     composition: "Bílé růže, eustoma, eucalyptus, gypsophila, zeleň.",
@@ -151,7 +151,7 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "vence",
     badge: null,
-    image: "/category-vence-fialovy.png",
+    image: "/category-vence-fialovy.jpg",
     description:
       "Tradiční smuteční věnec z čerstvých květin. Kruhový tvar symbolizuje věčnost a nekonečnou vzpomínku.",
     composition:
@@ -168,7 +168,7 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: null,
-    image: "/hero-home-2.png",
+    image: "/hero-home-2.jpg",
     description:
       "Podélná kytice určená k položení na rakev. Elegantní a důstojná kompozice.",
     composition: "Lilie, bílé růže, orchideje, asparagus, ruskus.",
@@ -184,7 +184,7 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "urna",
     badge: null,
-    image: "/seasonal-anthurie.png",
+    image: "/seasonal-anthurie.jpg",
     description:
       "Menší aranžmá určené k urně. Světlé tóny symbolizují naději a klid.",
     composition: "Bílé frézie, mini růže, eucalyptus, zeleň.",

@@ -21,7 +21,7 @@ export default function Page() {
         subheading="Navrhujeme květiny pro chvíle, na kterých záleží."
         ctaText="Prohlédnout nabídku"
         ctaHref="/kytice/"
-        backgroundImages={["/hero-home.png", "/hero-home-2.png"]}
+        backgroundImages={["/hero-home.jpg", "/hero-home-2.jpg"]}
       />
 
       {/* Sekce 2: Vstupní rozcestník */}
@@ -31,19 +31,19 @@ export default function Page() {
             title="Kytice na rakev"
             subtitle="S respektem a pochopením"
             href="/smutecni/rakev/"
-            image="/category-kytice.png"
+            image="/category-kytice.jpg"
           />
           <CategoryCard
             title="Květinové sety"
             subtitle="Kompletní květinový servis"
             href="/smutecni/"
-            image="/category-sety.png"
+            image="/category-sety.jpg"
           />
           <CategoryCard
             title="Věnce"
             subtitle="Důstojná vzpomínka"
             href="/smutecni/vence/"
-            image="/category-vence-fialovy.png"
+            image="/category-vence-fialovy.jpg"
           />
         </div>
       </section>
@@ -111,19 +111,19 @@ export default function Page() {
             heading: "Letní kolekce 2026",
             ctaText: "Zobrazit nabídku",
             ctaHref: "/kytice/sezonni/",
-            image: "/category-sety.png",
+            image: "/category-sety.jpg",
           },
           {
             heading: "Smuteční věnce s osobním věnováním",
             ctaText: "Prohlédnout věnce",
             ctaHref: "/smutecni/vence/",
-            image: "/category-vence-fialovy.png",
+            image: "/category-vence-fialovy.jpg",
           },
           {
             heading: "Květinové sety pro kompletní rozloučení",
             ctaText: "Zjistit více",
             ctaHref: "/smutecni/",
-            image: "/about-photo.png",
+            image: "/about-photo.jpg",
           },
         ]}
       />
