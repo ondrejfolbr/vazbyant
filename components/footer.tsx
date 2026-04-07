@@ -44,12 +44,6 @@ function Footer({ className }: FooterProps) {
                 </svg>
               </a>
             </div>
-            <a
-              href="tel:+420604585271"
-              className="text-[length:var(--font-size-body-lg)] font-[30] text-neutral-white transition-colors hover:text-neutral-white/80"
-            >
-              604 585 271
-            </a>
           </div>
 
           {/* Column 2: Navigation */}
@@ -87,6 +81,12 @@ function Footer({ className }: FooterProps) {
                 <br />
                 Ne: 7:00–12:00 hod.
               </p>
+              <a
+                href="tel:+420604585271"
+                className="transition-colors hover:text-neutral-white"
+              >
+                604 585 271
+              </a>
               <a
                 href="mailto:info@vazbykvetin.cz"
                 className="transition-colors hover:text-neutral-white"
