@@ -1,0 +1,141 @@
+"use client"
+
+import Image from "next/image"
+import Link from "next/link"
+import { useState, useCallback, useEffect } from "react"
+
+import { cn } from "@/lib/utils"
+
+interface HighlightSlide {
+  heading: string
+  ctaText: string
+  ctaHref: string
+  image: string
+}
+
+interface HighlightSliderProps {
+  slides: HighlightSlide[]
+  interval?: number
+}
+
+function HighlightSlider({ slides, interval = 6000 }: HighlightSliderProps) {
+  const [active, setActive] = useState(0)
+
+  const next = useCallback(() => {
+    setActive((prev) => (prev + 1) % slides.length)
+  }, [slides.length])
+
+  const prev = useCallback(() => {
+    setActive((prev) => (prev - 1 + slides.length) % slides.length)
+  }, [slides.length])
+
+  useEffect(() => {
+    if (slides.length <= 1) return
+    const timer = setInterval(next, interval)
+    return () => clearInterval(timer)
+  }, [next, interval, slides.length])
+
+  return (
+    <section className="py-[var(--spacing-section-y)]">
+      <div className="relative mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">
+        {/* Slide container */}
+        <div className="relative overflow-hidden rounded-sm">
+          <div
+            className="flex transition-transform duration-700 ease-[var(--ease-default)]"
+            style={{ transform: `translateX(-${active * 100}%)` }}
+          >
+            {slides.map((slide, i) => (
+              <div
+                key={i}
+                className="grid w-full flex-shrink-0 grid-cols-1 lg:grid-cols-2"
+              >
+                {/* Text panel */}
+                <div className="flex items-center bg-deep-plum px-10 py-16 lg:px-16 lg:py-24">
+                  <div className="flex flex-col gap-6">
+                    <h3 className="max-w-sm font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-neutral-white">
+                      {slide.heading}
+                    </h3>
+                    <Link
+                      href={slide.ctaHref}
+                      className="group inline-flex items-center gap-2 text-[length:var(--font-size-body)] text-neutral-white/80 transition-colors hover:text-neutral-white"
+                    >
+                      {slide.ctaText}
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="transition-transform group-hover:translate-x-1"
+                      >
+                        <path d="M3 8h10M9 4l4 4-4 4" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+                {/* Image panel */}
+                <div className="relative aspect-[4/3] lg:aspect-auto">
+                  <Image
+                    src={slide.image}
+                    alt={slide.heading}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Arrows */}
+        {slides.length > 1 && (
+          <>
+            <button
+              onClick={prev}
+              aria-label="Předchozí"
+              className="absolute top-1/2 left-2 z-10 flex size-10 -translate-y-1/2 items-center justify-center text-foreground/40 transition-colors hover:text-foreground"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <button
+              onClick={next}
+              aria-label="Další"
+              className="absolute top-1/2 right-2 z-10 flex size-10 -translate-y-1/2 items-center justify-center text-foreground/40 transition-colors hover:text-foreground"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </>
+        )}
+
+        {/* Dots */}
+        {slides.length > 1 && (
+          <div className="mt-6 flex justify-center gap-2">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                aria-label={`Slide ${i + 1}`}
+                className={cn(
+                  "size-2.5 rounded-full transition-colors",
+                  i === active
+                    ? "bg-deep-plum"
+                    : "bg-neutral-300 hover:bg-neutral-400",
+                )}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
+
+export { HighlightSlider }
