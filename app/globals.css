@@ -214,6 +214,7 @@
   }
   body {
     @apply bg-background text-foreground font-sans font-[30];
+    font-stretch: 90%;
   }
   html {
     @apply font-sans;

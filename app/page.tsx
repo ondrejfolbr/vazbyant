@@ -102,13 +102,13 @@ export default function Page() {
         <div className="absolute inset-0 bg-neutral-black/60" />
         <div className="relative z-10 mx-auto w-full max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] py-[var(--spacing-section-y)]">
           <div className="flex max-w-lg flex-col gap-4">
-            <span className="text-[length:var(--font-size-overline)] font-[30] uppercase tracking-widest text-plum-30">
+            <span className="text-[length:var(--font-size-overline)] font-[30] uppercase tracking-widest text-neutral-white/70">
               Sezónní nabídka
             </span>
             <h2 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-neutral-white">
               Dušičky 2025
             </h2>
-            <p className="text-[length:var(--font-size-body)] leading-relaxed text-plum-30">
+            <p className="text-[length:var(--font-size-body)] leading-relaxed text-neutral-white">
               Smuteční kytice a věnce pro pietní vzpomínku.
             </p>
             <div className="mt-2">

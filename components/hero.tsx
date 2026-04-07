@@ -44,7 +44,7 @@ function Hero({
           {heading}
         </h1>
         {subheading && (
-          <p className="hero-stagger hero-stagger-2 max-w-xl text-[length:var(--font-size-body-lg)] leading-relaxed text-plum-30">
+          <p className="hero-stagger hero-stagger-2 max-w-xl text-[length:var(--font-size-body-lg)] leading-relaxed text-neutral-white">
             {subheading}
           </p>
         )}

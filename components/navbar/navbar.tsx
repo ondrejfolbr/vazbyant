@@ -191,6 +191,9 @@ function MegaMenuPanel({
   onEnter: () => void
   onLeave: () => void
 }) {
+  const groups = category.groups ?? []
+  const hasGroups = groups.length > 0
+
   return (
     <div
       onMouseEnter={onEnter}
@@ -202,30 +205,53 @@ function MegaMenuPanel({
           : "invisible -translate-y-2 opacity-0",
       )}
     >
-      <div className="mx-auto grid max-w-[var(--max-width-site)] grid-cols-[1fr_1fr_1fr_1fr_300px] gap-8 px-[var(--spacing-section-x)] py-8">
-        {/* Subcategory links */}
-        <div className="col-span-3 grid grid-cols-3 gap-6">
-          {category.subcategories.map((sub) => (
-            <Link
-              key={sub.href}
-              href={sub.href}
-              className="rounded-sm px-3 py-2 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:bg-deep-plum-10 hover:text-deep-plum"
-            >
-              {sub.label}
-            </Link>
-          ))}
-          {category.cta && (
-            <Link
-              href={category.cta.href}
-              className="mt-2 inline-flex items-center rounded-sm border border-deep-plum px-4 py-2 text-[length:var(--font-size-body)] font-[30] text-deep-plum transition-colors hover:bg-deep-plum-10"
-            >
-              {category.cta.label}
-            </Link>
-          )}
-        </div>
+      <div className="mx-auto grid max-w-[var(--max-width-site)] grid-cols-[1fr_1fr_1fr_300px] gap-8 px-[var(--spacing-section-x)] py-8">
+        {hasGroups ? (
+          <>
+            {groups.map((group) => (
+              <div key={group.heading} className="flex flex-col gap-1">
+                <Link
+                  href={group.href}
+                  className="mb-1 text-[length:var(--font-size-body-sm)] font-[30] text-foreground transition-colors hover:text-deep-plum"
+                >
+                  {group.heading}
+                </Link>
+                {group.items.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-sm px-3 py-1.5 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:bg-deep-plum-10 hover:text-deep-plum"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            ))}
+          </>
+        ) : (
+          <div className="col-span-3 grid grid-cols-3 gap-6">
+            {category.subcategories.map((sub) => (
+              <Link
+                key={sub.href}
+                href={sub.href}
+                className="rounded-sm px-3 py-2 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:bg-deep-plum-10 hover:text-deep-plum"
+              >
+                {sub.label}
+              </Link>
+            ))}
+            {category.cta && (
+              <Link
+                href={category.cta.href}
+                className="mt-2 inline-flex items-center rounded-sm border border-deep-plum px-4 py-2 text-[length:var(--font-size-body)] font-[30] text-deep-plum transition-colors hover:bg-deep-plum-10"
+              >
+                {category.cta.label}
+              </Link>
+            )}
+          </div>
+        )}
 
         {/* Featured image placeholder */}
-        <div className="col-span-1 flex items-center justify-center rounded-sm bg-plum-10">
+        <div className="flex items-center justify-center rounded-sm bg-plum-10">
           <span className="text-[length:var(--font-size-caption)] text-plum-50">
             Foto
           </span>
@@ -239,29 +265,56 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
   return (
     <div className="fixed inset-0 z-40 flex flex-col bg-background pt-16">
       <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-6 py-6">
-        {megaMenuCategories.map((cat) => (
-          <div key={cat.label} className="flex flex-col">
-            <Link
-              href={cat.href}
-              onClick={onClose}
-              className="py-3 font-heading text-[length:var(--font-size-h3)] font-[40] text-foreground"
-            >
-              {cat.label}
-            </Link>
-            <div className="flex flex-col gap-1 pb-4 pl-4">
-              {cat.subcategories.map((sub) => (
-                <Link
-                  key={sub.href}
-                  href={sub.href}
-                  onClick={onClose}
-                  className="py-1.5 text-[length:var(--font-size-body)] text-muted-foreground transition-colors hover:text-deep-plum"
-                >
-                  {sub.label}
-                </Link>
-              ))}
+        {megaMenuCategories.map((cat) => {
+          const groups = cat.groups ?? []
+          const hasGroups = groups.length > 0
+
+          return (
+            <div key={cat.label} className="flex flex-col">
+              <span className="py-3 font-heading text-[length:var(--font-size-h3)] font-[40] text-foreground">
+                {cat.label}
+              </span>
+              {hasGroups ? (
+                <div className="flex flex-col gap-4 pb-4 pl-4">
+                  {groups.map((group) => (
+                    <div key={group.heading} className="flex flex-col gap-1">
+                      <Link
+                        href={group.href}
+                        onClick={onClose}
+                        className="py-1.5 text-[length:var(--font-size-body)] font-[30] text-foreground transition-colors hover:text-deep-plum"
+                      >
+                        {group.heading}
+                      </Link>
+                      {group.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={onClose}
+                          className="py-1 pl-3 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:text-deep-plum"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="flex flex-col gap-1 pb-4 pl-4">
+                  {cat.subcategories.map((sub) => (
+                    <Link
+                      key={sub.href}
+                      href={sub.href}
+                      onClick={onClose}
+                      className="py-1.5 text-[length:var(--font-size-body)] text-muted-foreground transition-colors hover:text-deep-plum"
+                    >
+                      {sub.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
-          </div>
-        ))}
+          )
+        })}
         {simpleLinks.map((link) => (
           <Link
             key={link.label}

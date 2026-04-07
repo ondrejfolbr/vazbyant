@@ -38,7 +38,7 @@ function CategoryCard({
         <h3 className="font-heading text-[length:var(--font-size-h3)] leading-snug font-[40] text-neutral-white">
           {title}
         </h3>
-        <p className="text-[length:var(--font-size-body-sm)] text-plum-30">
+        <p className="text-[length:var(--font-size-body-sm)] text-neutral-white/80">
           {subtitle}
         </p>
         <span className="card-cta mt-2 self-start border-b border-neutral-white/40 pb-0.5 text-[length:var(--font-size-body-sm)] font-[30] text-neutral-white">
