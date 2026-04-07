@@ -6,6 +6,7 @@ export interface Product {
   category: string
   subcategory: string | null
   badge: string | null
+  image: string | null
   description: string
   composition: string
   delivery: string
@@ -134,6 +135,7 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "kytice",
     badge: null,
+    image: "/category-kytice.png",
     description:
       "Jemná smuteční kytice v tlumených tónech bílé a krémové. Vyjadřuje úctu a tiché souznění.",
     composition: "Bílé růže, eustoma, eucalyptus, gypsophila, zeleň.",
@@ -149,6 +151,7 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "vence",
     badge: null,
+    image: "/category-vence-fialovy.png",
     description:
       "Tradiční smuteční věnec z čerstvých květin. Kruhový tvar symbolizuje věčnost a nekonečnou vzpomínku.",
     composition:
@@ -165,6 +168,7 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: null,
+    image: "/hero-home-2.png",
     description:
       "Podélná kytice určená k položení na rakev. Elegantní a důstojná kompozice.",
     composition: "Lilie, bílé růže, orchideje, asparagus, ruskus.",
@@ -180,6 +184,7 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "urna",
     badge: null,
+    image: "/seasonal-anthurie.png",
     description:
       "Menší aranžmá určené k urně. Světlé tóny symbolizují naději a klid.",
     composition: "Bílé frézie, mini růže, eucalyptus, zeleň.",
@@ -195,6 +200,7 @@ export const products: Product[] = [
     category: "svatebni",
     subcategory: "kytice",
     badge: "Oblíbené",
+    image: null,
     description:
       "Romantická svatební kytice v pastelových tónech. Ideální pro jarní a letní svatby.",
     composition: "Pivoňky, David Austin růže, eucalyptus, hedvábné stuhy.",
@@ -209,6 +215,7 @@ export const products: Product[] = [
     category: "svatebni",
     subcategory: "kytice",
     badge: null,
+    image: null,
     description:
       "Něžná kytice inspirovaná ranní zahradou. Přirozený, lehce divoký styl.",
     composition: "Luční kvítí, drobné růže, levandule, trávy, len.",
@@ -223,6 +230,7 @@ export const products: Product[] = [
     category: "svatebni",
     subcategory: "dekorace",
     badge: null,
+    image: null,
     description:
       "Kompletní květinová dekorace obřadního místa. Zahrnuje výzdobu uličky, oltáře a vstupní brány.",
     composition:
@@ -239,6 +247,7 @@ export const products: Product[] = [
     category: "kytice",
     subcategory: "narozeniny",
     badge: "Novinka",
+    image: null,
     description:
       "Veselá kytice plná slunečnic a žlutých tónů. Ideální dárek k narozeninám.",
     composition: "Slunečnice, solidago, germini, zeleň.",
@@ -253,6 +262,7 @@ export const products: Product[] = [
     category: "kytice",
     subcategory: "narozeniny",
     badge: null,
+    image: null,
     description:
       "Kytice z lučních květin — přirozená, lehká, jako procházka polem.",
     composition: "Heřmánek, chrpa, mák, trávy, len, drobné kvítí.",
@@ -267,6 +277,7 @@ export const products: Product[] = [
     category: "kytice",
     subcategory: "predplatne",
     badge: "Předplatné",
+    image: null,
     description:
       "Každý měsíc čerstvá sezónní kytice až k vašim dveřím. Překvapení od našich floristů.",
     composition: "Sezónní mix — každý měsíc jiný, vždy čerstvý.",
@@ -281,6 +292,7 @@ export const products: Product[] = [
     category: "kytice",
     subcategory: "firemni",
     badge: null,
+    image: null,
     description:
       "Elegantní kytice pro firemní prostory, recepce nebo jako dárek obchodním partnerům.",
     composition: "Bílé lilie, anthurium, zeleň, minimalistická vazba.",
@@ -296,6 +308,7 @@ export const products: Product[] = [
     category: "kytice",
     subcategory: "sezonni",
     badge: "Sezónní",
+    image: null,
     description:
       "Pietní kytice pro vzpomínku na Dušičky. Tlumené barvy, přírodní materiály.",
     composition: "Chryzantémy, vřes, mech, šišky, sušené listy.",
@@ -310,6 +323,7 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "dekorace",
     badge: null,
+    image: null,
     description:
       "Květinová výzdoba obřadní síně — diskrétní, důstojná, na míru prostoru.",
     composition: "Bílé chryzantémy, lilie, svíčky, zeleň, stuhy.",
@@ -325,6 +339,7 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "kose",
     badge: null,
+    image: null,
     description:
       "Proutěný koš aranžovaný čerstvými květinami — alternativa ke klasické kytici.",
     composition: "Bílé a krémové růže, eustoma, zeleň, proutěný koš.",
@@ -340,6 +355,7 @@ export const products: Product[] = [
     category: "svatebni",
     subcategory: "doplnky",
     badge: null,
+    image: null,
     description:
       "Elegantní korsáž na klopy — sladěná se svatební kyticí nevěsty.",
     composition: "Mini růže, eucalyptus, hedvábná stuha.",
@@ -354,6 +370,7 @@ export const products: Product[] = [
     category: "kytice",
     subcategory: "sezonni",
     badge: "Sezónní",
+    image: null,
     description:
       "Vánoční aranžmá s tradičními prvky — hvězda, jehličí, šišky.",
     composition: "Vánoční hvězda, jedlové větvičky, šišky, skořice, stuha.",

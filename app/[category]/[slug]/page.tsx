@@ -174,6 +174,7 @@ interface ProductDetailPageProps {
     category: string
     subcategory: string | null
     badge: string | null
+    image: string | null
     description: string
     composition: string
     delivery: string

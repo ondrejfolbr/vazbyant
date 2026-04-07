@@ -1,9 +1,11 @@
+import Image from "next/image"
+import Link from "next/link"
+
 import { Hero } from "@/components/hero"
 import { CategoryCard } from "@/components/category-card"
 import { ProductCard } from "@/components/product-card"
 import { SectionHeading } from "@/components/ui/section-heading"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 
 import { products } from "@/lib/products.data"
 
@@ -18,7 +20,7 @@ export default function Page() {
         subheading="Navrhujeme květiny pro chvíle, na kterých záleží."
         ctaText="Prohlédnout nabídku"
         ctaHref="/kytice/"
-        backgroundImages={["/hero-home.png", "/hero-home-2.png"]}
+        backgroundImage="/hero-mamut.png"
       />
 
       {/* Sekce 2: Vstupní rozcestník */}
@@ -28,19 +30,19 @@ export default function Page() {
             title="Kytice na rakev"
             subtitle="S respektem a pochopením"
             href="/smutecni/rakev/"
-            image="/hero-home-2.png"
+            image="/category-kytice.png"
           />
           <CategoryCard
             title="Květinové sety"
             subtitle="Kompletní květinový servis"
             href="/smutecni/"
-            image="/hero-home.png"
+            image="/category-sety.png"
           />
           <CategoryCard
             title="Věnce"
             subtitle="Důstojná vzpomínka"
             href="/smutecni/vence/"
-            image="/category-vence.png"
+            image="/category-vence-fialovy.png"
           />
         </div>
       </section>
@@ -57,6 +59,7 @@ export default function Page() {
             {featured.map((product) => (
               <ProductCard
                 key={product.id}
+                image={product.image}
                 title={product.name}
                 price={product.price}
                 badge={product.badge}
@@ -88,22 +91,28 @@ export default function Page() {
               </Button>
             </div>
           </div>
-          <div className="flex aspect-[4/3] items-center justify-center rounded-sm bg-plum-10 lg:col-span-7">
-            <span className="text-[length:var(--font-size-body-sm)] text-plum-50">
-              Foto — O nás
-            </span>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-sm lg:col-span-7">
+            <Image
+              src="/about-photo.png"
+              alt="Květinový set v přírodním prostředí"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 58vw, 100vw"
+            />
           </div>
         </div>
       </section>
 
       {/* Sekce 6: Sezónní highlight */}
       <section className="relative flex min-h-[50vh] items-center overflow-hidden">
-        <div className="absolute inset-0 bg-deep-plum-80">
-          <div className="flex h-full items-center justify-center text-[length:var(--font-size-body-sm)] text-deep-plum-70">
-            Sezónní banner fotografie
-          </div>
-        </div>
-        <div className="absolute inset-0 bg-neutral-black/60" />
+        <Image
+          src="/seasonal-anthurie.png"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-neutral-black/50" />
         <div className="relative z-10 mx-auto w-full max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] py-[var(--spacing-section-y)]">
           <div className="flex max-w-lg flex-col gap-4">
             <span className="text-[length:var(--font-size-overline)] font-[30] uppercase tracking-widest text-neutral-white/70">

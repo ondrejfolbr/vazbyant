@@ -1,11 +1,12 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
 
 interface ProductCardProps {
-  image?: string
+  image?: string | null
   title: string
   price: number
   badge?: string | null
@@ -15,6 +16,7 @@ interface ProductCardProps {
 }
 
 function ProductCard({
+  image,
   title,
   price,
   badge,
@@ -34,9 +36,19 @@ function ProductCard({
     >
       {/* Image */}
       <div className="relative aspect-square overflow-hidden rounded-sm bg-neutral-200 dark:bg-neutral-800">
-        <div className="card-image flex h-full items-center justify-center text-[length:var(--font-size-caption)] text-neutral-400">
-          Foto produktu
-        </div>
+        {image ? (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="card-image object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+          />
+        ) : (
+          <div className="card-image flex h-full items-center justify-center text-[length:var(--font-size-caption)] text-neutral-400">
+            Foto produktu
+          </div>
+        )}
 
         {badge && (
           <span className="absolute top-3 left-3 rounded-sm bg-deep-plum px-2.5 py-1 text-[length:var(--font-size-caption)] font-[30] text-neutral-white">
