@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { HeroSlideshow } from "@/components/hero-slideshow"
 
 interface HeroProps {
   heading: string
@@ -10,6 +11,7 @@ interface HeroProps {
   ctaText?: string
   ctaHref?: string
   backgroundImage?: string
+  backgroundImages?: string[]
   variant?: "full" | "sub"
   className?: string
 }
@@ -20,9 +22,13 @@ function Hero({
   ctaText,
   ctaHref,
   backgroundImage,
+  backgroundImages,
   variant = "full",
   className,
 }: HeroProps) {
+  const images = backgroundImages ?? (backgroundImage ? [backgroundImage] : [])
+  const hasSlideshow = images.length > 1
+
   return (
     <section
       className={cn(
@@ -31,10 +37,12 @@ function Hero({
         className,
       )}
     >
-      {/* Background image */}
-      {backgroundImage ? (
+      {/* Background */}
+      {hasSlideshow ? (
+        <HeroSlideshow images={images} />
+      ) : images.length === 1 ? (
         <Image
-          src={backgroundImage}
+          src={images[0]}
           alt=""
           fill
           priority
