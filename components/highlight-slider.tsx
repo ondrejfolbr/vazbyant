@@ -38,8 +38,32 @@ function HighlightSlider({ slides, interval = 6000 }: HighlightSliderProps) {
   return (
     <section className="py-[var(--spacing-section-y)]">
       <div className="relative mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">
+        {/* Arrows — outside slider, PEGAS style */}
+        {slides.length > 1 && (
+          <>
+            <button
+              onClick={prev}
+              aria-label="Předchozí"
+              className="absolute top-1/2 left-1 z-10 flex size-12 -translate-y-1/2 items-center justify-center text-foreground/30 transition-colors hover:text-foreground lg:left-3"
+            >
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 5l-9 9 9 9" />
+              </svg>
+            </button>
+            <button
+              onClick={next}
+              aria-label="Další"
+              className="absolute top-1/2 right-1 z-10 flex size-12 -translate-y-1/2 items-center justify-center text-foreground/30 transition-colors hover:text-foreground lg:right-3"
+            >
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10 5l9 9-9 9" />
+              </svg>
+            </button>
+          </>
+        )}
+
         {/* Slide container */}
-        <div className="relative overflow-hidden rounded-sm">
+        <div className="overflow-hidden rounded-sm">
           <div
             className="flex transition-transform duration-700 ease-[var(--ease-default)]"
             style={{ transform: `translateX(-${active * 100}%)` }}
@@ -57,21 +81,21 @@ function HighlightSlider({ slides, interval = 6000 }: HighlightSliderProps) {
                     </h3>
                     <Link
                       href={slide.ctaHref}
-                      className="group inline-flex items-center gap-2 text-[length:var(--font-size-body)] text-neutral-white/80 transition-colors hover:text-neutral-white"
+                      className="group inline-flex items-center gap-3 text-[length:var(--font-size-body)] text-neutral-white/70 transition-colors hover:text-neutral-white"
                     >
                       {slide.ctaText}
                       <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="1.5"
+                        strokeWidth="1"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         className="transition-transform group-hover:translate-x-1"
                       >
-                        <path d="M3 8h10M9 4l4 4-4 4" />
+                        <path d="M4 10h12M12 5l5 5-5 5" />
                       </svg>
                     </Link>
                   </div>
@@ -91,42 +115,18 @@ function HighlightSlider({ slides, interval = 6000 }: HighlightSliderProps) {
           </div>
         </div>
 
-        {/* Arrows */}
+        {/* Dots — round, PEGAS style */}
         {slides.length > 1 && (
-          <>
-            <button
-              onClick={prev}
-              aria-label="Předchozí"
-              className="absolute top-1/2 left-2 z-10 flex size-10 -translate-y-1/2 items-center justify-center text-foreground/40 transition-colors hover:text-foreground"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
-            </button>
-            <button
-              onClick={next}
-              aria-label="Další"
-              className="absolute top-1/2 right-2 z-10 flex size-10 -translate-y-1/2 items-center justify-center text-foreground/40 transition-colors hover:text-foreground"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 18l6-6-6-6" />
-              </svg>
-            </button>
-          </>
-        )}
-
-        {/* Dots */}
-        {slides.length > 1 && (
-          <div className="mt-6 flex justify-center gap-2">
+          <div className="mt-8 flex justify-center gap-3">
             {slides.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}
                 aria-label={`Slide ${i + 1}`}
                 className={cn(
-                  "size-2.5 rounded-full transition-colors",
+                  "size-3 rounded-full transition-all duration-300",
                   i === active
-                    ? "bg-deep-plum"
+                    ? "bg-deep-plum scale-110"
                     : "bg-neutral-300 hover:bg-neutral-400",
                 )}
               />

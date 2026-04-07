@@ -59,7 +59,7 @@ function ProductCard({
         {/* Hover overlay */}
         <div className="card-overlay absolute inset-0 flex items-end justify-center pb-5">
           <span className="card-cta rounded-sm bg-neutral-white px-4 py-2.5 text-[length:var(--font-size-body-sm)] font-[30] text-deep-plum">
-            Do košíku
+            Detail produktu
           </span>
         </div>
       </div>
