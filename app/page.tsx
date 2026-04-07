@@ -106,7 +106,7 @@ export default function Page() {
       {/* Sekce 6: Sezónní highlight */}
       <section className="relative flex min-h-[50vh] items-center overflow-hidden">
         <Image
-          src="/seasonal-anthurie.png"
+          src="/category-sety.png"
           alt=""
           fill
           className="object-cover"
@@ -119,10 +119,10 @@ export default function Page() {
               Sezónní nabídka
             </span>
             <h2 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-neutral-white">
-              Dušičky 2025
+              Léto 2026
             </h2>
             <p className="text-[length:var(--font-size-body)] leading-relaxed text-neutral-white">
-              Smuteční kytice a věnce pro pietní vzpomínku.
+              Čerstvé letní kytice a sety pro každou příležitost.
             </p>
             <div className="mt-2">
               <Button
