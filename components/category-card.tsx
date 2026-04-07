@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
@@ -6,6 +7,7 @@ interface CategoryCardProps {
   title: string
   subtitle: string
   href: string
+  image?: string
   className?: string
 }
 
@@ -13,6 +15,7 @@ function CategoryCard({
   title,
   subtitle,
   href,
+  image,
   className,
 }: CategoryCardProps) {
   return (
@@ -24,11 +27,21 @@ function CategoryCard({
       )}
     >
       {/* Image */}
-      <div className="card-image absolute inset-0 bg-deep-plum-80">
-        <div className="flex h-full items-center justify-center text-[length:var(--font-size-body-sm)] text-deep-plum-70">
-          Foto kategorie
+      {image ? (
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="card-image object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          sizes="(min-width: 768px) 33vw, 100vw"
+        />
+      ) : (
+        <div className="card-image absolute inset-0 bg-deep-plum-80">
+          <div className="flex h-full items-center justify-center text-[length:var(--font-size-body-sm)] text-deep-plum-70">
+            Foto kategorie
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent from-40% to-neutral-black/70" />

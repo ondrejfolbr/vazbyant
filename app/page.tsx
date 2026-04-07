@@ -25,19 +25,22 @@ export default function Page() {
       <section className="py-[var(--spacing-section-y)]">
         <div className="mx-auto grid max-w-[var(--max-width-site)] grid-cols-1 gap-6 px-[var(--spacing-section-x)] md:grid-cols-3">
           <CategoryCard
-            title="Smuteční květiny"
+            title="Kytice na rakev"
             subtitle="S respektem a pochopením"
+            href="/smutecni/rakev/"
+            image="/hero-home-2.png"
+          />
+          <CategoryCard
+            title="Květinové sety"
+            subtitle="Kompletní květinový servis"
             href="/smutecni/"
+            image="/hero-home.png"
           />
           <CategoryCard
-            title="Svatební květiny"
-            subtitle="Pro váš den"
-            href="/svatebni/"
-          />
-          <CategoryCard
-            title="Kytice & Dárky"
-            subtitle="Když slova nestačí"
-            href="/kytice/"
+            title="Věnce"
+            subtitle="Důstojná vzpomínka"
+            href="/smutecni/vence/"
+            image="/category-vence.png"
           />
         </div>
       </section>
