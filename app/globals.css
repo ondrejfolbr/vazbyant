@@ -129,7 +129,7 @@
   --radius-2xl: 0;
   --radius-3xl: 0;
   --radius-4xl: 0;
-  --radius-full: 0;
+  --radius-full: 9999px;
 
   /* --- Transitions --- */
   --ease-default: cubic-bezier(0.25, 0, 0, 1);
