@@ -46,7 +46,7 @@ function Hero({
           alt=""
           fill
           priority
-          className="object-cover"
+          className="object-cover object-right-top"
           sizes="100vw"
         />
       ) : (
@@ -58,7 +58,7 @@ function Hero({
       )}
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-30% to-neutral-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-t from-neutral-black/60 via-neutral-black/20 via-50% to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex w-full max-w-[var(--max-width-site)] flex-col gap-5 px-[var(--spacing-section-x)] pb-[var(--spacing-section-y)]">
