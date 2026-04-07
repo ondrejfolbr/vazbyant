@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
@@ -250,11 +251,15 @@ function MegaMenuPanel({
           </div>
         )}
 
-        {/* Featured image placeholder */}
-        <div className="flex items-center justify-center rounded-sm bg-plum-10">
-          <span className="text-[length:var(--font-size-caption)] text-plum-50">
-            Foto
-          </span>
+        {/* Featured image */}
+        <div className="relative overflow-hidden rounded-sm">
+          <Image
+            src="/category-kytice.png"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="300px"
+          />
         </div>
       </div>
     </div>
