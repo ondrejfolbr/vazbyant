@@ -91,7 +91,7 @@ export default function Page() {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-neutral-100 lg:col-span-7">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-sm lg:col-span-7">
             <Image
               src="/mamut-ctverec.png"
               alt="Mamut — maskot Vazby Květin"
