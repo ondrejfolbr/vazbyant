@@ -11,7 +11,7 @@ const buttonVariants = cva(
       variant: {
         default: "btn-sweep text-neutral-white",
         outline:
-          "border-deep-plum text-deep-plum transition-opacity hover:opacity-80 dark:border-plum-30 dark:text-plum-30 dark:hover:opacity-80",
+          "border-neutral-300 text-foreground transition-opacity hover:opacity-70 dark:border-neutral-600 dark:text-neutral-200 dark:hover:opacity-70",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
         ghost:
