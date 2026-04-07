@@ -52,7 +52,7 @@ export default function RootLayout({
       )}
     >
       <head>
-        <link rel="stylesheet" href="https://use.typekit.net/tkt6gli.css" />
+        <link rel="stylesheet" href="https://use.typekit.net/dnw8jfr.css" />
       </head>
       <body>
         <ThemeProvider>

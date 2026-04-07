@@ -15,9 +15,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* --- Font families --- */
+  /* --- Font families (matching PEGAS: single variable font for everything) --- */
   --font-heading: "latino-gothic-variable", "Latino Gothic Local", var(--font-heading-fallback), "Cormorant Garamond", Georgia, serif;
-  --font-sans: "latino-gothic-variable", "Latino Gothic Local", var(--font-sans), "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "latino-gothic-variable", "Latino Gothic Local", var(--font-heading-fallback), "Cormorant Garamond", Georgia, sans-serif;
   --font-mono: "latino-gothic-variable", "Latino Gothic Local", var(--font-heading-fallback), "Cormorant Garamond", Georgia, serif;
 
   /* --- Brand colors --- */
@@ -213,8 +213,9 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans font-[30];
-    font-stretch: 90%;
+    @apply bg-background text-foreground font-sans font-[20];
+    font-stretch: 80%;
+    font-variation-settings: "slnt" 1, "wdth" 80, "wght" 20;
   }
   html {
     @apply font-sans;
