@@ -104,24 +104,25 @@ export default function Page() {
       </section>
 
       {/* Sekce 6: Sezónní highlight */}
-      <section className="relative flex min-h-[50vh] items-center overflow-hidden">
-        <Image
-          src="/category-sety.png"
-          alt=""
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-neutral-black/50" />
-        <div className="relative z-10 mx-auto w-full max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] py-[var(--spacing-section-y)]">
-          <div className="flex max-w-lg flex-col gap-4">
-            <span className="text-[length:var(--font-size-overline)] font-[30] uppercase tracking-widest text-neutral-white/70">
+      <section className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="relative aspect-[4/3] overflow-hidden lg:aspect-auto">
+          <Image
+            src="/category-sety.png"
+            alt="Letní kolekce — květinové sety"
+            fill
+            className="object-cover"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
+        </div>
+        <div className="flex items-center bg-deep-plum px-[var(--spacing-section-x)] py-[var(--spacing-section-y)]">
+          <div className="flex max-w-md flex-col gap-4">
+            <span className="text-[length:var(--font-size-overline)] font-[30] uppercase tracking-widest text-neutral-white/50">
               Sezónní nabídka
             </span>
             <h2 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-neutral-white">
               Léto 2026
             </h2>
-            <p className="text-[length:var(--font-size-body)] leading-relaxed text-neutral-white">
+            <p className="text-[length:var(--font-size-body)] leading-relaxed text-neutral-white/80">
               Čerstvé letní kytice a sety pro každou příležitost.
             </p>
             <div className="mt-2">
@@ -129,7 +130,7 @@ export default function Page() {
                 asChild
                 variant="outline"
                 size="md"
-                className="border-neutral-white/40 text-neutral-white hover:border-plum-30 hover:bg-neutral-white/10 hover:text-neutral-white"
+                className="border-neutral-white/30 text-neutral-white hover:border-neutral-white/60 hover:bg-neutral-white/10 hover:text-neutral-white"
               >
                 <Link href="/kytice/sezonni/">Zobrazit nabídku</Link>
               </Button>
