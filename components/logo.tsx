@@ -16,9 +16,9 @@ function Logo({ variant = "color", layout = "horizontal", className }: LogoProps
       <Image
         src={src}
         alt="Vazby Květin"
-        width={170}
-        height={54}
-        className={cn("h-auto w-40", className)}
+        width={339}
+        height={108}
+        className={cn("h-auto w-52", className)}
       />
     )
   }

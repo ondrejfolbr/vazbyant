@@ -105,7 +105,7 @@ function NavBar() {
           <div className="flex items-center gap-4">
             <a
               href="tel:+420604585271"
-              className="hidden text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:text-foreground md:block"
+              className="hidden text-[length:var(--font-size-body)] font-[40] text-foreground transition-colors hover:text-foreground/70 md:block"
             >
               604 585 271
             </a>

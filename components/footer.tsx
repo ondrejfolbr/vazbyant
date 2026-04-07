@@ -20,7 +20,7 @@ function Footer({ className }: FooterProps) {
             <Link href="/" aria-label="Vazby Květin — domů">
               <Logo layout="stacked" variant="white" />
             </Link>
-            <div className="flex items-center gap-5">
+            <div className="mt-4 flex items-center gap-5">
               <a
                 href="https://instagram.com"
                 target="_blank"
