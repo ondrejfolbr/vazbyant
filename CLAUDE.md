@@ -1,5 +1,29 @@
 # CLAUDE.md
 
+## Project Context
+
+- **Production app is in the REPOSITORY ROOT** (not in `vazby-app/`). All work happens in root `app/`, `components/`, `lib/`, `public/`.
+- `vazby-app/` was a legacy duplicate and has been removed. If it reappears, ignore it.
+- Production URL: https://vazbyant.vercel.app (Vercel auto-deploys from `main`).
+- Dev server: run `npm run dev` from the repository root.
+- `/homepage-secondary` is an alternate homepage layout (split hero with mammoth, bento grid, brand story).
+- Read `VAZBYKVETIN_SPEC.md` for full design tokens, sitemap, wireframes, copy deck, and component specs.
+
+## Brand & Tone
+
+Vazby Květin is part of the **PEGAS funeral service** ecosystem. Primary audience includes bereaved families.
+
+- Core values: dignity, silence, space, gratitude (důstojnost, ticho, prostor, vděčnost).
+- No playful, bouncy, or attention-grabbing UI. Everything calm and respectful.
+- **Animation hard rules**: no bounce/spring/elastic easing, no scale > 1.03, no animations < 200ms or > 600ms, no parallax, no autoplay video, no pulse effects. Prefer slow opacity fades and gentle ease-out.
+- Photography: soft natural light, muted colors, quiet mood.
+
+## Deploy
+
+- Push to `main` → Vercel auto-deploys within ~2 minutes.
+- Always run `npm run build` before pushing to catch errors locally.
+- Prefer creating a PR for larger changes; push directly to `main` only for small, verified changes.
+
 ## Role
 
 Autonomous senior frontend implementer. Produce developer-handoff-ready frontend code, not prototype-grade output.
