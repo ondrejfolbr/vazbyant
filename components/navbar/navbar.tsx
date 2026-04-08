@@ -214,18 +214,18 @@ function MegaMenuPanel({
                 {group.heading ? (
                   <Link
                     href={group.href}
-                    className="mb-1 text-[length:var(--font-size-body-sm)] font-[30] text-foreground transition-colors hover:text-deep-plum"
+                    className="mb-2 text-[length:var(--font-size-body-sm)] font-bold text-foreground transition-colors hover:text-deep-plum"
                   >
                     {group.heading}
                   </Link>
                 ) : (
-                  <div className="mb-1 h-[var(--font-size-body-sm)] leading-[var(--font-size-body-sm)]">&nbsp;</div>
+                  <div className="mb-2 h-[var(--font-size-body-sm)] leading-[var(--font-size-body-sm)]">&nbsp;</div>
                 )}
                 {group.items.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-sm px-3 py-1.5 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:bg-deep-plum-10 hover:text-deep-plum"
+                    className="rounded-sm py-1.5 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:text-deep-plum"
                   >
                     {item.label}
                   </Link>
@@ -255,16 +255,29 @@ function MegaMenuPanel({
           </div>
         )}
 
-        {/* Featured image */}
-        <div className="relative overflow-hidden rounded-sm">
-          <Image
-            src="/category-kytice.jpg"
-            alt=""
-            fill
-            className="object-cover"
-            sizes="300px"
-          />
-        </div>
+        {/* Featured product */}
+        <Link
+          href="/smutecni/kytice-na-rakev-ticho/"
+          className="group flex flex-col gap-3 overflow-hidden rounded-sm"
+        >
+          <div className="relative aspect-square overflow-hidden rounded-sm">
+            <Image
+              src="/hero-home-2.jpg"
+              alt="Kytice na rakev Ticho"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="300px"
+            />
+          </div>
+          <div className="flex flex-col gap-0.5">
+            <span className="text-[length:var(--font-size-body-sm)] text-foreground transition-colors group-hover:text-deep-plum">
+              Kytice na rakev Ticho
+            </span>
+            <span className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
+              3 490 Kč
+            </span>
+          </div>
+        </Link>
       </div>
     </div>
   )
