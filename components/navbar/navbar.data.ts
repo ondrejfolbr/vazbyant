@@ -24,38 +24,37 @@ export const megaMenuCategories: MegaMenuCategory[] = [
     subcategories: [],
     groups: [
       {
-        heading: "Smuteční květiny",
+        heading: "Smuteční & pietní květiny",
         href: "/smutecni/",
         items: [
           { label: "Kytice na rakev", href: "/smutecni/rakev/" },
-          { label: "Kytice na rakev — převislé", href: "/smutecni/rakev-previsle/" },
+          { label: "Převislé kytice na rakev", href: "/smutecni/rakev-previsle/" },
           { label: "Exkluzivní smuteční vazby", href: "/smutecni/exkluzivni/" },
           { label: "Kytice na položení", href: "/smutecni/polozeni/" },
           { label: "Kytice volně vázané", href: "/smutecni/volne-vazane/" },
           { label: "Věnce", href: "/smutecni/vence/" },
-          { label: "Aranžmá do stojanů", href: "/smutecni/stojany/" },
-          { label: "Aranžmá na přání", href: "/smutecni/na-prani/" },
         ],
       },
       {
-        heading: "Svatební květiny",
+        heading: "",
+        href: "/smutecni/",
+        items: [
+          { label: "Květinová aranžmá do stojanů", href: "/smutecni/stojany/" },
+          { label: "Aranžmá na přání", href: "/smutecni/na-prani/" },
+          { label: "Pietní dekorace", href: "/smutecni/dekorace/" },
+          { label: "Květiny k výročí úmrtí", href: "/smutecni/vyroci/" },
+          { label: "Květiny k rozloučení / VIP", href: "/smutecni/vip/" },
+          { label: "Květinové koše", href: "/smutecni/kose/" },
+        ],
+      },
+      {
+        heading: "Další služby",
         href: "/svatebni/",
         items: [
-          { label: "Kytice pro nevěsty", href: "/svatebni/kytice/" },
-          { label: "Kytice pro družičky", href: "/svatebni/druzicky/" },
-          { label: "Klopy", href: "/svatebni/klopy/" },
-          { label: "Květinová výzdoba stolů", href: "/svatebni/dekorace/" },
-          { label: "Svatební komplety", href: "/svatebni/komplety/" },
-        ],
-      },
-      {
-        heading: "Ostatní kytice",
-        href: "/kytice/",
-        items: [
-          { label: "Z lásky", href: "/kytice/z-lasky/" },
-          { label: "Pro maminky", href: "/kytice/pro-maminky/" },
-          { label: "Pro muže", href: "/kytice/pro-muze/" },
-          { label: "Kytičky pro dětičky", href: "/kytice/pro-deti/" },
+          { label: "Svatební květiny", href: "/svatebni/" },
+          { label: "Firemní květiny", href: "/firemni/" },
+          { label: "Květinové předplatné", href: "/predplatne/" },
+          { label: "Květiny na přání", href: "/na-prani/" },
         ],
       },
     ],
@@ -66,16 +65,17 @@ export const megaMenuCategories: MegaMenuCategory[] = [
 export const simpleLinks: NavLink[] = [
   { label: "Reference", href: "/reference/" },
   { label: "O nás", href: "/o-nas/" },
-  { label: "Rady a tipy", href: "/rady-a-tipy/" },
+  { label: "Inspirace & rady", href: "/rady-a-tipy/" },
   { label: "Kontakt", href: "/kontakt/" },
 ]
 
 export const footerNav: NavLink[] = [
   { label: "Smuteční květiny", href: "/smutecni/" },
   { label: "Svatební květiny", href: "/svatebni/" },
-  { label: "Ostatní kytice", href: "/kytice/" },
+  { label: "Firemní květiny", href: "/firemni/" },
+  { label: "Květinové předplatné", href: "/predplatne/" },
   { label: "Reference", href: "/reference/" },
   { label: "O nás", href: "/o-nas/" },
-  { label: "Rady a tipy", href: "/rady-a-tipy/" },
+  { label: "Inspirace & rady", href: "/rady-a-tipy/" },
   { label: "Kontakt", href: "/kontakt/" },
 ]

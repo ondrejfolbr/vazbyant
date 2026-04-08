@@ -44,19 +44,19 @@ function HighlightSlider({ slides, interval = 6000 }: HighlightSliderProps) {
             <button
               onClick={prev}
               aria-label="Předchozí"
-              className="absolute top-1/2 left-1 z-10 flex size-12 -translate-y-1/2 items-center justify-center text-foreground/30 transition-colors hover:text-foreground lg:left-3"
+              className="absolute top-1/2 left-0 z-10 flex size-8 -translate-y-1/2 items-center justify-center rounded-md text-foreground transition-opacity duration-300 hover:opacity-70 lg:left-2"
             >
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 5l-9 9 9 9" />
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16 5l-8 8 8 8" />
               </svg>
             </button>
             <button
               onClick={next}
               aria-label="Další"
-              className="absolute top-1/2 right-1 z-10 flex size-12 -translate-y-1/2 items-center justify-center text-foreground/30 transition-colors hover:text-foreground lg:right-3"
+              className="absolute top-1/2 right-0 z-10 flex size-8 -translate-y-1/2 items-center justify-center rounded-md text-foreground transition-opacity duration-300 hover:opacity-70 lg:right-2"
             >
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M10 5l9 9-9 9" />
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10 5l8 8-8 8" />
               </svg>
             </button>
           </>

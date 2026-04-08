@@ -5,6 +5,17 @@ import { useEffect, useState, useCallback } from "react"
 
 import { cn } from "@/lib/utils"
 
+const VIDEO_EXTENSIONS = [".mp4", ".webm", ".mov"]
+
+function isVideo(src: string): boolean {
+  return VIDEO_EXTENSIONS.some((ext) => src.toLowerCase().endsWith(ext))
+}
+
+/** Derive a poster JPG path from a video path (e.g. /hero.mp4 → /hero.jpg) */
+function videoPoster(src: string): string {
+  return src.replace(/\.[^.]+$/, ".jpg")
+}
+
 interface HeroSlideshowProps {
   images: string[]
   interval?: number
@@ -25,20 +36,37 @@ function HeroSlideshow({ images, interval = 6000 }: HeroSlideshowProps) {
 
   return (
     <div className="absolute inset-0">
-      {images.map((src, i) => (
-        <Image
-          key={src}
-          src={src}
-          alt=""
-          fill
-          priority={i === 0}
-          className={cn(
-            "object-cover transition-opacity duration-[1500ms] ease-in-out",
-            i === activeIndex ? "opacity-100" : "opacity-0",
-          )}
-          sizes="100vw"
-        />
-      ))}
+      {images.map((src, i) =>
+        isVideo(src) ? (
+          <video
+            key={src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={videoPoster(src)}
+            className={cn(
+              "absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out",
+              i === activeIndex ? "opacity-100" : "opacity-0",
+            )}
+          >
+            <source src={src} type={`video/${src.split(".").pop()}`} />
+          </video>
+        ) : (
+          <Image
+            key={src}
+            src={src}
+            alt=""
+            fill
+            priority={i === 0}
+            className={cn(
+              "object-cover transition-opacity duration-[1500ms] ease-in-out",
+              i === activeIndex ? "opacity-100" : "opacity-0",
+            )}
+            sizes="100vw"
+          />
+        ),
+      )}
 
       {/* Slide indicators */}
       {images.length > 1 && (

@@ -36,132 +36,103 @@ export const categories: Record<string, CategoryMeta> = {
       "Květinové aranžmá pro váš den — kytice, dekorace obřadu i doplňky.",
   },
   kytice: {
-    label: "Kytice & Dárky",
+    label: "Ostatní kytice",
     description:
-      "Když slova nestačí — narozeninové, sezónní i firemní květiny.",
+      "Když slova nestačí — kytice z lásky, pro maminky, pro muže i pro děti.",
   },
 }
 
+// ---------------------------------------------------------------------------
+// Subcategories — aligned with mega menu structure
+// ---------------------------------------------------------------------------
+
 export const subcategories: Record<string, SubcategoryMeta> = {
-  // Smuteční
-  "smutecni/kytice": {
-    label: "Pohřební kytice",
-    description:
-      "Jemné smuteční kytice pro poslední rozloučení — ručně vázané, v tlumených tónech.",
-    parentCategory: "smutecni",
-  },
-  "smutecni/vence": {
-    label: "Smuteční věnce",
-    description:
-      "Tradiční i moderní věnce z čerstvých květin. Kruhový tvar symbolizuje věčnou vzpomínku.",
-    parentCategory: "smutecni",
-  },
   "smutecni/rakev": {
     label: "Kytice na rakev",
     description:
       "Podélné kompozice určené k položení na rakev — elegantní, důstojné, na míru.",
     parentCategory: "smutecni",
   },
-  "smutecni/urna": {
-    label: "Kytice na urnu",
+  "smutecni/rakev-previsle": {
+    label: "Převislé kytice na rakev",
     description:
-      "Menší aranžmá určená k urně. Světlé tóny symbolizující naději a klid.",
+      "Převislé kompozice splývající přes hranu rakve — dramatické a majestátní.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/exkluzivni": {
+    label: "Exkluzivní smuteční vazby",
+    description:
+      "Prémiové smuteční aranžmá z nejkvalitnějších květin — na míru vašim přáním.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/polozeni": {
+    label: "Kytice na položení",
+    description:
+      "Menší kytice určené k položení u hrobu nebo na pietní místo.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/volne-vazane": {
+    label: "Kytice volně vázané",
+    description:
+      "Přirozeně vázané smuteční kytice — jemné, osobní, s nádechem zahrady.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/vence": {
+    label: "Věnce",
+    description:
+      "Tradiční i moderní věnce z čerstvých květin. Kruhový tvar symbolizuje věčnou vzpomínku.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/stojany": {
+    label: "Květinová aranžmá do stojanů",
+    description:
+      "Vysoká květinová aranžmá do stojanů pro obřadní síně a rozloučení.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/na-prani": {
+    label: "Aranžmá na přání",
+    description:
+      "Smuteční květiny vytvořené přesně podle vašich představ — individuální konzultace.",
     parentCategory: "smutecni",
   },
   "smutecni/dekorace": {
     label: "Pietní dekorace",
     description:
-      "Květinová výzdoba obřadních síní a smutečních míst — s citem a respektem.",
+      "Květinová dekorace ke stolu, k fotografii, k oltáři — s citem a respektem.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/vyroci": {
+    label: "Květiny k výročí úmrtí",
+    description:
+      "Kytice a aranžmá pro vzpomínkové příležitosti — výročí, svátky, pietní dny.",
+    parentCategory: "smutecni",
+  },
+  "smutecni/vip": {
+    label: "Květiny k rozloučení / VIP / firemní kondolence",
+    description:
+      "Prémiové smuteční vazby pro významné příležitosti — VIP rozloučení, firemní kondolence.",
     parentCategory: "smutecni",
   },
   "smutecni/kose": {
     label: "Květinové koše",
     description:
-      "Květinové koše jako alternativa ke klasickým kyticím — vhodné k vystavení u kondolence.",
+      "Květinové koše ve smutečním formátu — alternativa ke klasickým kyticím.",
     parentCategory: "smutecni",
-  },
-  // Svatební
-  "svatebni/kytice": {
-    label: "Svatební kytice",
-    description:
-      "Buketky pro nevěstu i družičky — romantické, přirozené, na míru vašemu dni.",
-    parentCategory: "svatebni",
-  },
-  "svatebni/dekorace": {
-    label: "Dekorace obřadu",
-    description:
-      "Výzdoba uličky, oltáře, vstupní brány a stolů — kompletní květinový servis pro svatbu.",
-    parentCategory: "svatebni",
-  },
-  "svatebni/doplnky": {
-    label: "Doplňky",
-    description:
-      "Stuhy, vazy, korsáže a další svatební doplňky k doladění detailů.",
-    parentCategory: "svatebni",
-  },
-  // Kytice & Dárky
-  "kytice/narozeniny": {
-    label: "Narozeninové kytice",
-    description:
-      "Veselé, barevné kytice k narozeninám — protože radost si zaslouží být vidět.",
-    parentCategory: "kytice",
-  },
-  "kytice/sezonni": {
-    label: "Sezónní květiny",
-    description:
-      "Valentýn, Dušičky, Vánoce — květiny, které patří ke svátku.",
-    parentCategory: "kytice",
-  },
-  "kytice/firemni": {
-    label: "Firemní květiny",
-    description:
-      "Elegantní kytice a pravidelné dodávky pro firemní prostory, recepce a obchodní partnery.",
-    parentCategory: "kytice",
-  },
-  "kytice/predplatne": {
-    label: "VK BOX — Předplatné",
-    description:
-      "Každý měsíc čerstvá sezónní kytice až k vašim dveřím. Překvapení od našich floristů.",
-    parentCategory: "kytice",
   },
 }
 
+// ---------------------------------------------------------------------------
+// Products — ~25 per category
+// ---------------------------------------------------------------------------
+
 export const products: Product[] = [
+  // ==========================================================================
+  // SMUTEČNÍ (~25 products)
+  // ==========================================================================
+
+  // -- Kytice na rakev --
   {
     id: 1,
-    name: "Smuteční kytice Klid",
-    slug: "smutecni-kytice-klid",
-    price: 1490,
-    category: "smutecni",
-    subcategory: "kytice",
-    badge: null,
-    image: "/category-kytice.jpg",
-    description:
-      "Jemná smuteční kytice v tlumených tónech bílé a krémové. Vyjadřuje úctu a tiché souznění.",
-    composition: "Bílé růže, eustoma, eucalyptus, gypsophila, zeleň.",
-    delivery:
-      "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
-    care: "Kytici uchovávejte v čerstvé vodě. Vydrží 5–7 dní.",
-  },
-  {
-    id: 2,
-    name: "Věnec Vzpomínka",
-    slug: "venec-vzpominka",
-    price: 2890,
-    category: "smutecni",
-    subcategory: "vence",
-    badge: null,
-    image: "/category-vence-fialovy.jpg",
-    description:
-      "Tradiční smuteční věnec z čerstvých květin. Kruhový tvar symbolizuje věčnost a nekonečnou vzpomínku.",
-    composition:
-      "Bílé a růžové karafiáty, chryzantémy, zeleň, stuha s nápisem.",
-    delivery:
-      "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
-    care: "Věnec vydržel v čerstvém stavu 3–5 dní. Uchovávejte v chladnu.",
-  },
-  {
-    id: 3,
     name: "Kytice na rakev Ticho",
     slug: "kytice-na-rakev-ticho",
     price: 3490,
@@ -170,14 +141,389 @@ export const products: Product[] = [
     badge: null,
     image: "/hero-home-2.jpg",
     description:
-      "Podélná kytice určená k položení na rakev. Elegantní a důstojná kompozice.",
+      "Podélná kytice určená k položení na rakev. Elegantní a důstojná kompozice v bílých tónech.",
     composition: "Lilie, bílé růže, orchideje, asparagus, ruskus.",
-    delivery:
-      "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
     care: "Kytici je možné opatrně kropit vodou pro prodloužení svěžesti.",
   },
   {
+    id: 2,
+    name: "Kytice na rakev Klid",
+    slug: "kytice-na-rakev-klid",
+    price: 2990,
+    category: "smutecni",
+    subcategory: "rakev",
+    badge: null,
+    image: null,
+    description:
+      "Klasická rakevní kytice v tlumených barvách — bílá a zelená s nádechem levandule.",
+    composition: "Bílé karafiáty, lisianthus, levandule, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Kytici je možné opatrně kropit vodou pro prodloužení svěžesti.",
+  },
+  {
+    id: 3,
+    name: "Kytice na rakev Památka",
+    slug: "kytice-na-rakev-pamatka",
+    price: 4290,
+    category: "smutecni",
+    subcategory: "rakev",
+    badge: "Oblíbené",
+    image: null,
+    description:
+      "Bohatá kompozice s bílými liliemi a růžemi. Nadčasová elegance pro důstojné rozloučení.",
+    composition: "Bílé lilie, růže, chryzantémy, eucalyptus, gypsophila.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Kytici je možné opatrně kropit vodou pro prodloužení svěžesti.",
+  },
+
+  // -- Kytice na rakev - převislé --
+  {
     id: 4,
+    name: "Převislá kytice Kaskáda",
+    slug: "previsla-kytice-kaskada",
+    price: 4990,
+    category: "smutecni",
+    subcategory: "rakev",
+    badge: null,
+    image: null,
+    description:
+      "Převislá kompozice splývající přes hranu rakve — dramatická a majestátní.",
+    composition: "Orchideje, břečťan, bílé růže, asparagus, eucalyptus.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Doporučujeme umístit do chladnějšího prostoru.",
+  },
+  {
+    id: 5,
+    name: "Převislá kytice Elegance",
+    slug: "previsla-kytice-elegance",
+    price: 5490,
+    category: "smutecni",
+    subcategory: "rakev",
+    badge: null,
+    image: null,
+    description:
+      "Velkolepá převislá kompozice s bílými orchidejemi a bohatou zelení.",
+    composition: "Phalaenopsis orchideje, břečťan, ruskus, monstera listy.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Orchideje vydržel dlouho — opatrně kropit.",
+  },
+
+  // -- Exkluzivní smuteční vazby --
+  {
+    id: 6,
+    name: "Exkluzivní vazba Royal",
+    slug: "exkluzivni-vazba-royal",
+    price: 7990,
+    category: "smutecni",
+    subcategory: "vip",
+    badge: "Exkluzivní",
+    image: null,
+    description:
+      "Prémiová smuteční kompozice z nejkvalitnějších importovaných květin.",
+    composition: "Ecuadorské růže, cymbidium orchideje, anthurium, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Nutná rezervace 24 hodin předem.",
+    care: "Květiny nejvyšší kvality — vydrží 7–10 dní.",
+  },
+  {
+    id: 7,
+    name: "Exkluzivní vazba Bílý mramor",
+    slug: "exkluzivni-vazba-bily-mramor",
+    price: 6490,
+    category: "smutecni",
+    subcategory: "vip",
+    badge: "Exkluzivní",
+    image: null,
+    description:
+      "Čistě bílá kompozice symbolizující čistotu a nevinnost. Prémiové květiny.",
+    composition: "Bílé avalanche růže, lilie, eustoma, eucalyptus silver.",
+    delivery: "Doručení v Praze do 4 hodin. Nutná rezervace 24 hodin předem.",
+    care: "Květiny nejvyšší kvality — vydrží 7–10 dní.",
+  },
+
+  // -- Kytice na položení --
+  {
+    id: 8,
+    name: "Kytice na položení Vzpomínka",
+    slug: "kytice-na-polozeni-vzpominka",
+    price: 1290,
+    category: "smutecni",
+    subcategory: "polozeni",
+    badge: null,
+    image: null,
+    description:
+      "Menší kytice určená k položení u hrobu — jemná, osobní, v tlumených tónech.",
+    composition: "Bílé frézie, mini růže, eucalyptus, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Umístěte do nádoby s vodou. Vydrží 4–6 dní.",
+  },
+  {
+    id: 9,
+    name: "Kytice na položení Útěcha",
+    slug: "kytice-na-polozeni-utecha",
+    price: 1490,
+    category: "smutecni",
+    subcategory: "polozeni",
+    badge: null,
+    image: "/category-kytice.jpg",
+    description:
+      "Kytice v krémových a fialových tónech — vyjadřuje soustrast a respekt.",
+    composition: "Krémové růže, fialové lisianthus, zeleň, stuha.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Kytici uchovávejte v čerstvé vodě. Vydrží 5–7 dní.",
+  },
+  {
+    id: 10,
+    name: "Kytice na položení Světlo",
+    slug: "kytice-na-polozeni-svetlo",
+    price: 990,
+    category: "smutecni",
+    subcategory: "polozeni",
+    badge: null,
+    image: "/seasonal-anthurie.jpg",
+    description:
+      "Malá kytice ve světlých tónech — symbolizuje naději a klid.",
+    composition: "Bílé karafiáty, gypsophila, eucalyptus.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Umístěte do nádoby s vodou. Vydrží 4–6 dní.",
+  },
+
+  // -- Kytice volně vázané --
+  {
+    id: 11,
+    name: "Volně vázaná Zahradní klid",
+    slug: "volne-vazana-zahradni-klid",
+    price: 1690,
+    category: "smutecni",
+    subcategory: "volne-vazane",
+    badge: null,
+    image: null,
+    description:
+      "Přirozeně vázaná kytice s nádechem zahrady — jemná, osobní, s měkkými tóny.",
+    composition: "Pivoňkové růže, eucalyptus, astilbe, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Kytici uchovávejte v čerstvé vodě. Vydrží 5–7 dní.",
+  },
+  {
+    id: 12,
+    name: "Volně vázaná Loučení",
+    slug: "volne-vazana-louceni",
+    price: 1890,
+    category: "smutecni",
+    subcategory: "volne-vazane",
+    badge: null,
+    image: null,
+    description:
+      "Bohatá volně vázaná kytice pro rozloučení — bílé a fialové tóny.",
+    composition: "Bílé růže, fialové chryzantémy, levandule, trávy.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Kytici uchovávejte v čerstvé vodě. Vydrží 5–7 dní.",
+  },
+  {
+    id: 13,
+    name: "Volně vázaná Naděje",
+    slug: "volne-vazana-nadeje",
+    price: 1490,
+    category: "smutecni",
+    subcategory: "volne-vazane",
+    badge: null,
+    image: null,
+    description:
+      "Něžná kytice ve světlých tónech — symbolizuje naději a pokoj.",
+    composition: "Bílé frézie, lisianthus, eucalyptus, gypsophila.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Kytici uchovávejte v čerstvé vodě. Vydrží 5–7 dní.",
+  },
+
+  // -- Věnce --
+  {
+    id: 14,
+    name: "Věnec Vzpomínka",
+    slug: "venec-vzpominka",
+    price: 2890,
+    category: "smutecni",
+    subcategory: "vence",
+    badge: null,
+    image: "/category-vence-fialovy.jpg",
+    description:
+      "Tradiční smuteční věnec z čerstvých květin. Kruhový tvar symbolizuje věčnost.",
+    composition: "Bílé a růžové karafiáty, chryzantémy, zeleň, stuha s nápisem.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Věnec vydrží v čerstvém stavu 3–5 dní. Uchovávejte v chladnu.",
+  },
+  {
+    id: 15,
+    name: "Věnec Věčnost",
+    slug: "venec-vecnost",
+    price: 3490,
+    category: "smutecni",
+    subcategory: "vence",
+    badge: null,
+    image: null,
+    description:
+      "Velký smuteční věnec s bohatou květinovou výzdobou a hedvábnou stuhou.",
+    composition: "Bílé růže, lilie, chryzantémy, břečťan, stuha.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Věnec vydrží v čerstvém stavu 3–5 dní. Uchovávejte v chladnu.",
+  },
+  {
+    id: 16,
+    name: "Věnec Srdce",
+    slug: "venec-srdce",
+    price: 3290,
+    category: "smutecni",
+    subcategory: "vence",
+    badge: "Oblíbené",
+    image: null,
+    description:
+      "Věnec ve tvaru srdce — hluboký symbol lásky a oddanosti.",
+    composition: "Červené a bílé růže, zeleň, smuteční stuha.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Věnec vydrží v čerstvém stavu 3–5 dní. Uchovávejte v chladnu.",
+  },
+
+  // -- Květinová aranžmá do stojanů --
+  {
+    id: 17,
+    name: "Stojanové aranžmá Důstojnost",
+    slug: "stojanove-aranzma-dustojnost",
+    price: 3990,
+    category: "smutecni",
+    subcategory: "stojany",
+    badge: null,
+    image: "/category-sety.jpg",
+    description:
+      "Vysoké květinové aranžmá do stojanu pro obřadní síně a rozloučení.",
+    composition: "Bílé lilie, chryzantémy, eucalyptus, stojan (zapůjčení).",
+    delivery: "Instalace v obřadní síni dle domluvy.",
+    care: "O instalaci i úklid se postaráme.",
+  },
+  {
+    id: 18,
+    name: "Stojanové aranžmá Harmonie",
+    slug: "stojanove-aranzma-harmonie",
+    price: 4490,
+    category: "smutecni",
+    subcategory: "stojany",
+    badge: null,
+    image: null,
+    description:
+      "Velké stojanové aranžmá v bílých a fialových tónech — elegantní doplněk obřadu.",
+    composition: "Bílé růže, fialové orchideje, zeleň, svíčky, stojan.",
+    delivery: "Instalace v obřadní síni dle domluvy.",
+    care: "O instalaci i úklid se postaráme.",
+  },
+
+  // -- Aranžmá na přání --
+  {
+    id: 19,
+    name: "Vzpomínková kytice — výročí",
+    slug: "vzpominkova-kytice-vyroci",
+    price: 1290,
+    category: "smutecni",
+    subcategory: "vyroci",
+    badge: null,
+    image: null,
+    description:
+      "Kytice pro pietní vzpomínku — k výročí úmrtí, na Dušičky, ke svátku zesnulého.",
+    composition: "Bílé chryzantémy, frézie, eucalyptus, stuha.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Kytici uchovávejte v čerstvé vodě. Vydrží 5–7 dní.",
+  },
+  {
+    id: 20,
+    name: "Vzpomínková kytice — Dušičky",
+    slug: "vzpominkova-kytice-dusicky",
+    price: 990,
+    category: "smutecni",
+    subcategory: "vyroci",
+    badge: "Sezónní",
+    image: null,
+    description:
+      "Pietní kytice pro vzpomínku na Dušičky. Tlumené barvy, přírodní materiály.",
+    composition: "Chryzantémy, vřes, mech, šišky, sušené listy.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující den.",
+    care: "Obsahuje sušené prvky — vydrží déle než čerstvé květiny (10–14 dní).",
+  },
+  {
+    id: 21,
+    name: "Květinový koš Důstojnost",
+    slug: "kvetinovy-kos-dustojnost",
+    price: 1890,
+    category: "smutecni",
+    subcategory: "kose",
+    badge: null,
+    image: null,
+    description:
+      "Velké smuteční aranžmá na míru — kompletní květinový servis pro rozloučení.",
+    composition: "Dle vašeho přání — konzultace s floristou.",
+    delivery: "Doručení dle domluvy. Konzultace min. 48 hodin předem.",
+    care: "O instalaci i úklid se postaráme.",
+  },
+  {
+    id: 22,
+    name: "Smuteční kytice Klid",
+    slug: "smutecni-kytice-klid",
+    price: 1490,
+    category: "smutecni",
+    subcategory: "volne-vazane",
+    badge: null,
+    image: "/category-kytice.jpg",
+    description:
+      "Jemná smuteční kytice v tlumených tónech bílé a krémové. Vyjadřuje úctu a tiché souznění.",
+    composition: "Bílé růže, eustoma, eucalyptus, gypsophila, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Kytici uchovávejte v čerstvé vodě. Vydrží 5–7 dní.",
+  },
+  {
+    id: 23,
+    name: "Věnec Bílý kruh",
+    slug: "venec-bily-kruh",
+    price: 2490,
+    category: "smutecni",
+    subcategory: "vence",
+    badge: null,
+    image: null,
+    description:
+      "Menší věnec v čistě bílém provedení — diskrétní a elegantní.",
+    composition: "Bílé karafiáty, gypsophila, ruskus, stuha.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Věnec vydrží v čerstvém stavu 3–5 dní.",
+  },
+  {
+    id: 24,
+    name: "Kytice na položení Pieta",
+    slug: "kytice-na-polozeni-pieta",
+    price: 1790,
+    category: "smutecni",
+    subcategory: "polozeni",
+    badge: null,
+    image: null,
+    description:
+      "Větší kytice na položení s bohatou vazbou — vhodná k vystavení u kondolence.",
+    composition: "Bílé lilie, růže, chryzantémy, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Umístěte do nádoby s vodou. Vydrží 5–7 dní.",
+  },
+  {
+    id: 25,
+    name: "Exkluzivní vazba Orchidej",
+    slug: "exkluzivni-vazba-orchidej",
+    price: 8990,
+    category: "smutecni",
+    subcategory: "vip",
+    badge: "Exkluzivní",
+    image: null,
+    description:
+      "Vrcholné floristické dílo — čisté linie, exotické orchideje, dokonalá kompozice.",
+    composition: "Cymbidium a phalaenopsis orchideje, monstera, anthurium.",
+    delivery: "Doručení v Praze do 4 hodin. Nutná rezervace 24 hodin předem.",
+    care: "Orchideje vydrží 10–14 dní při správné péči.",
+  },
+
+  // -- Kytice na urnu --
+  {
+    id: 26,
     name: "Kytice na urnu Světlo",
     slug: "kytice-na-urnu-svetlo",
     price: 1290,
@@ -188,196 +534,78 @@ export const products: Product[] = [
     description:
       "Menší aranžmá určené k urně. Světlé tóny symbolizují naději a klid.",
     composition: "Bílé frézie, mini růže, eucalyptus, zeleň.",
-    delivery:
-      "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
     care: "Umístěte do nádoby s vodou. Vydrží 4–6 dní.",
   },
   {
-    id: 5,
-    name: "Svatební kytice Harmonie",
-    slug: "svatebni-kytice-harmonie",
-    price: 2490,
-    category: "svatebni",
-    subcategory: "kytice",
-    badge: "Oblíbené",
-    image: null,
-    description:
-      "Romantická svatební kytice v pastelových tónech. Ideální pro jarní a letní svatby.",
-    composition: "Pivoňky, David Austin růže, eucalyptus, hedvábné stuhy.",
-    delivery: "Doručení v den svatby ráno. Nutná rezervace min. 14 dní předem.",
-    care: "Kytici uchovávejte v chladnu do obřadu. Před použitím lehce pokropte.",
-  },
-  {
-    id: 6,
-    name: "Svatební kytice Ranní rosa",
-    slug: "svatebni-kytice-ranni-rosa",
-    price: 1990,
-    category: "svatebni",
-    subcategory: "kytice",
-    badge: null,
-    image: null,
-    description:
-      "Něžná kytice inspirovaná ranní zahradou. Přirozený, lehce divoký styl.",
-    composition: "Luční kvítí, drobné růže, levandule, trávy, len.",
-    delivery: "Doručení v den svatby ráno. Nutná rezervace min. 14 dní předem.",
-    care: "Kytici uchovávejte v čerstvé vodě mimo přímé slunce.",
-  },
-  {
-    id: 7,
-    name: "Dekorace obřadu Elegance",
-    slug: "dekorace-obradu-elegance",
-    price: 4990,
-    category: "svatebni",
-    subcategory: "dekorace",
-    badge: null,
-    image: null,
-    description:
-      "Kompletní květinová dekorace obřadního místa. Zahrnuje výzdobu uličky, oltáře a vstupní brány.",
-    composition:
-      "Bílé růže, hortenzie, orchideje, zeleň, svíčky, stojany (zapůjčení).",
-    delivery:
-      "Instalace v místě obřadu ráno v den svatby. Konzultace předem nutná.",
-    care: "O dekoraci se postaráme — instalace i úklid v ceně.",
-  },
-  {
-    id: 8,
-    name: "Kytice Sluneční den",
-    slug: "kytice-slunecni-den",
-    price: 890,
-    category: "kytice",
-    subcategory: "narozeniny",
-    badge: "Novinka",
-    image: null,
-    description:
-      "Veselá kytice plná slunečnic a žlutých tónů. Ideální dárek k narozeninám.",
-    composition: "Slunečnice, solidago, germini, zeleň.",
-    delivery: "Doručení v Praze do 3 hodin. Mimo Prahu následující den.",
-    care: "Kytici přistřihněte a vložte do čerstvé vody. Vydrží 7–10 dní.",
-  },
-  {
-    id: 9,
-    name: "Kytice Polní sen",
-    slug: "kytice-polni-sen",
-    price: 790,
-    category: "kytice",
-    subcategory: "narozeniny",
-    badge: null,
-    image: null,
-    description:
-      "Kytice z lučních květin — přirozená, lehká, jako procházka polem.",
-    composition: "Heřmánek, chrpa, mák, trávy, len, drobné kvítí.",
-    delivery: "Doručení v Praze do 3 hodin. Mimo Prahu následující den.",
-    care: "Luční květiny mají kratší životnost (3–5 dní). Měňte vodu denně.",
-  },
-  {
-    id: 10,
-    name: "VK BOX — měsíční předplatné",
-    slug: "vk-box-mesicni-predplatne",
-    price: 1290,
-    category: "kytice",
-    subcategory: "predplatne",
-    badge: "Předplatné",
-    image: null,
-    description:
-      "Každý měsíc čerstvá sezónní kytice až k vašim dveřím. Překvapení od našich floristů.",
-    composition: "Sezónní mix — každý měsíc jiný, vždy čerstvý.",
-    delivery: "Doručení první pracovní pondělí v měsíci.",
-    care: "Návod k péči přiložen v každém boxu.",
-  },
-  {
-    id: 11,
-    name: "Firemní kytice Profesionál",
-    slug: "firemni-kytice-profesional",
-    price: 1590,
-    category: "kytice",
-    subcategory: "firemni",
-    badge: null,
-    image: null,
-    description:
-      "Elegantní kytice pro firemní prostory, recepce nebo jako dárek obchodním partnerům.",
-    composition: "Bílé lilie, anthurium, zeleň, minimalistická vazba.",
-    delivery:
-      "Pravidelné doručení dle dohody. Jednorázově do 24 hodin v Praze.",
-    care: "Přistřihněte stonky, měňte vodu každé 2 dny. Vydrží 7–14 dní.",
-  },
-  {
-    id: 12,
-    name: "Sezónní — Dušičky",
-    slug: "sezonni-dusicky",
-    price: 990,
-    category: "kytice",
-    subcategory: "sezonni",
-    badge: "Sezónní",
-    image: null,
-    description:
-      "Pietní kytice pro vzpomínku na Dušičky. Tlumené barvy, přírodní materiály.",
-    composition: "Chryzantémy, vřes, mech, šišky, sušené listy.",
-    delivery: "Doručení v Praze do 3 hodin. Mimo Prahu následující den.",
-    care: "Obsahuje sušené prvky — vydrží déle než čerstvé květiny (10–14 dní).",
-  },
-  {
-    id: 13,
-    name: "Pietní dekorace Harmonie",
-    slug: "pietni-dekorace-harmonie",
-    price: 3990,
+    id: 27,
+    name: "Kytice na urnu Tiché ráno",
+    slug: "kytice-na-urnu-tiche-rano",
+    price: 1490,
     category: "smutecni",
-    subcategory: "dekorace",
+    subcategory: "urna",
     badge: null,
     image: null,
     description:
-      "Květinová výzdoba obřadní síně — diskrétní, důstojná, na míru prostoru.",
-    composition: "Bílé chryzantémy, lilie, svíčky, zeleň, stuhy.",
-    delivery:
-      "Instalace v obřadní síni dle domluvy. Spolupráce s pohřební službou PEGAS.",
-    care: "O instalaci i úklid se postaráme.",
+      "Jemná kytice v krémových a bílých tónech — vhodná k urnovému rozloučení.",
+    composition: "Krémové růže, lisianthus, gypsophila, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Umístěte do nádoby s vodou. Vydrží 4–6 dní.",
   },
   {
-    id: 14,
-    name: "Květinový koš Důstojnost",
-    slug: "kvetinovy-kos-dustojnost",
-    price: 1890,
+    id: 28,
+    name: "Kytice na urnu Levandule",
+    slug: "kytice-na-urnu-levandule",
+    price: 1190,
+    category: "smutecni",
+    subcategory: "urna",
+    badge: null,
+    image: null,
+    description:
+      "Kytice s levandulí a bílými květy — uklidňující a voňavá.",
+    composition: "Levandule, bílé mini růže, eucalyptus.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Umístěte do nádoby s vodou. Vydrží 4–6 dní.",
+  },
+
+  // -- Květinové koše doplnění --
+  {
+    id: 29,
+    name: "Květinový koš Vzpomínka",
+    slug: "kvetinovy-kos-vzpominka",
+    price: 2290,
     category: "smutecni",
     subcategory: "kose",
     badge: null,
     image: null,
     description:
-      "Proutěný koš aranžovaný čerstvými květinami — alternativa ke klasické kytici.",
-    composition: "Bílé a krémové růže, eustoma, zeleň, proutěný koš.",
-    delivery:
-      "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+      "Velký květinový koš s bohatou výzdobou — vhodný k vystavení u kondolence.",
+    composition: "Bílé a krémové růže, lilie, chryzantémy, proutěný koš.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
     care: "Koš obsahuje aranžovací hmotu — stačí dolévat vodu. Vydrží 5–7 dní.",
   },
+
+  // -- Květiny k výročí doplnění --
   {
-    id: 15,
-    name: "Korsáž pro ženicha",
-    slug: "korsaz-pro-zenicha",
-    price: 390,
-    category: "svatebni",
-    subcategory: "doplnky",
+    id: 30,
+    name: "Vzpomínková kytice — celoroční",
+    slug: "vzpominkova-kytice-celorocni",
+    price: 1490,
+    category: "smutecni",
+    subcategory: "vyroci",
     badge: null,
     image: null,
     description:
-      "Elegantní korsáž na klopy — sladěná se svatební kyticí nevěsty.",
-    composition: "Mini růže, eucalyptus, hedvábná stuha.",
-    delivery: "Součást svatební zakázky. Doručení v den svatby.",
-    care: "Uchovávejte v chladnu do obřadu.",
-  },
-  {
-    id: 16,
-    name: "Sezónní — Vánoční hvězda",
-    slug: "sezonni-vanocni-hvezda",
-    price: 690,
-    category: "kytice",
-    subcategory: "sezonni",
-    badge: "Sezónní",
-    image: null,
-    description:
-      "Vánoční aranžmá s tradičními prvky — hvězda, jehličí, šišky.",
-    composition: "Vánoční hvězda, jedlové větvičky, šišky, skořice, stuha.",
-    delivery: "Doručení v Praze do 3 hodin. Mimo Prahu následující den.",
-    care: "Vánoční hvězdu zalévejte střídmě. Aranžmá vydrží 10–14 dní.",
+      "Kytice vhodná k jakémukoliv vzpomínkovému dnu — jemná, nadčasová, důstojná.",
+    composition: "Bílé růže, frézie, eucalyptus, hedvábná stuha.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Kytici uchovávejte v čerstvé vodě. Vydrží 5–7 dní.",
   },
 ]
+
+// ---------------------------------------------------------------------------
+// Query helpers
+// ---------------------------------------------------------------------------
 
 export function getProductsByCategory(category: string): Product[] {
   return products.filter((p) => p.category === category)

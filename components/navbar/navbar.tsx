@@ -67,7 +67,7 @@ function NavBar() {
       >
         <div className="mx-auto flex h-16 max-w-[var(--max-width-site)] items-center justify-between px-[var(--spacing-section-x)]">
           {/* Logo */}
-          <Link href="/" aria-label="Vazby Květin — domů">
+          <Link href="/" aria-label="Vazby Květin — domů" className="text-deep-plum">
             <Logo className="h-5" />
           </Link>
 
@@ -209,14 +209,18 @@ function MegaMenuPanel({
       <div className="mx-auto grid max-w-[var(--max-width-site)] grid-cols-[1fr_1fr_1fr_300px] gap-8 px-[var(--spacing-section-x)] py-8">
         {hasGroups ? (
           <>
-            {groups.map((group) => (
-              <div key={group.heading} className="flex flex-col gap-1">
-                <Link
-                  href={group.href}
-                  className="mb-1 text-[length:var(--font-size-body-sm)] font-[30] text-foreground transition-colors hover:text-deep-plum"
-                >
-                  {group.heading}
-                </Link>
+            {groups.map((group, gi) => (
+              <div key={group.heading || `group-${gi}`} className="flex flex-col gap-1">
+                {group.heading ? (
+                  <Link
+                    href={group.href}
+                    className="mb-1 text-[length:var(--font-size-body-sm)] font-[30] text-foreground transition-colors hover:text-deep-plum"
+                  >
+                    {group.heading}
+                  </Link>
+                ) : (
+                  <div className="mb-1 h-[var(--font-size-body-sm)] leading-[var(--font-size-body-sm)]">&nbsp;</div>
+                )}
                 {group.items.map((item) => (
                   <Link
                     key={item.href}
@@ -281,15 +285,17 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
               </span>
               {hasGroups ? (
                 <div className="flex flex-col gap-4 pb-4 pl-4">
-                  {groups.map((group) => (
-                    <div key={group.heading} className="flex flex-col gap-1">
-                      <Link
-                        href={group.href}
-                        onClick={onClose}
-                        className="py-1.5 text-[length:var(--font-size-body)] font-[30] text-foreground transition-colors hover:text-deep-plum"
-                      >
-                        {group.heading}
-                      </Link>
+                  {groups.map((group, gi) => (
+                    <div key={group.heading || `m-group-${gi}`} className="flex flex-col gap-1">
+                      {group.heading && (
+                        <Link
+                          href={group.href}
+                          onClick={onClose}
+                          className="py-1.5 text-[length:var(--font-size-body)] font-[30] text-foreground transition-colors hover:text-deep-plum"
+                        >
+                          {group.heading}
+                        </Link>
+                      )}
                       {group.items.map((item) => (
                         <Link
                           key={item.href}

@@ -21,16 +21,16 @@ export default function Page() {
         subheading="Navrhujeme květiny pro chvíle, na kterých záleží."
         ctaText="Prohlédnout nabídku"
         ctaHref="/kytice/"
-        backgroundImages={["/hero-home.jpg", "/hero-home-2.jpg"]}
+        backgroundImages={["/hero-home.mp4", "/hero-home-2.jpg"]}
       />
 
       {/* Sekce 2: Vstupní rozcestník */}
       <section className="py-[var(--spacing-section-y)]">
         <div className="mx-auto grid max-w-[var(--max-width-site)] grid-cols-1 gap-6 px-[var(--spacing-section-x)] md:grid-cols-3">
           <CategoryCard
-            title="Kytice na rakev"
+            title="Smuteční květiny"
             subtitle="S respektem a pochopením"
-            href="/smutecni/rakev/"
+            href="/smutecni/"
             image="/category-kytice.jpg"
           />
           <CategoryCard
@@ -70,7 +70,7 @@ export default function Page() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <Button asChild variant="outline" size="md">
+            <Button asChild size="md">
               <Link href="/kytice/">Zobrazit vše</Link>
             </Button>
           </div>
@@ -87,7 +87,7 @@ export default function Page() {
               body="Známe prostředí loučení a víme, jak důležité je umět vyjádřit pocity ve chvílích, kdy na tom záleží. Budujeme květinářství, které těmto situacím rozumí. Neprodáváme jen květiny — nabízíme způsob, jak něco říct, když slova nestačí."
             />
             <div>
-              <Button asChild variant="outline" size="md">
+              <Button asChild size="md">
                 <Link href="/o-nas/">Více o nás</Link>
               </Button>
             </div>
