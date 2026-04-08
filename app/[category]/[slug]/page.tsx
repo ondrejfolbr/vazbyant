@@ -10,7 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { ProductCard } from "@/components/product-card"
-import { QuantitySelector } from "@/components/quantity-selector"
+import { ProductAddToCart } from "@/components/cart/ProductAddToCart"
 import { QuickOrderForm } from "@/components/quick-order-form"
 import {
   products,
@@ -266,18 +266,15 @@ function ProductDetailPage({ product }: ProductDetailPageProps) {
               </div>
             </div>
 
-            {/* Quantity */}
-            <div className="flex flex-col gap-2">
-              <span className="text-[length:var(--font-size-body-sm)] font-[30] text-muted-foreground">
-                Počet kusů
-              </span>
-              <QuantitySelector />
-            </div>
-
-            {/* Add to cart */}
-            <Button size="lg" className="w-full">
-              Přidat do košíku
-            </Button>
+            {/* Quantity + Add to cart */}
+            <ProductAddToCart
+              productId={String(product.id)}
+              slug={product.slug}
+              name={product.name}
+              price={product.price}
+              image={product.image ?? "/category-kytice.jpg"}
+              category={product.category as "smutecni" | "svatebni" | "kytice" | "firemni"}
+            />
 
             {/* Funeral quick order */}
             {isFuneral && <QuickOrderForm />}

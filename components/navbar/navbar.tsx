@@ -11,6 +11,7 @@ import {
   simpleLinks,
 } from "@/components/navbar/navbar.data"
 import type { MegaMenuCategory } from "@/components/navbar/navbar.data"
+import { CartTrigger } from "@/components/cart/CartTrigger"
 
 function NavBar() {
   const [scrolled, setScrolled] = React.useState(false)
@@ -109,30 +110,7 @@ function NavBar() {
             >
               604 585 271
             </a>
-            <Link
-              href="/kosik/"
-              className="relative flex size-10 items-center justify-center rounded-sm text-foreground transition-colors hover:bg-deep-plum-10"
-              aria-label="Košík"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M6 6h12l-1.5 7H7.5L6 6Z" />
-                <path d="M6 6 5 2H2" />
-                <circle cx="9" cy="17" r="1" />
-                <circle cx="15" cy="17" r="1" />
-              </svg>
-              <span className="absolute -top-0.5 -right-0.5 flex size-4 items-center justify-center rounded-full bg-deep-plum text-[10px] font-[30] text-neutral-white">
-                0
-              </span>
-            </Link>
+            <CartTrigger />
 
             {/* Mobile hamburger */}
             <button

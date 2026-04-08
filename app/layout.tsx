@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 import { ThemeProvider } from "@/components/theme-provider"
 import { NavBar } from "@/components/navbar/navbar"
 import { Footer } from "@/components/footer"
+import { CartDrawer } from "@/components/cart/CartDrawer"
 import { cn } from "@/lib/utils"
 
 const cormorant = Cormorant_Garamond({
@@ -59,6 +60,7 @@ export default function RootLayout({
           <NavBar />
           {children}
           <Footer />
+          <CartDrawer />
         </ThemeProvider>
       </body>
     </html>
