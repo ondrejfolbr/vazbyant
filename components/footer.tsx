@@ -79,6 +79,8 @@ function Footer({ className }: FooterProps) {
               <p>
                 Po–Pá: 7:00–15:30 hod.
                 <br />
+                So: Zavřeno
+                <br />
                 Ne: 7:00–12:00 hod.
               </p>
               <a

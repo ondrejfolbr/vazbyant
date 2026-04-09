@@ -26,9 +26,16 @@ const fadeUp = {
   },
 }
 
+function generateOrderNumber() {
+  const year = new Date().getFullYear()
+  const num = Math.floor(1000 + Math.random() * 9000)
+  return `VK-${year}-${num}`
+}
+
 function ConfirmationContent() {
   const router = useRouter()
   const [allowed, setAllowed] = React.useState(false)
+  const orderNumber = React.useMemo(() => generateOrderNumber(), [])
 
   React.useEffect(() => {
     const confirmed = sessionStorage.getItem("vk-order-confirmed")
@@ -96,7 +103,7 @@ function ConfirmationContent() {
           Číslo objednávky
         </span>
         <p className="mt-1 font-sans text-[length:var(--font-size-h3)] font-[30] text-foreground">
-          VK-2024-0042
+          {orderNumber}
         </p>
       </motion.div>
 
