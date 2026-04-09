@@ -7,6 +7,7 @@ export interface Product {
   subcategory: string | null
   badge: string | null
   image: string | null
+  images: string[]
   description: string
   composition: string
   delivery: string
@@ -140,6 +141,12 @@ export const products: Product[] = [
     subcategory: "rakev",
     badge: null,
     image: "/hero-home-2.jpg",
+    images: [
+      "https://images.unsplash.com/photo-1535046173-1e4f853c48aa?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1529330821961-0414396878d8?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1570112008549-e4181988109f?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1500994802273-2dd2df834939?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Podélná kytice určená k položení na rakev. Elegantní a důstojná kompozice v bílých tónech.",
     composition: "Lilie, bílé růže, orchideje, asparagus, ruskus.",
@@ -154,7 +161,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1529330821961-0414396878d8?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1529330821961-0414396878d8?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1535046173-1e4f853c48aa?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1570112008549-e4181988109f?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1606246551522-61f9ed248bd7?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Klasická rakevní kytice v tlumených barvách — bílá a zelená s nádechem levandule.",
     composition: "Bílé karafiáty, lisianthus, levandule, zeleň.",
@@ -169,7 +182,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: "Oblíbené",
-    image: null,
+    image: "https://images.unsplash.com/photo-1570112008549-e4181988109f?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1570112008549-e4181988109f?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1535046173-1e4f853c48aa?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1484639726803-f17534cedb15?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1608450885499-57ea062049f2?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Bohatá kompozice s bílými liliemi a růžemi. Nadčasová elegance pro důstojné rozloučení.",
     composition: "Bílé lilie, růže, chryzantémy, eucalyptus, gypsophila.",
@@ -186,7 +205,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1606246551522-61f9ed248bd7?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1606246551522-61f9ed248bd7?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1535046173-1e4f853c48aa?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1636412669967-1411f6487176?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1631407056951-11215617b7f1?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Převislá kompozice splývající přes hranu rakve — dramatická a majestátní.",
     composition: "Orchideje, břečťan, bílé růže, asparagus, eucalyptus.",
@@ -201,7 +226,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1484639726803-f17534cedb15?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1484639726803-f17534cedb15?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1606246551522-61f9ed248bd7?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1579092691423-b5f99ec64624?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1636412669967-1411f6487176?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Velkolepá převislá kompozice s bílými orchidejemi a bohatou zelení.",
     composition: "Phalaenopsis orchideje, břečťan, ruskus, monstera listy.",
@@ -218,7 +249,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "vip",
     badge: "Exkluzivní",
-    image: null,
+    image: "https://images.unsplash.com/photo-1636412669967-1411f6487176?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1636412669967-1411f6487176?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1631407056951-11215617b7f1?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1579092691423-b5f99ec64624?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1535046173-1e4f853c48aa?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Prémiová smuteční kompozice z nejkvalitnějších importovaných květin.",
     composition: "Ecuadorské růže, cymbidium orchideje, anthurium, zeleň.",
@@ -233,7 +270,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "vip",
     badge: "Exkluzivní",
-    image: null,
+    image: "https://images.unsplash.com/photo-1579092691423-b5f99ec64624?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1579092691423-b5f99ec64624?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1636412669967-1411f6487176?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1631407056951-11215617b7f1?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1529330821961-0414396878d8?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Čistě bílá kompozice symbolizující čistotu a nevinnost. Prémiové květiny.",
     composition: "Bílé avalanche růže, lilie, eustoma, eucalyptus silver.",
@@ -250,7 +293,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "polozeni",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1598247535869-0b843a252a40?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1598247535869-0b843a252a40?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1616515999992-408b665d6e36?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1615561199412-3c41666b19e7?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1486639107311-064febaff1c5?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Menší kytice určená k položení u hrobu — jemná, osobní, v tlumených tónech.",
     composition: "Bílé frézie, mini růže, eucalyptus, zeleň.",
@@ -266,6 +315,12 @@ export const products: Product[] = [
     subcategory: "polozeni",
     badge: null,
     image: "/category-kytice.jpg",
+    images: [
+      "https://images.unsplash.com/photo-1616515999992-408b665d6e36?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1598247535869-0b843a252a40?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1610247672619-df289f408ff2?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1671366656070-b60172d9a892?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Kytice v krémových a fialových tónech — vyjadřuje soustrast a respekt.",
     composition: "Krémové růže, fialové lisianthus, zeleň, stuha.",
@@ -281,6 +336,12 @@ export const products: Product[] = [
     subcategory: "polozeni",
     badge: null,
     image: "/seasonal-anthurie.jpg",
+    images: [
+      "https://images.unsplash.com/photo-1615561199412-3c41666b19e7?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1486639107311-064febaff1c5?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1610247672619-df289f408ff2?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1598247535869-0b843a252a40?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Malá kytice ve světlých tónech — symbolizuje naději a klid.",
     composition: "Bílé karafiáty, gypsophila, eucalyptus.",
@@ -297,7 +358,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "volne-vazane",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1486639107311-064febaff1c5?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1486639107311-064febaff1c5?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1598247535869-0b843a252a40?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1580596090683-f4711170117b?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Přirozeně vázaná kytice s nádechem zahrady — jemná, osobní, s měkkými tóny.",
     composition: "Pivoňkové růže, eucalyptus, astilbe, zeleň.",
@@ -312,7 +379,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "volne-vazane",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1610247672619-df289f408ff2?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1610247672619-df289f408ff2?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1671366656070-b60172d9a892?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1616515999992-408b665d6e36?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1653267409726-a77cd6b3aa78?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Bohatá volně vázaná kytice pro rozloučení — bílé a fialové tóny.",
     composition: "Bílé růže, fialové chryzantémy, levandule, trávy.",
@@ -327,7 +400,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "volne-vazane",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1671366656070-b60172d9a892?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1671366656070-b60172d9a892?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1615561199412-3c41666b19e7?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1558860671-c7811ccf4862?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Něžná kytice ve světlých tónech — symbolizuje naději a pokoj.",
     composition: "Bílé frézie, lisianthus, eucalyptus, gypsophila.",
@@ -345,6 +424,12 @@ export const products: Product[] = [
     subcategory: "vence",
     badge: null,
     image: "/category-vence-fialovy.jpg",
+    images: [
+      "https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1528564031703-bf3181c2294e?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1551001626-86e913f8baf7?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1593139247120-fd48520799a3?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Tradiční smuteční věnec z čerstvých květin. Kruhový tvar symbolizuje věčnost.",
     composition: "Bílé a růžové karafiáty, chryzantémy, zeleň, stuha s nápisem.",
@@ -359,7 +444,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "vence",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1528564031703-bf3181c2294e?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1528564031703-bf3181c2294e?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1593139247120-fd48520799a3?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1551001626-86e913f8baf7?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Velký smuteční věnec s bohatou květinovou výzdobou a hedvábnou stuhou.",
     composition: "Bílé růže, lilie, chryzantémy, břečťan, stuha.",
@@ -374,7 +465,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "vence",
     badge: "Oblíbené",
-    image: null,
+    image: "https://images.unsplash.com/photo-1551001626-86e913f8baf7?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1551001626-86e913f8baf7?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1593139247120-fd48520799a3?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1528564031703-bf3181c2294e?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Věnec ve tvaru srdce — hluboký symbol lásky a oddanosti.",
     composition: "Červené a bílé růže, zeleň, smuteční stuha.",
@@ -392,6 +489,12 @@ export const products: Product[] = [
     subcategory: "stojany",
     badge: null,
     image: "/category-sety.jpg",
+    images: [
+      "https://images.unsplash.com/photo-1551001626-86e913f8baf7?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1593139247120-fd48520799a3?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1500994802273-2dd2df834939?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1535046173-1e4f853c48aa?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Vysoké květinové aranžmá do stojanu pro obřadní síně a rozloučení.",
     composition: "Bílé lilie, chryzantémy, eucalyptus, stojan (zapůjčení).",
@@ -406,7 +509,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "stojany",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1528564031703-bf3181c2294e?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1500994802273-2dd2df834939?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1570112008549-e4181988109f?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Velké stojanové aranžmá v bílých a fialových tónech — elegantní doplněk obřadu.",
     composition: "Bílé růže, fialové orchideje, zeleň, svíčky, stojan.",
@@ -423,7 +532,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "vyroci",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1580596090683-f4711170117b?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1558860671-c7811ccf4862?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1653267409726-a77cd6b3aa78?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Kytice pro pietní vzpomínku — k výročí úmrtí, na Dušičky, ke svátku zesnulého.",
     composition: "Bílé chryzantémy, frézie, eucalyptus, stuha.",
@@ -438,7 +553,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "vyroci",
     badge: "Sezónní",
-    image: null,
+    image: "https://images.unsplash.com/photo-1580596090683-f4711170117b?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1580596090683-f4711170117b?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1653267409726-a77cd6b3aa78?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1558860671-c7811ccf4862?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Pietní kytice pro vzpomínku na Dušičky. Tlumené barvy, přírodní materiály.",
     composition: "Chryzantémy, vřes, mech, šišky, sušené listy.",
@@ -453,7 +574,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "kose",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1560238786-aa5717f6ba63?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1560238786-aa5717f6ba63?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1592125661285-79820f2fdf7a?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1532713031318-db2d14e4b3e1?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1630164183600-44bd79a73d34?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Velké smuteční aranžmá na míru — kompletní květinový servis pro rozloučení.",
     composition: "Dle vašeho přání — konzultace s floristou.",
@@ -469,6 +596,12 @@ export const products: Product[] = [
     subcategory: "volne-vazane",
     badge: null,
     image: "/category-kytice.jpg",
+    images: [
+      "https://images.unsplash.com/photo-1598247535869-0b843a252a40?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1671366656070-b60172d9a892?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1580596090683-f4711170117b?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Jemná smuteční kytice v tlumených tónech bílé a krémové. Vyjadřuje úctu a tiché souznění.",
     composition: "Bílé růže, eustoma, eucalyptus, gypsophila, zeleň.",
@@ -483,7 +616,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "vence",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1593139247120-fd48520799a3?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1593139247120-fd48520799a3?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1551001626-86e913f8baf7?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1528564031703-bf3181c2294e?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Menší věnec v čistě bílém provedení — diskrétní a elegantní.",
     composition: "Bílé karafiáty, gypsophila, ruskus, stuha.",
@@ -498,7 +637,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "polozeni",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1616515999992-408b665d6e36?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1616515999992-408b665d6e36?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1615561199412-3c41666b19e7?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1598247535869-0b843a252a40?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1671366656070-b60172d9a892?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Větší kytice na položení s bohatou vazbou — vhodná k vystavení u kondolence.",
     composition: "Bílé lilie, růže, chryzantémy, zeleň.",
@@ -513,7 +658,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "vip",
     badge: "Exkluzivní",
-    image: null,
+    image: "https://images.unsplash.com/photo-1631407056951-11215617b7f1?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1631407056951-11215617b7f1?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1636412669967-1411f6487176?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1579092691423-b5f99ec64624?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1484639726803-f17534cedb15?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Vrcholné floristické dílo — čisté linie, exotické orchideje, dokonalá kompozice.",
     composition: "Cymbidium a phalaenopsis orchideje, monstera, anthurium.",
@@ -531,6 +682,12 @@ export const products: Product[] = [
     subcategory: "urna",
     badge: null,
     image: "/seasonal-anthurie.jpg",
+    images: [
+      "https://images.unsplash.com/photo-1558860671-c7811ccf4862?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1653267409726-a77cd6b3aa78?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1580596090683-f4711170117b?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Menší aranžmá určené k urně. Světlé tóny symbolizují naději a klid.",
     composition: "Bílé frézie, mini růže, eucalyptus, zeleň.",
@@ -545,7 +702,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "urna",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1653267409726-a77cd6b3aa78?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1653267409726-a77cd6b3aa78?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1558860671-c7811ccf4862?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1580596090683-f4711170117b?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Jemná kytice v krémových a bílých tónech — vhodná k urnovému rozloučení.",
     composition: "Krémové růže, lisianthus, gypsophila, zeleň.",
@@ -560,7 +723,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "urna",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1653267409726-a77cd6b3aa78?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1558860671-c7811ccf4862?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1580596090683-f4711170117b?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Kytice s levandulí a bílými květy — uklidňující a voňavá.",
     composition: "Levandule, bílé mini růže, eucalyptus.",
@@ -577,7 +746,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "kose",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1592125661285-79820f2fdf7a?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1592125661285-79820f2fdf7a?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1560238786-aa5717f6ba63?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1630164183600-44bd79a73d34?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1532713031318-db2d14e4b3e1?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Velký květinový koš s bohatou výzdobou — vhodný k vystavení u kondolence.",
     composition: "Bílé a krémové růže, lilie, chryzantémy, proutěný koš.",
@@ -594,7 +769,13 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "vyroci",
     badge: null,
-    image: null,
+    image: "https://images.unsplash.com/photo-1558860671-c7811ccf4862?w=600&h=750&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1558860671-c7811ccf4862?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1616515999992-408b665d6e36?w=600&h=750&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1598247535869-0b843a252a40?w=600&h=750&fit=crop&auto=format",
+    ],
     description:
       "Kytice vhodná k jakémukoliv vzpomínkovému dnu — jemná, nadčasová, důstojná.",
     composition: "Bílé růže, frézie, eucalyptus, hedvábná stuha.",

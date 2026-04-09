@@ -12,6 +12,7 @@ import {
 import { ProductCard } from "@/components/product-card"
 import { ProductAddToCart } from "@/components/cart/ProductAddToCart"
 import { QuickOrderForm } from "@/components/quick-order-form"
+import { ProductGallery } from "@/components/product-gallery"
 import {
   products,
   subcategories,
@@ -127,6 +128,7 @@ function SubcategoryPage({ category, slug }: SubcategoryPageProps) {
               {subcategoryProducts.map((product) => (
                 <ProductCard
                   key={product.id}
+                  image={product.image}
                   title={product.name}
                   price={product.price}
                   badge={product.badge}
@@ -175,6 +177,7 @@ interface ProductDetailPageProps {
     subcategory: string | null
     badge: string | null
     image: string | null
+    images: string[]
     description: string
     composition: string
     delivery: string
@@ -199,26 +202,10 @@ function ProductDetailPage({ product }: ProductDetailPageProps) {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           {/* Left — Gallery */}
           <div className="lg:col-span-7">
-            {/* Main image */}
-            <div className="flex aspect-[4/5] items-center justify-center rounded-sm bg-plum-10">
-              <span className="text-[length:var(--font-size-body)] text-plum-50">
-                Hlavní foto produktu
-              </span>
-            </div>
-
-            {/* Thumbnails */}
-            <div className="mt-3 grid grid-cols-4 gap-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="flex aspect-square items-center justify-center rounded-sm bg-plum-10"
-                >
-                  <span className="text-[length:var(--font-size-caption)] text-plum-50">
-                    {i}
-                  </span>
-                </div>
-              ))}
-            </div>
+            <ProductGallery
+              images={product.images.length > 0 ? product.images : product.image ? [product.image] : []}
+              alt={product.name}
+            />
           </div>
 
           {/* Right — Info (sticky) */}
@@ -325,6 +312,7 @@ function ProductDetailPage({ product }: ProductDetailPageProps) {
               {related.map((p) => (
                 <ProductCard
                   key={p.id}
+                  image={p.image}
                   title={p.name}
                   price={p.price}
                   badge={p.badge}

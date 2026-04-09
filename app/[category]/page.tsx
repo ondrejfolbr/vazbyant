@@ -60,6 +60,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             {categoryProducts.map((product) => (
               <ProductCard
                 key={product.id}
+                image={product.image}
                 title={product.name}
                 price={product.price}
                 badge={product.badge}
