@@ -21,6 +21,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { NavBar } from "@/components/navbar/navbar"
 import { Footer } from "@/components/footer"
 import { CartDrawer } from "@/components/cart/CartDrawer"
+import { SearchDialog } from "@/components/search/SearchDialog"
 import { cn } from "@/lib/utils"
 
 const cormorant = Cormorant_Garamond({
@@ -61,6 +62,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <CartDrawer />
+          <SearchDialog />
         </ThemeProvider>
       </body>
     </html>
