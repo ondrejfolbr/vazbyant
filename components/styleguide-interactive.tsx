@@ -130,7 +130,16 @@ function StyleguideInteractive() {
         <h2 className="font-heading text-[length:var(--font-size-h2)] font-[40] text-foreground">
           Quick Order Form
         </h2>
-        <QuickOrderForm className="max-w-md" />
+        <QuickOrderForm
+          className="max-w-md"
+          productId="demo-001"
+          slug="pohrebni-kytice-classic"
+          name="Pohřební kytice Classic"
+          price={1490}
+          image="/images/products/pohrebni-kytice-classic.jpg"
+          category="smutecni"
+          selectedSize="M"
+        />
       </section>
     </div>
   )

@@ -46,6 +46,7 @@ function Step1Delivery({ onNext, defaultValues }: Step1DeliveryProps) {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors },
   } = useForm<DeliveryFormData>({
     resolver: zodResolver(deliverySchema),
@@ -55,6 +56,21 @@ function Step1Delivery({ onNext, defaultValues }: Step1DeliveryProps) {
     },
     mode: "onBlur",
   })
+
+  React.useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem("vk-quick-order")
+      if (raw) {
+        const data = JSON.parse(raw) as { condolenceMessage?: string }
+        if (data.condolenceMessage && !watch("note")) {
+          setValue("note", `Kondolenční kartička: ${data.condolenceMessage}`)
+        }
+      }
+    } catch {
+      // Ignore invalid JSON
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const deliveryType = watch("deliveryType")
 

@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { motion } from "motion/react"
 
 import { Button } from "@/components/ui/button"
@@ -26,6 +27,23 @@ const fadeUp = {
 }
 
 function ConfirmationContent() {
+  const router = useRouter()
+  const [allowed, setAllowed] = React.useState(false)
+
+  React.useEffect(() => {
+    const confirmed = sessionStorage.getItem("vk-order-confirmed")
+    if (confirmed) {
+      sessionStorage.removeItem("vk-order-confirmed")
+      setAllowed(true)
+    } else {
+      router.replace("/")
+    }
+  }, [router])
+
+  if (!allowed) {
+    return null
+  }
+
   return (
     <motion.div
       variants={staggerChildren}

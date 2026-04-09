@@ -44,6 +44,8 @@ function CheckoutFlow() {
 
   function handleConfirm() {
     clearCart()
+    sessionStorage.removeItem("vk-quick-order")
+    sessionStorage.setItem("vk-order-confirmed", "true")
     router.push("/potvrzeni/")
   }
 

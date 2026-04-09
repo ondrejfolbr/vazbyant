@@ -1,24 +1,58 @@
 "use client"
 
 import * as React from "react"
+import { useRouter } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { useCart } from "@/hooks/use-cart"
 
 interface QuickOrderFormProps {
   className?: string
-  productId?: string
-  slug?: string
-  name?: string
-  price?: number
-  image?: string
-  category?: "smutecni" | "svatebni" | "kytice" | "firemni"
-  selectedSize?: string
+  productId: string
+  slug: string
+  name: string
+  price: number
+  image: string
+  category: "smutecni" | "svatebni" | "kytice" | "firemni"
+  selectedSize: string
 }
 
-function QuickOrderForm({ className }: QuickOrderFormProps) {
+function QuickOrderForm({
+  className,
+  productId,
+  slug,
+  name,
+  price,
+  image,
+  category,
+  selectedSize,
+}: QuickOrderFormProps) {
+  const router = useRouter()
+  const { addItem } = useCart()
   const [message, setMessage] = React.useState("")
   const maxLength = 300
+
+  function handleQuickOrder() {
+    addItem({
+      productId,
+      slug,
+      name,
+      price,
+      image,
+      category,
+      variant: selectedSize,
+    })
+
+    if (message.trim()) {
+      sessionStorage.setItem(
+        "vk-quick-order",
+        JSON.stringify({ condolenceMessage: message.trim() }),
+      )
+    }
+
+    router.push("/objednavka")
+  }
 
   return (
     <div
@@ -27,7 +61,6 @@ function QuickOrderForm({ className }: QuickOrderFormProps) {
         className,
       )}
     >
-      {/* Urgent delivery badge */}
       <div className="flex items-center gap-2 rounded-sm bg-deep-plum/10 px-3 py-2">
         <div className="size-2 rounded-full bg-deep-plum" />
         <span className="text-[length:var(--font-size-body-sm)] font-[30] text-deep-plum">
@@ -35,7 +68,6 @@ function QuickOrderForm({ className }: QuickOrderFormProps) {
         </span>
       </div>
 
-      {/* Condolence card */}
       <div className="flex flex-col gap-2">
         <label
           htmlFor="condolence"
@@ -59,8 +91,12 @@ function QuickOrderForm({ className }: QuickOrderFormProps) {
         </span>
       </div>
 
-      {/* Quick order CTA */}
-      <Button variant="accent" size="lg" className="w-full">
+      <Button
+        variant="accent"
+        size="lg"
+        className="w-full"
+        onClick={handleQuickOrder}
+      >
         Rychlá objednávka
       </Button>
       <p className="text-center text-[length:var(--font-size-caption)] text-muted-foreground">
