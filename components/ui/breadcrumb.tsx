@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 interface BreadcrumbItem {
   label: string
@@ -7,13 +8,14 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[]
+  className?: string
 }
 
-function Breadcrumb({ items }: BreadcrumbProps) {
+function Breadcrumb({ items, className }: BreadcrumbProps) {
   return (
     <nav
       aria-label="Navigace"
-      className="mb-4 text-[length:var(--font-size-body-sm)] text-muted-foreground"
+      className={cn("mb-4 text-[length:var(--font-size-body-sm)] text-muted-foreground", className)}
     >
       <ol className="flex items-center gap-2">
         <li>

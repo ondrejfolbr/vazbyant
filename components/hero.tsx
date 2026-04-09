@@ -58,7 +58,7 @@ function Hero({
       )}
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-30% to-neutral-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-neutral-black/20 from-30% to-neutral-black/75" />
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex w-full max-w-[var(--max-width-site)] flex-col gap-5 px-[var(--spacing-section-x)] pb-[var(--spacing-section-y)]">
@@ -75,7 +75,7 @@ function Hero({
             <Button
               asChild
               size="lg"
-              className="bg-neutral-white/15 text-neutral-white hover:bg-neutral-white/25 hover:text-neutral-white"
+              className="bg-deep-plum text-neutral-white hover:bg-deep-plum/85 hover:text-neutral-white"
             >
               <Link href={ctaHref}>{ctaText}</Link>
             </Button>

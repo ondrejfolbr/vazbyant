@@ -36,7 +36,6 @@ export const megaMenuCategories: MegaMenuCategory[] = [
         href: "/smutecni/",
         items: [
           { label: "Kytice na rakev", href: "/smutecni/rakev/" },
-          { label: "Převislé kytice na rakev", href: "/smutecni/rakev-previsle/" },
           { label: "Exkluzivní smuteční vazby", href: "/smutecni/exkluzivni/" },
           { label: "Kytice na položení", href: "/smutecni/polozeni/" },
           { label: "Kytice volně vázané", href: "/smutecni/volne-vazane/" },

@@ -12,11 +12,13 @@ import {
 } from "@/components/navbar/navbar.data"
 import type { MegaMenuCategory } from "@/components/navbar/navbar.data"
 import { CartTrigger } from "@/components/cart/CartTrigger"
+import { useProfileStore } from "@/store/profile-store"
 
 function NavBar() {
   const [scrolled, setScrolled] = React.useState(false)
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const [activeMenu, setActiveMenu] = React.useState<string | null>(null)
+  const openProfile = useProfileStore((s) => s.openDrawer)
   const closeTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const megaMenuOpen = activeMenu !== null
@@ -131,6 +133,26 @@ function NavBar() {
               604 585 271
             </a>
             <CartTrigger />
+            <button
+              type="button"
+              onClick={openProfile}
+              className="flex size-10 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:bg-deep-plum-10 hover:text-foreground"
+              aria-label="Přihlášení"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="8" r="4" />
+                <path d="M20 21a8 8 0 0 0-16 0" />
+              </svg>
+            </button>
 
             {/* Mobile hamburger */}
             <button

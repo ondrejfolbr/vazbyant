@@ -165,7 +165,7 @@ export const products: Product[] = [
     price: 3490,
     category: "smutecni",
     subcategory: "rakev",
-    badge: null,
+    badge: "Nejprodávanější",
     image: "/product-rakev.jpg",
     images: [
       "/product-rakev.jpg",
@@ -221,7 +221,7 @@ export const products: Product[] = [
     price: 4990,
     category: "smutecni",
     subcategory: "rakev",
-    badge: null,
+    badge: "Novinka",
     image: "/product-rakev-previsle.jpg",
     images: [
       "/product-rakev-previsle.jpg",
@@ -368,13 +368,10 @@ export const products: Product[] = [
     price: 1690,
     category: "smutecni",
     subcategory: "volne-vazane",
-    badge: null,
-    image: "https://images.unsplash.com/photo-1486639107311-064febaff1c5?w=600&h=750&fit=crop&auto=format",
+    badge: "Oblíbené",
+    image: "/product-volne-vazane.jpg",
     images: [
-      "https://images.unsplash.com/photo-1486639107311-064febaff1c5?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1598247535869-0b843a252a40?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1580596090683-f4711170117b?w=600&h=750&fit=crop&auto=format",
+      "/product-volne-vazane.jpg",
     ],
     description:
       "Přirozeně vázaná kytice s nádechem zahrady — jemná, osobní, s měkkými tóny.",
@@ -390,12 +387,9 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "volne-vazane",
     badge: null,
-    image: "https://images.unsplash.com/photo-1610247672619-df289f408ff2?w=600&h=750&fit=crop&auto=format",
+    image: "/product-volne-vazane.jpg",
     images: [
-      "https://images.unsplash.com/photo-1610247672619-df289f408ff2?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1671366656070-b60172d9a892?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1616515999992-408b665d6e36?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1653267409726-a77cd6b3aa78?w=600&h=750&fit=crop&auto=format",
+      "/product-volne-vazane.jpg",
     ],
     description:
       "Bohatá volně vázaná kytice pro rozloučení — bílé a fialové tóny.",
@@ -411,12 +405,9 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "volne-vazane",
     badge: null,
-    image: "https://images.unsplash.com/photo-1671366656070-b60172d9a892?w=600&h=750&fit=crop&auto=format",
+    image: "/product-volne-vazane.jpg",
     images: [
-      "https://images.unsplash.com/photo-1671366656070-b60172d9a892?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1615561199412-3c41666b19e7?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1608153917100-3bd2426fde7c?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1558860671-c7811ccf4862?w=600&h=750&fit=crop&auto=format",
+      "/product-volne-vazane.jpg",
     ],
     description:
       "Něžná kytice ve světlých tónech — symbolizuje naději a pokoj.",
@@ -433,7 +424,7 @@ export const products: Product[] = [
     price: 2890,
     category: "smutecni",
     subcategory: "vence",
-    badge: null,
+    badge: "Nejprodávanější",
     image: "/category-vence-fialovy.jpg",
     images: [
       "https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?w=600&h=750&fit=crop&auto=format",
@@ -498,7 +489,7 @@ export const products: Product[] = [
     price: 3990,
     category: "smutecni",
     subcategory: "stojany",
-    badge: null,
+    badge: "Novinka",
     image: "/category-sety.jpg",
     images: [
       "https://images.unsplash.com/photo-1551001626-86e913f8baf7?w=600&h=750&fit=crop&auto=format",
@@ -584,7 +575,7 @@ export const products: Product[] = [
     price: 1890,
     category: "smutecni",
     subcategory: "kose",
-    badge: null,
+    badge: "Oblíbené",
     image: "https://images.unsplash.com/photo-1560238786-aa5717f6ba63?w=600&h=750&fit=crop&auto=format",
     images: [
       "https://images.unsplash.com/photo-1560238786-aa5717f6ba63?w=600&h=750&fit=crop&auto=format",
@@ -756,7 +747,7 @@ export const products: Product[] = [
     price: 2290,
     category: "smutecni",
     subcategory: "kose",
-    badge: null,
+    badge: "Novinka",
     image: "https://images.unsplash.com/photo-1592125661285-79820f2fdf7a?w=600&h=750&fit=crop&auto=format",
     images: [
       "https://images.unsplash.com/photo-1592125661285-79820f2fdf7a?w=600&h=750&fit=crop&auto=format",
@@ -802,7 +793,7 @@ export const products: Product[] = [
     price: 14990,
     category: "smutecni",
     subcategory: "sety",
-    badge: null,
+    badge: "Kompletní set",
     image: "/sety/vzpominky-hero.jpg",
     images: [
       "/sety/vzpominky-hero.jpg",

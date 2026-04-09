@@ -21,6 +21,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { NavBar } from "@/components/navbar/navbar"
 import { Footer } from "@/components/footer"
 import { CartDrawer } from "@/components/cart/CartDrawer"
+import { ProfileDrawer } from "@/components/profile/ProfileDrawer"
 import { SearchDialog } from "@/components/search/SearchDialog"
 import { cn } from "@/lib/utils"
 
@@ -62,6 +63,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <CartDrawer />
+          <ProfileDrawer />
           <SearchDialog />
         </ThemeProvider>
       </body>

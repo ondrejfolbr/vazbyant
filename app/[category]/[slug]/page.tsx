@@ -111,7 +111,7 @@ function SubcategoryPage({ category, slug }: SubcategoryPageProps) {
       {/* Breadcrumb-style header */}
       {subcategoryMeta.heroImage ? (
         <section className="relative">
-          <div className="mx-auto grid max-w-[var(--max-width-site)] lg:grid-cols-[2fr_1fr]">
+          <div className="mx-auto grid max-w-[var(--max-width-site)] lg:grid-cols-[3fr_2fr]">
             {/* Left — dark plum with white text */}
             <div className="flex flex-col justify-center bg-deep-plum px-[var(--spacing-section-x)] py-[var(--spacing-section-y)]">
               <Breadcrumb
