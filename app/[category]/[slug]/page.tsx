@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
@@ -25,6 +26,34 @@ import {
 
 interface SlugPageProps {
   params: Promise<{ category: string; slug: string }>
+}
+
+export async function generateMetadata({
+  params,
+}: SlugPageProps): Promise<Metadata> {
+  const { category, slug } = await params
+
+  const subcategoryMeta = getSubcategory(category, slug)
+  if (subcategoryMeta) {
+    const categoryMeta = categories[category]
+    return {
+      title: subcategoryMeta.label,
+      description: subcategoryMeta.description,
+    }
+  }
+
+  const product = getProductBySlug(category, slug)
+  if (!product) {
+    return {}
+  }
+
+  const categoryMeta = categories[product.category]
+  const categoryLabel = categoryMeta?.label ?? product.category
+
+  return {
+    title: product.name,
+    description: `${product.name} — ${categoryLabel}. ${product.description}`,
+  }
 }
 
 export function generateStaticParams() {

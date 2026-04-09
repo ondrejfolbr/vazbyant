@@ -113,13 +113,18 @@ export default function KontaktPage() {
         </div>
       </section>
 
-      {/* Map placeholder */}
+      {/* Map */}
       <section className="border-t border-border">
-        <div className="flex h-[400px] items-center justify-center bg-plum-10">
-          <span className="text-[length:var(--font-size-body-sm)] text-plum-50">
-            Mapa — Mirošovická 704, Mnichovice
-          </span>
-        </div>
+        <iframe
+          src="https://maps.google.com/maps?q=Miro%C5%A1ovick%C3%A1+704%2C+251+64+Mnichovice&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="400"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Mapa — Mirošovická 704, Mnichovice"
+        />
       </section>
     </main>
   )

@@ -21,7 +21,7 @@ export default function Page() {
         subheading="Navrhujeme květiny pro chvíle, na kterých záleží."
         ctaText="Prohlédnout nabídku"
         ctaHref="/kytice/"
-        backgroundImages={["/hero-home.mp4", "/hero-home-2.jpg"]}
+        backgroundImage="/hero-home-2.jpg"
       />
 
       {/* Sekce 2: Vstupní rozcestník */}

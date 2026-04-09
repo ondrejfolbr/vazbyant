@@ -22,7 +22,7 @@ function Footer({ className }: FooterProps) {
             </Link>
             <div className="mt-4 flex items-center gap-5">
               <a
-                href="https://instagram.com"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -33,7 +33,7 @@ function Footer({ className }: FooterProps) {
                 </svg>
               </a>
               <a
-                href="https://facebook.com"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"

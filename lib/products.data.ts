@@ -17,6 +17,7 @@ export interface Product {
 export interface CategoryMeta {
   label: string
   description: string
+  heroImage: string
 }
 
 export interface SubcategoryMeta {
@@ -30,16 +31,22 @@ export const categories: Record<string, CategoryMeta> = {
     label: "Smuteční květiny",
     description:
       "Květiny pro chvíle loučení — s respektem, pochopením a důstojností.",
+    heroImage:
+      "https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=1920&q=80",
   },
   svatebni: {
     label: "Svatební květiny",
     description:
       "Květinové aranžmá pro váš den — kytice, dekorace obřadu i doplňky.",
+    heroImage:
+      "https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80",
   },
   kytice: {
     label: "Ostatní kytice",
     description:
       "Když slova nestačí — kytice z lásky, pro maminky, pro muže i pro děti.",
+    heroImage:
+      "https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=1920&q=80",
   },
 }
 

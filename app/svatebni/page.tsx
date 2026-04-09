@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
@@ -55,11 +56,37 @@ const PROCESS_STEPS: Array<{
   },
 ]
 
+const SERVICE_IMAGES: Record<string, string> = {
+  "Svatební kytice":
+    "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+  "Dekorace obřadu":
+    "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80",
+  Doplňky:
+    "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80",
+}
+
+const GALLERY_IMAGES = [
+  "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=80",
+  "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80",
+  "https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=600&q=80",
+  "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80",
+  "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&q=80",
+  "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&q=80",
+]
+
 export default function SvatebniPage() {
   return (
     <main>
       {/* HERO */}
-      <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-deep-plum-80">
+      <section className="relative flex min-h-[60vh] items-end overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-30% to-neutral-black/60" />
         <div className="relative z-10 mx-auto w-full max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] pb-[var(--spacing-section-y)]">
           <p className="hero-stagger hero-stagger-1 mb-4 text-[length:var(--font-size-body)] leading-relaxed text-neutral-white/80">
@@ -95,10 +122,14 @@ export default function SvatebniPage() {
           <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-3">
             {SERVICES.map((service) => (
               <div key={service.title} className="flex flex-col gap-4">
-                <div className="flex aspect-[4/3] items-center justify-center rounded-sm bg-plum-10">
-                  <span className="text-[length:var(--font-size-body-sm)] text-plum-50">
-                    Foto: {service.title.toLowerCase()}
-                  </span>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                  <Image
+                    src={SERVICE_IMAGES[service.title] ?? ""}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                  />
                 </div>
                 <h3 className="font-heading text-[length:var(--font-size-h3)] font-[40] text-foreground">
                   {service.title}
@@ -128,14 +159,18 @@ export default function SvatebniPage() {
 
           {/* Gallery grid */}
           <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-3">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+            {GALLERY_IMAGES.map((img, i) => (
               <div
                 key={i}
-                className="flex aspect-[4/3] items-center justify-center rounded-sm bg-plum-10"
+                className="relative aspect-[4/3] overflow-hidden rounded-sm"
               >
-                <span className="text-[length:var(--font-size-caption)] text-plum-50">
-                  Foto realizace {i}
-                </span>
+                <Image
+                  src={img}
+                  alt={`Svatební realizace ${i + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 33vw, 50vw"
+                />
               </div>
             ))}
           </div>
