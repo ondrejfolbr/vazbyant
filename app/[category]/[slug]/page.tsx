@@ -14,6 +14,7 @@ import { ProductCard } from "@/components/product-card"
 import { ProductAddToCart } from "@/components/cart/ProductAddToCart"
 import { QuickOrderForm } from "@/components/quick-order-form"
 import { ProductGallery } from "@/components/product-gallery"
+import { Breadcrumb } from "@/components/ui/breadcrumb"
 import {
   products,
   subcategories,
@@ -110,16 +111,12 @@ function SubcategoryPage({ category, slug }: SubcategoryPageProps) {
       {/* Breadcrumb-style header */}
       <section className="bg-deep-plum-10 py-[var(--spacing-section-y)]">
         <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">
-          <nav className="mb-4 flex items-center gap-2 text-[length:var(--font-size-body-sm)] text-muted-foreground">
-            <Link
-              href={`/${category}/`}
-              className="transition-colors hover:text-foreground"
-            >
-              {categoryMeta.label}
-            </Link>
-            <span>/</span>
-            <span className="text-foreground">{subcategoryMeta.label}</span>
-          </nav>
+          <Breadcrumb
+            items={[
+              { label: categoryMeta.label, href: `/${category}/` },
+              { label: subcategoryMeta.label },
+            ]}
+          />
           <SectionHeading
             heading={subcategoryMeta.label}
             body={subcategoryMeta.description}
@@ -227,6 +224,25 @@ function ProductDetailPage({ product }: ProductDetailPageProps) {
   return (
     <main>
       <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] py-12">
+        <Breadcrumb
+          items={[
+            {
+              label: categories[product.category]?.label ?? product.category,
+              href: `/${product.category}/`,
+            },
+            ...(product.subcategory
+              ? [
+                  {
+                    label:
+                      subcategories[`${product.category}/${product.subcategory}`]
+                        ?.label ?? product.subcategory,
+                    href: `/${product.category}/${product.subcategory}/`,
+                  },
+                ]
+              : []),
+            { label: product.name },
+          ]}
+        />
         {/* Two-column layout */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           {/* Left — Gallery */}
