@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { motion, AnimatePresence } from "motion/react"
+import { motion, AnimatePresence } from "framer-motion"
 
 import { useCart } from "@/hooks/use-cart"
 import type { CartItem as CartItemType } from "@/store/cart-store"

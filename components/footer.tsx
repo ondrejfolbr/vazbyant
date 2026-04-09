@@ -48,9 +48,6 @@ function Footer({ className }: FooterProps) {
 
           {/* Column 2: Navigation */}
           <div className="flex flex-col gap-5">
-            <span className="text-[length:var(--font-size-overline)] font-[30] uppercase tracking-widest text-neutral-white/40">
-              Navigace
-            </span>
             <nav className="flex flex-col gap-3">
               {footerNav.map((link) => (
                 <Link
@@ -66,9 +63,6 @@ function Footer({ className }: FooterProps) {
 
           {/* Column 3: Contact */}
           <div className="flex flex-col gap-5">
-            <span className="text-[length:var(--font-size-overline)] font-[30] uppercase tracking-widest text-neutral-white/40">
-              Kontakt
-            </span>
             <div className="flex flex-col gap-3 text-[length:var(--font-size-body)] text-neutral-white/70">
               <p className="font-[30] text-neutral-white">VAZBY KVĚTIN s.r.o.</p>
               <address className="not-italic leading-relaxed">

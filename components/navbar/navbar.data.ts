@@ -52,6 +52,7 @@ export const megaMenuCategories: MegaMenuCategory[] = [
           { label: "Květiny k výročí úmrtí", href: "/smutecni/vyroci/" },
           { label: "Květiny k rozloučení / VIP", href: "/smutecni/vip/" },
           { label: "Květinové koše", href: "/smutecni/kose/" },
+          { label: "Smuteční sety", href: "/smutecni/sety/" },
         ],
       },
       {

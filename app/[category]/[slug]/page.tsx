@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
@@ -108,22 +109,56 @@ function SubcategoryPage({ category, slug }: SubcategoryPageProps) {
   return (
     <main>
       {/* Breadcrumb-style header */}
-      <section className="bg-deep-plum-10 py-[var(--spacing-section-y)]">
-        <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">
-          <Breadcrumb
-            items={[
-              { label: categoryMeta.label, href: `/${category}/` },
-              { label: subcategoryMeta.label },
-            ]}
-          />
-          <SectionHeading
-            heading={subcategoryMeta.label}
-            body={subcategoryMeta.description}
-          />
-        </div>
-      </section>
+      {subcategoryMeta.heroImage ? (
+        <section className="relative">
+          <div className="mx-auto grid max-w-[var(--max-width-site)] lg:grid-cols-[2fr_1fr]">
+            {/* Left — dark plum with white text */}
+            <div className="flex flex-col justify-center bg-deep-plum px-[var(--spacing-section-x)] py-[var(--spacing-section-y)]">
+              <Breadcrumb
+                items={[
+                  { label: categoryMeta.label, href: `/${category}/` },
+                  { label: subcategoryMeta.label },
+                ]}
+                className="mb-4 [&_a]:text-neutral-white/60 [&_a:hover]:text-neutral-white [&_span[aria-hidden]]:text-neutral-white/30 [&_span:last-child]:text-neutral-white"
+              />
+              <h2 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-neutral-white">
+                {subcategoryMeta.label}
+              </h2>
+              <p className="mt-4 max-w-xl text-[length:var(--font-size-body-lg)] leading-relaxed text-neutral-white/70">
+                {subcategoryMeta.description}
+              </p>
+            </div>
+            {/* Right — image */}
+            <div className="relative aspect-[4/3] lg:aspect-auto">
+              <Image
+                src={subcategoryMeta.heroImage}
+                alt={subcategoryMeta.label}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                priority
+              />
+            </div>
+          </div>
+        </section>
+      ) : (
+        <section className="bg-deep-plum-10 py-[var(--spacing-section-y)]">
+          <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">
+            <Breadcrumb
+              items={[
+                { label: categoryMeta.label, href: `/${category}/` },
+                { label: subcategoryMeta.label },
+              ]}
+            />
+            <SectionHeading
+              heading={subcategoryMeta.label}
+              body={subcategoryMeta.description}
+            />
+          </div>
+        </section>
+      )}
 
-      <section className="py-[var(--spacing-section-y)]">
+      <section className="py-[calc(var(--spacing-section-y)/2)]">
         <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">
           {subcategoryProducts.length > 0 ? (
             <CategoryFilters products={subcategoryProducts} />
@@ -261,6 +296,7 @@ function ProductDetailPage({ product }: ProductDetailPageProps) {
               price={product.price}
               image={product.image ?? "/category-kytice.jpg"}
               category={product.category as "smutecni" | "svatebni" | "kytice" | "firemni"}
+              subcategory={product.subcategory}
               isFuneral={isFuneral}
             />
           </div>

@@ -103,7 +103,7 @@ function CategoryFilters({ products, subcategories }: CategoryFiltersProps) {
           <select
             value={activeSubcategory ?? ""}
             onChange={(e) => setActiveSubcategory(e.target.value || null)}
-            className="rounded-sm border border-border bg-background px-4 py-2 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:border-deep-plum-80 hover:text-foreground focus:border-deep-plum focus:outline-none"
+            className="rounded-sm border border-border bg-background px-4 py-2 text-[length:var(--font-size-body-sm)] text-muted-foreground focus:border-deep-plum focus:outline-none"
           >
             <option value="">Podkategorie</option>
             {subcategories.map((sc) => (
@@ -118,7 +118,7 @@ function CategoryFilters({ products, subcategories }: CategoryFiltersProps) {
         <select
           value={activePriceRange ?? ""}
           onChange={(e) => setActivePriceRange(e.target.value !== "" ? Number(e.target.value) : null)}
-          className="rounded-sm border border-border bg-background px-4 py-2 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:border-deep-plum-80 hover:text-foreground focus:border-deep-plum focus:outline-none"
+          className="rounded-sm border border-border bg-background px-4 py-2 text-[length:var(--font-size-body-sm)] text-muted-foreground focus:border-deep-plum focus:outline-none"
         >
           <option value="">Cenový rozsah</option>
           {PRICE_RANGES.map((range, i) => (
@@ -132,7 +132,7 @@ function CategoryFilters({ products, subcategories }: CategoryFiltersProps) {
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value as SortOption)}
-          className="rounded-sm border border-border bg-background px-4 py-2 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:border-deep-plum-80 hover:text-foreground focus:border-deep-plum focus:outline-none"
+          className="rounded-sm border border-border bg-background px-4 py-2 text-[length:var(--font-size-body-sm)] text-muted-foreground focus:border-deep-plum focus:outline-none"
         >
           {SORT_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>

@@ -24,6 +24,7 @@ export interface SubcategoryMeta {
   label: string
   description: string
   parentCategory: string
+  heroImage?: string
 }
 
 export const categories: Record<string, CategoryMeta> = {
@@ -31,8 +32,7 @@ export const categories: Record<string, CategoryMeta> = {
     label: "Smuteční květiny",
     description:
       "Květiny pro chvíle loučení — s respektem, pochopením a důstojností.",
-    heroImage:
-      "https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=1920&q=80",
+    heroImage: "/hero-smutecni.jpg",
   },
   svatebni: {
     label: "Svatební květiny",
@@ -60,72 +60,91 @@ export const subcategories: Record<string, SubcategoryMeta> = {
     description:
       "Podélné kompozice určené k položení na rakev — elegantní, důstojné, na míru.",
     parentCategory: "smutecni",
+    heroImage: "/subcategory-rakev.jpg",
   },
   "smutecni/rakev-previsle": {
     label: "Převislé kytice na rakev",
     description:
       "Převislé kompozice splývající přes hranu rakve — dramatické a majestátní.",
     parentCategory: "smutecni",
+    heroImage: "/subcategory-rakev.jpg",
   },
   "smutecni/exkluzivni": {
     label: "Exkluzivní smuteční vazby",
     description:
       "Prémiové smuteční aranžmá z nejkvalitnějších květin — na míru vašim přáním.",
     parentCategory: "smutecni",
+    heroImage: "/subcategory-exkluzivni.jpg",
   },
   "smutecni/polozeni": {
     label: "Kytice na položení",
     description:
       "Menší kytice určené k položení u hrobu nebo na pietní místo.",
     parentCategory: "smutecni",
+    heroImage: "/subcategory-polozeni.jpg",
   },
   "smutecni/volne-vazane": {
     label: "Kytice volně vázané",
     description:
       "Přirozeně vázané smuteční kytice — jemné, osobní, s nádechem zahrady.",
     parentCategory: "smutecni",
+    heroImage: "/subcategory-volne-vazane.jpg",
   },
   "smutecni/vence": {
     label: "Věnce",
     description:
       "Tradiční i moderní věnce z čerstvých květin. Kruhový tvar symbolizuje věčnou vzpomínku.",
     parentCategory: "smutecni",
+    heroImage: "/subcategory-vence.jpg",
   },
   "smutecni/stojany": {
     label: "Květinová aranžmá do stojanů",
     description:
       "Vysoká květinová aranžmá do stojanů pro obřadní síně a rozloučení.",
     parentCategory: "smutecni",
+    heroImage: "/subcategory-stojany.jpg",
   },
   "smutecni/na-prani": {
     label: "Aranžmá na přání",
     description:
       "Smuteční květiny vytvořené přesně podle vašich představ — individuální konzultace.",
     parentCategory: "smutecni",
+    heroImage: "/subcategory-na-prani.jpg",
   },
   "smutecni/dekorace": {
     label: "Pietní dekorace",
     description:
       "Květinová dekorace ke stolu, k fotografii, k oltáři — s citem a respektem.",
     parentCategory: "smutecni",
+    heroImage: "/subcategory-dekorace.jpg",
   },
   "smutecni/vyroci": {
     label: "Květiny k výročí úmrtí",
     description:
       "Kytice a aranžmá pro vzpomínkové příležitosti — výročí, svátky, pietní dny.",
     parentCategory: "smutecni",
+    heroImage: "/subcategory-vyroci.jpg",
   },
   "smutecni/vip": {
     label: "Květiny k rozloučení / VIP / firemní kondolence",
     description:
       "Prémiové smuteční vazby pro významné příležitosti — VIP rozloučení, firemní kondolence.",
     parentCategory: "smutecni",
+    heroImage: "/subcategory-vip.jpg",
   },
   "smutecni/kose": {
     label: "Květinové koše",
     description:
       "Květinové koše ve smutečním formátu — alternativa ke klasickým kyticím.",
     parentCategory: "smutecni",
+    heroImage: "/subcategory-kose.jpg",
+  },
+  "smutecni/sety": {
+    label: "Smuteční sety",
+    description:
+      "Kompletní sestavy smutečních aranžmá — kytice na rakev, věnce a doplňkové květiny v jednotné barevné harmonii.",
+    parentCategory: "smutecni",
+    heroImage: "/subcategory-smutecni-sety.jpg",
   },
 }
 
@@ -147,12 +166,9 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: null,
-    image: "/hero-home-2.jpg",
+    image: "/product-rakev.jpg",
     images: [
-      "https://images.unsplash.com/photo-1535046173-1e4f853c48aa?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1529330821961-0414396878d8?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1570112008549-e4181988109f?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1500994802273-2dd2df834939?w=600&h=750&fit=crop&auto=format",
+      "/product-rakev.jpg",
     ],
     description:
       "Podélná kytice určená k položení na rakev. Elegantní a důstojná kompozice v bílých tónech.",
@@ -168,9 +184,9 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: null,
-    image: "/kvetiny08.png",
+    image: "/product-rakev.jpg",
     images: [
-      "/kvetiny08.png",
+      "/product-rakev.jpg",
     ],
     description:
       "Klasická rakevní kytice v tlumených barvách — bílá a zelená s nádechem levandule.",
@@ -186,9 +202,9 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: "Oblíbené",
-    image: "/kvetiny09.png",
+    image: "/product-rakev.jpg",
     images: [
-      "/kvetiny09.png",
+      "/product-rakev.jpg",
     ],
     description:
       "Bohatá kompozice s bílými liliemi a růžemi. Nadčasová elegance pro důstojné rozloučení.",
@@ -206,12 +222,9 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: null,
-    image: "https://images.unsplash.com/photo-1606246551522-61f9ed248bd7?w=600&h=750&fit=crop&auto=format",
+    image: "/product-rakev-previsle.jpg",
     images: [
-      "https://images.unsplash.com/photo-1606246551522-61f9ed248bd7?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1535046173-1e4f853c48aa?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1636412669967-1411f6487176?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1631407056951-11215617b7f1?w=600&h=750&fit=crop&auto=format",
+      "/product-rakev-previsle.jpg",
     ],
     description:
       "Převislá kompozice splývající přes hranu rakve — dramatická a majestátní.",
@@ -227,12 +240,9 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: null,
-    image: "https://images.unsplash.com/photo-1484639726803-f17534cedb15?w=600&h=750&fit=crop&auto=format",
+    image: "/product-rakev-previsle.jpg",
     images: [
-      "https://images.unsplash.com/photo-1484639726803-f17534cedb15?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1606246551522-61f9ed248bd7?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1579092691423-b5f99ec64624?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1636412669967-1411f6487176?w=600&h=750&fit=crop&auto=format",
+      "/product-rakev-previsle.jpg",
     ],
     description:
       "Velkolepá převislá kompozice s bílými orchidejemi a bohatou zelení.",
@@ -782,6 +792,80 @@ export const products: Product[] = [
     composition: "Bílé růže, frézie, eucalyptus, hedvábná stuha.",
     delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
     care: "Kytici uchovávejte v čerstvé vodě. Vydrží 5–7 dní.",
+  },
+
+  // -- Smuteční sety --
+  {
+    id: 31,
+    name: "Smuteční set Vzpomínky",
+    slug: "smutecni-set-vzpominky",
+    price: 14990,
+    category: "smutecni",
+    subcategory: "sety",
+    badge: null,
+    image: "/sety/vzpominky-hero.jpg",
+    images: [
+      "/sety/vzpominky-hero.jpg",
+      "/sety/vzpominky-interier.jpg",
+      "/sety/vzpominky-venec.jpg",
+      "/sety/vzpominky-stojan.jpg",
+      "/sety/vzpominky-kytice-rakev.jpg",
+      "/sety/vzpominky-aranzma.jpg",
+      "/sety/vzpominky-kytice.jpg",
+    ],
+    description:
+      "Sestava smutečních aranžmá v harmonické, živé paletě barev. Barevné květy připomínají, že vzpomínky mají mnoho tónů — veselé, dojemné i tiché. Věnce a kytice společně vytvářejí hřejivou atmosféru, která dodává obřadu lidskost a jemné světlo. Vhodné pro rozloučení pod širým nebem nebo pro okamžiky, kdy barevnost podporuje příběh života.",
+    composition: "Gerbery, růže, chryzantémy, statice, solidago, zeleň. Kód: KK3 KR, KK3V, KK3 KVV, KK3 KP, KK3 KA.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den. Set je nutné objednat min. 24 hodin předem.",
+    care: "Jednotlivé aranžmá obsahují aranžovací hmotu — stačí dolévat vodu. Vydrží 5–7 dní.",
+  },
+  {
+    id: 32,
+    name: "Smuteční set Vděčnost",
+    slug: "smutecni-set-vdecnost",
+    price: 12990,
+    category: "smutecni",
+    subcategory: "sety",
+    badge: null,
+    image: "/sety/vdecnost-celek.jpg",
+    images: [
+      "/sety/vdecnost-celek.jpg",
+      "/sety/vdecnost-venec-bila.jpg",
+      "/sety/vdecnost-venec-tmava.jpg",
+      "/sety/vdecnost-stojan.jpg",
+      "/sety/vdecnost-aranzma.jpg",
+      "/sety/vdecnost-kytice-1.jpg",
+      "/sety/vdecnost-kytice-2.jpg",
+      "/sety/vdecnost-kytice-rakev-3.jpg",
+    ],
+    description:
+      "Sada věnců, květinových aranžmá a kytice na rakev v lehké žluto-bílé paletě. Vytváří harmonické, světlé prostředí, které obřad provází, nezahltí.",
+    composition: "Žluté a bílé růže, chryzantémy, gerbery, solidago, zeleň. Stuhy v bílé a šedé. Kód: KL2.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den. Set je nutné objednat min. 24 hodin předem.",
+    care: "Jednotlivé aranžmá obsahují aranžovací hmotu — stačí dolévat vodu. Vydrží 5–7 dní.",
+  },
+  {
+    id: 33,
+    name: "Smuteční set Ticho",
+    slug: "smutecni-set-ticho",
+    price: 11990,
+    category: "smutecni",
+    subcategory: "sety",
+    badge: null,
+    image: "/sety/ticho-hero.jpg",
+    images: [
+      "/sety/ticho-hero.jpg",
+      "/sety/ticho-2.jpg",
+      "/sety/ticho-11.jpg",
+      "/sety/ticho-3.jpg",
+      "/sety/ticho-5.jpg",
+      "/sety/ticho-10.jpg",
+    ],
+    description:
+      "Komplet smutečních aranžmá v bílé nebo jemně krémové skladbě. Působí čistě a klidně, sjednocuje prostor a přináší jemnost i v náročných chvílích.",
+    composition: "Bílé gerbery, růže, chryzantémy, gypsophila, palma, zeleň. Kód: KK1.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den. Set je nutné objednat min. 24 hodin předem.",
+    care: "Jednotlivé aranžmá obsahují aranžovací hmotu — stačí dolévat vodu. Vydrží 5–7 dní.",
   },
 ]
 

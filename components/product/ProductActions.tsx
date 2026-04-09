@@ -10,6 +10,10 @@ import {
   type FlowerCount,
 } from "@/components/product/FlowerCountSelector"
 import {
+  ArrangementTypeSelector,
+  type ArrangementType,
+} from "@/components/product/ArrangementTypeSelector"
+import {
   RibbonConfigurator,
   type RibbonState,
 } from "@/components/product/RibbonConfigurator"
@@ -33,6 +37,7 @@ interface ProductActionsProps {
   price: number
   image: string
   category: "smutecni" | "svatebni" | "kytice" | "firemni"
+  subcategory: string | null
   isFuneral: boolean
 }
 
@@ -42,10 +47,13 @@ function ProductActions({
   name,
   image,
   category,
+  subcategory,
   isFuneral,
 }: ProductActionsProps) {
   const { addItem } = useCart()
+  const isSet = subcategory === "sety"
   const [flowerCount, setFlowerCount] = React.useState<FlowerCount>(20)
+  const [arrangementType, setArrangementType] = React.useState<ArrangementType | null>(null)
   const [quantity, setQuantity] = React.useState(1)
   const [quickOrderOpen, setQuickOrderOpen] = React.useState(false)
   const [ribbon, setRibbon] = React.useState<RibbonState>({
@@ -57,7 +65,9 @@ function ProductActions({
     note: "",
   })
 
-  const basePrice = isFuneral ? PRICE_MAP[flowerCount] : PRICE_MAP[flowerCount]
+  const basePrice = isSet
+    ? (arrangementType?.price ?? 3490)
+    : PRICE_MAP[flowerCount]
   const totalUnitPrice = basePrice + (ribbon.enabled ? RIBBON_PRICE : 0)
 
   const formattedPrice = new Intl.NumberFormat("cs-CZ", {
@@ -74,7 +84,9 @@ function ProductActions({
       price: totalUnitPrice,
       image,
       category,
-      variant: `${flowerCount} květů`,
+      variant: isSet
+        ? (arrangementType?.label ?? "Věnec malý")
+        : `${flowerCount} květů`,
       quantity,
     })
     setQuantity(1)
@@ -82,11 +94,15 @@ function ProductActions({
 
   return (
     <div className="flex flex-col gap-6">
-      {/* Flower count selector */}
-      <FlowerCountSelector
-        defaultCount={20}
-        onCountChange={setFlowerCount}
-      />
+      {/* Arrangement type selector (sets) or flower count selector */}
+      {isSet ? (
+        <ArrangementTypeSelector setName={name.replace(/^Smuteční set /, "")} onTypeChange={setArrangementType} />
+      ) : (
+        <FlowerCountSelector
+          defaultCount={20}
+          onCountChange={setFlowerCount}
+        />
+      )}
 
       {/* Price */}
       <div className="flex flex-col gap-0.5">
@@ -181,7 +197,7 @@ function ProductActions({
                   price={totalUnitPrice}
                   image={image}
                   category={category}
-                  selectedSize={`${flowerCount} květů`}
+                  selectedSize={isSet ? (arrangementType?.label ?? "Věnec malý") : `${flowerCount} květů`}
                   className="border-0 bg-transparent p-0"
                 />
               </div>

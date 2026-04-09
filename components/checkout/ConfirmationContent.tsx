@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 
 import { Button } from "@/components/ui/button"
 

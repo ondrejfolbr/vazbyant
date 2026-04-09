@@ -56,7 +56,7 @@ function ColorSwatch({
       <span className="text-[length:var(--font-size-body-sm)] font-[30] text-foreground">
         {label}
       </span>
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2 p-1">
         {colors.map((color) => (
           <button
             key={color.name}
