@@ -36,7 +36,6 @@ export async function generateMetadata({
 
   const subcategoryMeta = getSubcategory(category, slug)
   if (subcategoryMeta) {
-    const categoryMeta = categories[category]
     return {
       title: subcategoryMeta.label,
       description: subcategoryMeta.description,

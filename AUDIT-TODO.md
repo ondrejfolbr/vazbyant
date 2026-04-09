@@ -29,14 +29,14 @@ Audit provedený 2026-04-08. Kompletní průchod všech stránek, komponent a fu
 
 ## P2 — Vylepšení
 
-- [ ] **Filtry na kategoriích nefunkční** — tlačítka "Typ vazby", "Cenový rozsah", "Barva", "Řazení" nic nedělají
-- [ ] **Velikostní selektor (S/M/L) nefunguje** — žádný state management, nekomunikuje s košíkem, nemění cenu
-- [ ] **"Načíst další" tlačítko nefunguje** — na stránkách kategorií nemá logiku
-- [ ] **"Rychlá objednávka" nemá handler** — tlačítko na product detail nemá submit logiku
-- [ ] **`loading.tsx` states** — žádné loading skeletony, při přechodu mezi stránkami je prázdná stránka
-- [ ] **Breadcrumbs na product detail** — subcategory stránky mají, product detail ne
-- [ ] **Vyhledávání** — e-shop s 30+ produkty nemá search
-- [ ] **`/potvrzeni/` přístupná přímo** — stránka potvrzení by neměla být dostupná bez objednávky
+- [x] **Filtry na kategoriích nefunkční** — nahrazeny funkčními filtry (podkategorie, cenový rozsah, řazení) v CategoryFilters komponentě
+- [x] **Velikostní selektor (S/M/L) nefunguje** — SizeSelector s useState, variant se předává do košíku
+- [x] **"Načíst další" tlačítko nefunguje** — klientská paginace (9 produktů na stránku) integrovaná do CategoryFilters
+- [x] **"Rychlá objednávka" nemá handler** — přidá produkt do košíku + redirect na /objednavka s prefill kondolenčního vzkazu
+- [x] **`loading.tsx` states** — 3 route-specifické loading skeletony (root, category, product detail)
+- [x] **Breadcrumbs na product detail** — reusable Breadcrumb komponenta s ol/li, přidána na product detail i subcategory
+- [x] **Vyhledávání** — Cmd+K search dialog s fulltextovým vyhledáváním přes produkty
+- [x] **`/potvrzeni/` přístupná přímo** — guard přes sessionStorage, redirect na / bez platné objednávky
 
 ## P3 — Nice-to-have / UX doporučení
 
