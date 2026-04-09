@@ -11,8 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { ProductCard } from "@/components/product-card"
-import { ProductAddToCart } from "@/components/cart/ProductAddToCart"
-import { QuickOrderForm } from "@/components/quick-order-form"
+import { ProductActions } from "@/components/product/ProductActions"
 import { ProductGallery } from "@/components/product-gallery"
 import { Breadcrumb } from "@/components/ui/breadcrumb"
 import {
@@ -277,39 +276,16 @@ function ProductDetailPage({ product }: ProductDetailPageProps) {
               {product.description}
             </p>
 
-            {/* Variant selector placeholder */}
-            <div className="flex flex-col gap-2">
-              <span className="text-[length:var(--font-size-body-sm)] font-[30] text-muted-foreground">
-                Velikost
-              </span>
-              <div className="flex gap-2">
-                {["S", "M", "L"].map((size, i) => (
-                  <div
-                    key={size}
-                    className={`flex h-10 w-14 items-center justify-center rounded-sm border text-[length:var(--font-size-body-sm)] font-[30] transition-colors ${
-                      i === 1
-                        ? "border-deep-plum bg-deep-plum text-neutral-white"
-                        : "border-border text-muted-foreground hover:border-deep-plum-80 hover:text-foreground"
-                    }`}
-                  >
-                    {size}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Quantity + Add to cart */}
-            <ProductAddToCart
+            {/* Size selector, add to cart, and quick order */}
+            <ProductActions
               productId={String(product.id)}
               slug={product.slug}
               name={product.name}
               price={product.price}
               image={product.image ?? "/category-kytice.jpg"}
               category={product.category as "smutecni" | "svatebni" | "kytice" | "firemni"}
+              isFuneral={isFuneral}
             />
-
-            {/* Funeral quick order */}
-            {isFuneral && <QuickOrderForm />}
           </div>
         </div>
 

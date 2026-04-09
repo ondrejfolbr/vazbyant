@@ -7,6 +7,13 @@ import { Button } from "@/components/ui/button"
 
 interface QuickOrderFormProps {
   className?: string
+  productId?: string
+  slug?: string
+  name?: string
+  price?: number
+  image?: string
+  category?: "smutecni" | "svatebni" | "kytice" | "firemni"
+  selectedSize?: string
 }
 
 function QuickOrderForm({ className }: QuickOrderFormProps) {

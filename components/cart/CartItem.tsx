@@ -64,6 +64,11 @@ function CartItemRow({ item }: CartItemProps) {
             <span className="text-[length:var(--font-size-caption)] text-muted-foreground">
               {CATEGORY_LABELS[item.category] ?? item.category}
             </span>
+            {item.variant && (
+              <span className="text-[length:var(--font-size-caption)] text-muted-foreground">
+                {" · "}Velikost {item.variant}
+              </span>
+            )}
 
             <div className="mt-auto flex items-center justify-between">
               {/* Quantity controls */}
