@@ -170,11 +170,16 @@ function ProductDetailPage({ product }: ProductDetailPageProps) {
   const related = getRelatedProducts(product)
   const isFuneral = product.category === "smutecni"
 
-  const formattedPrice = new Intl.NumberFormat("cs-CZ", {
-    style: "currency",
-    currency: "CZK",
-    minimumFractionDigits: 0,
-  }).format(product.price)
+  const subcategoryLabel =
+    product.subcategory
+      ? subcategories[`${product.category}/${product.subcategory}`]?.label ??
+        product.subcategory
+      : null
+  const subcategoryHref = product.subcategory
+    ? `/${product.category}/${product.subcategory}/`
+    : null
+
+  const categoryLabel = categories[product.category]?.label ?? product.category
 
   return (
     <main>
@@ -182,7 +187,7 @@ function ProductDetailPage({ product }: ProductDetailPageProps) {
         <Breadcrumb
           items={[
             {
-              label: categories[product.category]?.label ?? product.category,
+              label: categoryLabel,
               href: `/${product.category}/`,
             },
             ...(product.subcategory
@@ -217,14 +222,30 @@ function ProductDetailPage({ product }: ProductDetailPageProps) {
               </span>
             )}
 
-            {/* Name & price */}
-            <div className="flex flex-col gap-2">
-              <h1 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-foreground">
-                {product.name}
-              </h1>
-              <span className="font-sans text-[length:var(--font-size-h3)] font-[30] text-muted-foreground">
-                {formattedPrice}
-              </span>
+            {/* Name */}
+            <h1 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-foreground">
+              {product.name}
+            </h1>
+
+            {/* Catalog number + category */}
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[length:var(--font-size-caption)] text-muted-foreground">
+              <span>Kat. č.: KR-{String(product.id).padStart(3, "0")}</span>
+              <span aria-hidden="true">·</span>
+              {subcategoryLabel && subcategoryHref ? (
+                <Link
+                  href={subcategoryHref}
+                  className="underline decoration-border underline-offset-2 transition-colors hover:text-foreground"
+                >
+                  {subcategoryLabel}
+                </Link>
+              ) : (
+                <Link
+                  href={`/${product.category}/`}
+                  className="underline decoration-border underline-offset-2 transition-colors hover:text-foreground"
+                >
+                  {categoryLabel}
+                </Link>
+              )}
             </div>
 
             {/* Description */}
@@ -232,7 +253,7 @@ function ProductDetailPage({ product }: ProductDetailPageProps) {
               {product.description}
             </p>
 
-            {/* Size selector, add to cart, and quick order */}
+            {/* Flower count selector, ribbon, quantity, CTA, quick order */}
             <ProductActions
               productId={String(product.id)}
               slug={product.slug}

@@ -61,13 +61,6 @@ function QuickOrderForm({
         className,
       )}
     >
-      <div className="flex items-center gap-2 rounded-sm bg-deep-plum/10 px-3 py-2">
-        <div className="size-2 rounded-full bg-deep-plum" />
-        <span className="text-[length:var(--font-size-body-sm)] font-[30] text-deep-plum">
-          Doručíme do 4 hodin v Praze
-        </span>
-      </div>
-
       <div className="flex flex-col gap-2">
         <label
           htmlFor="condolence"
