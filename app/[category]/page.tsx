@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { Hero } from "@/components/hero"
@@ -7,6 +8,22 @@ import { categories, getProductsByCategory } from "@/lib/products.data"
 
 interface CategoryPageProps {
   params: Promise<{ category: string }>
+}
+
+export async function generateMetadata({
+  params,
+}: CategoryPageProps): Promise<Metadata> {
+  const { category } = await params
+  const meta = categories[category]
+
+  if (!meta) {
+    return {}
+  }
+
+  return {
+    title: meta.label,
+    description: meta.description,
+  }
 }
 
 export function generateStaticParams() {
@@ -30,6 +47,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         heading={meta.label}
         subheading={meta.description}
         variant="sub"
+        backgroundImage={meta.heroImage}
       />
 
       <section className="py-[var(--spacing-section-y)]">

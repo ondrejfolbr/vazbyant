@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
@@ -77,7 +78,15 @@ export default function RadyATipyPage() {
   return (
     <main>
       {/* HERO */}
-      <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-deep-plum-80">
+      <section className="relative flex min-h-[60vh] items-end overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=1920&q=80"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-30% to-neutral-black/60" />
         <div className="relative z-10 mx-auto w-full max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] pb-[var(--spacing-section-y)]">
           <p className="hero-stagger hero-stagger-1 mb-4 text-[length:var(--font-size-body)] leading-relaxed text-neutral-white/80">

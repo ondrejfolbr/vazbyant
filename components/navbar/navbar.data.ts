@@ -52,9 +52,6 @@ export const megaMenuCategories: MegaMenuCategory[] = [
         href: "/svatebni/",
         items: [
           { label: "Svatební květiny", href: "/svatebni/" },
-          { label: "Firemní květiny", href: "/firemni/" },
-          { label: "Květinové předplatné", href: "/predplatne/" },
-          { label: "Květiny na přání", href: "/na-prani/" },
         ],
       },
     ],
@@ -63,7 +60,6 @@ export const megaMenuCategories: MegaMenuCategory[] = [
 ]
 
 export const simpleLinks: NavLink[] = [
-  { label: "Reference", href: "/reference/" },
   { label: "O nás", href: "/o-nas/" },
   { label: "Inspirace & rady", href: "/rady-a-tipy/" },
   { label: "Kontakt", href: "/kontakt/" },
@@ -72,9 +68,6 @@ export const simpleLinks: NavLink[] = [
 export const footerNav: NavLink[] = [
   { label: "Smuteční květiny", href: "/smutecni/" },
   { label: "Svatební květiny", href: "/svatebni/" },
-  { label: "Firemní květiny", href: "/firemni/" },
-  { label: "Květinové předplatné", href: "/predplatne/" },
-  { label: "Reference", href: "/reference/" },
   { label: "O nás", href: "/o-nas/" },
   { label: "Inspirace & rady", href: "/rady-a-tipy/" },
   { label: "Kontakt", href: "/kontakt/" },
