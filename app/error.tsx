@@ -32,7 +32,7 @@ export default function ErrorPage({ reset }: ErrorPageProps) {
         <Button size="md" onClick={reset}>
           Zkusit znovu
         </Button>
-        <Button asChild variant="outline" size="md">
+        <Button asChild variant="secondary" size="md">
           <Link href="/">Hlavní stránka</Link>
         </Button>
       </div>

@@ -78,9 +78,9 @@ export default function Page() {
       </section>
 
       {/* Sekce 4: Brand story */}
-      <section className="py-[var(--spacing-section-y)]">
-        <div className="mx-auto grid max-w-[var(--max-width-site)] grid-cols-1 items-center gap-12 px-[var(--spacing-section-x)] lg:grid-cols-12">
-          <div className="flex flex-col gap-5 lg:col-span-5">
+      <section className="py-[calc(var(--spacing-section-y)*0.7)]">
+        <div className="mx-auto grid max-w-[70%] grid-cols-1 items-center gap-6 px-[var(--spacing-section-x)] lg:grid-cols-2">
+          <div className="flex flex-col gap-5">
             <SectionHeading
               overline="O nás"
               heading="Květinářství, které rozumí chvílím, kdy na tom záleží."
@@ -92,13 +92,14 @@ export default function Page() {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-sm lg:col-span-7">
+          <div className="flex items-center justify-center">
             <Image
-              src="/mamut-ctverec.png"
+              src="/mamut-homepage.png"
               alt="Mamut — maskot Vazby Květin"
-              fill
-              className="object-contain"
-              sizes="(min-width: 1024px) 58vw, 100vw"
+              width={1133}
+              height={1620}
+              className="h-auto w-full max-w-[360px] object-contain"
+              sizes="(min-width: 1024px) 35vw, 100vw"
             />
           </div>
         </div>

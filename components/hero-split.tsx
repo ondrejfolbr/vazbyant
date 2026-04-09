@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 interface HeroCategoryItem {
   title: string
   href: string
+  image?: string
 }
 
 interface HeroSplitProps {
@@ -65,11 +66,21 @@ function HeroSplit({
               <Link
                 key={cat.href}
                 href={cat.href}
-                className="group relative block h-[300px] overflow-hidden bg-neutral-100 transition-all duration-[var(--transition-base)] hover:shadow-[var(--shadow-md)]"
+                className="group relative block h-[300px] overflow-hidden bg-neutral-100 transition-all duration-[600ms] ease-out hover:shadow-[var(--shadow-md)]"
               >
-                <div className="flex h-full items-center justify-center text-[length:var(--font-size-caption)] text-neutral-400">
-                  Foto kategorie
-                </div>
+                {cat.image ? (
+                  <Image
+                    src={cat.image}
+                    alt={cat.title.replace("\n", " ")}
+                    fill
+                    className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                    sizes="(min-width: 1024px) 22vw, (min-width: 640px) 50vw, 100vw"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center text-[length:var(--font-size-caption)] text-neutral-400">
+                    Foto kategorie
+                  </div>
+                )}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-black/50 to-transparent p-4 pt-8">
                   <h3 className="font-heading text-[length:var(--font-size-body)] leading-snug font-[40] text-neutral-white">
                     {cat.title}

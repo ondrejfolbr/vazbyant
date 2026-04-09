@@ -132,7 +132,7 @@ function SubcategoryPage({ category, slug }: SubcategoryPageProps) {
               <p className="text-[length:var(--font-size-body-lg)] text-muted-foreground">
                 Produkty v této kategorii připravujeme.
               </p>
-              <Button asChild variant="outline" size="md">
+              <Button asChild size="md">
                 <Link href={`/${category}/`}>
                   Zpět na {categoryMeta.label.toLowerCase()}
                 </Link>

@@ -168,12 +168,9 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: null,
-    image: "https://images.unsplash.com/photo-1529330821961-0414396878d8?w=600&h=750&fit=crop&auto=format",
+    image: "/kvetiny08.png",
     images: [
-      "https://images.unsplash.com/photo-1529330821961-0414396878d8?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1535046173-1e4f853c48aa?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1570112008549-e4181988109f?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1606246551522-61f9ed248bd7?w=600&h=750&fit=crop&auto=format",
+      "/kvetiny08.png",
     ],
     description:
       "Klasická rakevní kytice v tlumených barvách — bílá a zelená s nádechem levandule.",
@@ -189,12 +186,9 @@ export const products: Product[] = [
     category: "smutecni",
     subcategory: "rakev",
     badge: "Oblíbené",
-    image: "https://images.unsplash.com/photo-1570112008549-e4181988109f?w=600&h=750&fit=crop&auto=format",
+    image: "/kvetiny09.png",
     images: [
-      "https://images.unsplash.com/photo-1570112008549-e4181988109f?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1535046173-1e4f853c48aa?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1484639726803-f17534cedb15?w=600&h=750&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1608450885499-57ea062049f2?w=600&h=750&fit=crop&auto=format",
+      "/kvetiny09.png",
     ],
     description:
       "Bohatá kompozice s bílými liliemi a růžemi. Nadčasová elegance pro důstojné rozloučení.",

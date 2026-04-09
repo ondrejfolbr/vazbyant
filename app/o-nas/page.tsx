@@ -16,7 +16,7 @@ export default function ONasPage() {
       {/* 1. HERO */}
       <section className="relative flex min-h-[60vh] items-end overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=1920&q=80"
+          src="/img-onas-hero.png"
           alt=""
           fill
           priority
@@ -76,7 +76,7 @@ export default function ONasPage() {
             <div className="flex flex-col gap-6">
               <div className="relative aspect-[3/2] overflow-hidden rounded-sm">
                 <Image
-                  src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=800&q=80"
+                  src="/smutecni-vazby.png"
                   alt="Smuteční vazba"
                   fill
                   className="object-cover"
@@ -123,8 +123,8 @@ export default function ONasPage() {
         <div className="mx-auto grid max-w-[var(--max-width-content)] grid-cols-1 items-center gap-12 px-[var(--spacing-section-x)] lg:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm lg:order-2">
             <Image
-              src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800&q=80"
-              alt="Detail ruční práce"
+              src="/jak-pracujeme.png"
+              alt="Floristka při práci ve vazárně"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 50vw, 100vw"
@@ -164,7 +164,7 @@ export default function ONasPage() {
             vysvětlovat.
           </p>
           <div className="mt-8">
-            <Button asChild variant="outline" size="md">
+            <Button asChild size="md">
               <a
                 href="https://pohrebpegas.cz"
                 target="_blank"
@@ -204,7 +204,7 @@ export default function ONasPage() {
               Rádi se s vámi potkáme a promluvíme o vašich představách.
             </p>
             <div className="mt-auto pt-4">
-              <Button asChild variant="outline" size="lg" className="w-full">
+              <Button asChild variant="secondary" size="lg" className="w-full">
                 <Link href="/kontakt/">Domluvit konzultaci</Link>
               </Button>
             </div>

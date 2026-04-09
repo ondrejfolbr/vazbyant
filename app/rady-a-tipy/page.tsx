@@ -369,7 +369,7 @@ export default function RadyATipyPage() {
             <Button asChild size="lg">
               <Link href="/smutecni/">Vybrat smuteční vazbu</Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="secondary" size="lg">
               <Link href="/kontakt/">Napsat nám</Link>
             </Button>
           </div>

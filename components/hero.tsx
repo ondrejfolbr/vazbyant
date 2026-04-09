@@ -74,9 +74,8 @@ function Hero({
           <div className="hero-stagger hero-stagger-3 mt-2">
             <Button
               asChild
-              variant="outline"
               size="lg"
-              className="border-neutral-white/40 text-neutral-white hover:border-plum-30 hover:bg-neutral-white/10 hover:text-neutral-white"
+              className="bg-neutral-white/15 text-neutral-white hover:bg-neutral-white/25 hover:text-neutral-white"
             >
               <Link href={ctaHref}>{ctaText}</Link>
             </Button>

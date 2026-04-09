@@ -33,10 +33,10 @@ function CartPageContent() {
           <Button asChild size="lg">
             <Link href="/smutecni/">Smuteční květiny</Link>
           </Button>
-          <Button asChild variant="outline" size="lg">
+          <Button asChild variant="secondary" size="lg">
             <Link href="/svatebni/">Svatební květiny</Link>
           </Button>
-          <Button asChild variant="outline" size="lg">
+          <Button asChild variant="secondary" size="lg">
             <Link href="/kytice/">Kytice &amp; Dárky</Link>
           </Button>
         </div>

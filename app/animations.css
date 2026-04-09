@@ -94,19 +94,19 @@
 /* --- Card hover --------------------------------------------------------- */
 
 .card-image {
-  transition: transform var(--transition-card);
+  transition: transform 600ms ease-out;
 }
 
 .card-cta {
   opacity: 0;
   transform: translateY(8px);
   transition:
-    opacity var(--transition-base),
-    transform var(--transition-base);
+    opacity 500ms ease-out,
+    transform 500ms ease-out;
 }
 
 .card-overlay {
-  transition: background-color var(--transition-base);
+  transition: background-color 500ms ease-out;
 }
 
 @media (hover: hover) {

@@ -208,7 +208,6 @@ function CategoryFilters({ products, subcategories }: CategoryFiltersProps) {
       {hasMore && (
         <div className="mt-12 flex flex-col items-center gap-2">
           <Button
-            variant="outline"
             size="md"
             onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
           >
