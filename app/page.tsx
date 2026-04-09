@@ -20,7 +20,7 @@ export default function Page() {
         heading="Vazby pro život. Vazby pro loučení."
         subheading="Navrhujeme květiny pro chvíle, na kterých záleží."
         ctaText="Prohlédnout nabídku"
-        ctaHref="/kytice/"
+        ctaHref="/smutecni/"
         backgroundImage="/hero-home-2.jpg"
       />
 

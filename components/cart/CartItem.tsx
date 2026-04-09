@@ -58,7 +58,7 @@ function CartItemRow({ item }: CartItemProps) {
 
           {/* Details */}
           <div className="flex min-w-0 flex-1 flex-col gap-1">
-            <span className="truncate text-[length:var(--font-size-body)] font-[30] text-foreground">
+            <span className="line-clamp-2 text-[length:var(--font-size-body)] font-[30] text-foreground">
               {item.name}
             </span>
             <span className="text-[length:var(--font-size-caption)] text-muted-foreground">

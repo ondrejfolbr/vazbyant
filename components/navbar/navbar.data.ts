@@ -9,17 +9,25 @@ export interface MegaMenuGroup {
   items: NavLink[]
 }
 
+export interface MegaMenuFeatured {
+  title: string
+  href: string
+  image: string
+  price: string
+}
+
 export interface MegaMenuCategory {
   label: string
   href: string
   subcategories: NavLink[]
   groups?: MegaMenuGroup[]
   cta?: { label: string; href: string }
+  featured?: MegaMenuFeatured
 }
 
 export const megaMenuCategories: MegaMenuCategory[] = [
   {
-    label: "Vazby",
+    label: "Nabídka",
     href: "/smutecni/",
     subcategories: [],
     groups: [
@@ -40,7 +48,6 @@ export const megaMenuCategories: MegaMenuCategory[] = [
         href: "/smutecni/",
         items: [
           { label: "Květinová aranžmá do stojanů", href: "/smutecni/stojany/" },
-          { label: "Aranžmá na přání", href: "/smutecni/na-prani/" },
           { label: "Pietní dekorace", href: "/smutecni/dekorace/" },
           { label: "Květiny k výročí úmrtí", href: "/smutecni/vyroci/" },
           { label: "Květiny k rozloučení / VIP", href: "/smutecni/vip/" },
@@ -56,6 +63,13 @@ export const megaMenuCategories: MegaMenuCategory[] = [
       },
     ],
     cta: { label: "Rychlá objednávka", href: "/smutecni/" },
+    featured: {
+      title: "Kytice na rakev Ticho",
+      href: "/smutecni/kytice-na-rakev-ticho/",
+      image:
+        "https://images.unsplash.com/photo-1535046173-1e4f853c48aa?w=600&h=750&fit=crop&auto=format",
+      price: "3 490 Kč",
+    },
   },
 ]
 

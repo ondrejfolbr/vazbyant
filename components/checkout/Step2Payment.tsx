@@ -4,8 +4,6 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 
 export type PaymentMethod = "card" | "transfer" | "cod"
 
@@ -86,40 +84,15 @@ function Step2Payment({ onNext, onBack, defaultMethod = "card" }: Step2PaymentPr
 }
 
 function CardFields() {
-  const [cardNumber, setCardNumber] = React.useState("")
-
-  function formatCardNumber(value: string) {
-    const digits = value.replace(/\D/g, "").slice(0, 16)
-    return digits.replace(/(.{4})/g, "$1 ").trim()
-  }
-
   return (
-    <div className="flex flex-col gap-4 rounded-sm border border-border p-6">
-      <div className="flex flex-col gap-1.5">
-        <Label className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
-          Číslo karty
-        </Label>
-        <Input
-          value={cardNumber}
-          onChange={(e) => setCardNumber(formatCardNumber(e.target.value))}
-          placeholder="1234 5678 9012 3456"
-          maxLength={19}
-        />
-      </div>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="flex flex-col gap-1.5">
-          <Label className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
-            Platnost
-          </Label>
-          <Input placeholder="MM/YY" maxLength={5} />
-        </div>
-        <div className="flex flex-col gap-1.5">
-          <Label className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
-            CVV
-          </Label>
-          <Input type="password" placeholder="•••" maxLength={3} />
-        </div>
-      </div>
+    <div className="flex flex-col items-center gap-3 rounded-sm border border-border p-6 text-center">
+      <p className="text-[length:var(--font-size-body)] text-foreground">
+        Po dokončení objednávky budete přesměrováni na zabezpečenou platební
+        bránu.
+      </p>
+      <p className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
+        Platba je zpracována přes šifrované spojení. Vaše údaje jsou v bezpečí.
+      </p>
     </div>
   )
 }
@@ -133,11 +106,11 @@ function TransferInfo() {
       <dl className="flex flex-col gap-2 text-[length:var(--font-size-body-sm)]">
         <div className="flex justify-between">
           <dt className="text-muted-foreground">Číslo účtu</dt>
-          <dd className="font-[30] text-foreground">123456789 / 0800</dd>
+          <dd className="font-[30] text-foreground">— bude doplněno —</dd>
         </div>
         <div className="flex justify-between">
           <dt className="text-muted-foreground">Variabilní symbol</dt>
-          <dd className="font-[30] text-foreground">VK-2024-0042</dd>
+          <dd className="font-[30] text-foreground">— přiřazeno po potvrzení —</dd>
         </div>
         <div className="flex justify-between">
           <dt className="text-muted-foreground">Splatnost</dt>

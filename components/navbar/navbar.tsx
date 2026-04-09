@@ -254,28 +254,30 @@ function MegaMenuPanel({
         )}
 
         {/* Featured product */}
-        <Link
-          href="/smutecni/kytice-na-rakev-ticho/"
-          className="group flex flex-col gap-3 overflow-hidden rounded-sm"
-        >
-          <div className="relative aspect-square overflow-hidden rounded-sm">
-            <Image
-              src="/hero-home-2.jpg"
-              alt="Kytice na rakev Ticho"
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="300px"
-            />
-          </div>
-          <div className="flex flex-col gap-0.5">
-            <span className="text-[length:var(--font-size-body-sm)] text-foreground transition-colors group-hover:text-deep-plum">
-              Kytice na rakev Ticho
-            </span>
-            <span className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
-              3 490 Kč
-            </span>
-          </div>
-        </Link>
+        {category.featured && (
+          <Link
+            href={category.featured.href}
+            className="group flex flex-col gap-3 overflow-hidden rounded-sm"
+          >
+            <div className="relative aspect-square overflow-hidden rounded-sm">
+              <Image
+                src={category.featured.image}
+                alt={category.featured.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="300px"
+              />
+            </div>
+            <div className="flex flex-col gap-0.5">
+              <span className="text-[length:var(--font-size-body-sm)] text-foreground transition-colors group-hover:text-deep-plum">
+                {category.featured.title}
+              </span>
+              <span className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
+                {category.featured.price}
+              </span>
+            </div>
+          </Link>
+        )}
       </div>
     </div>
   )

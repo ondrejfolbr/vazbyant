@@ -6,11 +6,11 @@ Audit provedený 2026-04-08. Kompletní průchod všech stránek, komponent a fu
 
 ## P0 — Kritické (blokují použitelnost)
 
-- [ ] **Rozbité 404 stránky z navigace** — `/reference`, `/firemni`, `/predplatne`, `/na-prani` vedou na default Next.js 404, přitom jsou linkované z hlavní nav a footeru
-- [ ] **Custom `not-found.tsx`** — chybí branded 404 stránka (teď je černá s anglickým textem)
-- [ ] **Custom `error.tsx` + `global-error.tsx`** — žádné error boundary, runtime error zobrazí default Next.js error
-- [ ] **Produktové fotky** — 23 z 30 produktů nemá obrázek (`image: null`), zobrazuje se šedý placeholder "Foto produktu"
-- [ ] **Product detail galerie** — hlavní foto je placeholder "Hlavní foto produktu", thumbnaily jsou čísla "1, 2, 3, 4"
+- [x] **Rozbité 404 stránky z navigace** — odstraněny mrtvé linky z nav, včetně `/smutecni/na-prani/`
+- [x] **Custom `not-found.tsx`** — branded 404 stránka s česky textem a navigačními kartami
+- [x] **Custom `error.tsx` + `global-error.tsx`** — branded error boundaries s českým textem
+- [x] **Produktové fotky** — všech 31 produktů má reálné Unsplash obrázky
+- [x] **Product detail galerie** — plnohodnotná galerie s thumbnaily a fade přechody
 
 ## P1 — Důležité
 
@@ -40,15 +40,15 @@ Audit provedený 2026-04-08. Kompletní průchod všech stránek, komponent a fu
 
 ## P3 — Nice-to-have / UX doporučení
 
-- [ ] **Cart drawer — název produktu se ořezává** — "Kytice na rakev Tic..." nemá dost prostoru
-- [ ] **Checkout platba kartou** — formulář vypadá funkčně ale nic nedělá; lepší "Budete přesměrováni na platební bránu"
-- [ ] **Hardcoded číslo objednávky** — potvrzení vždy ukazuje "VK-2024-0042"
-- [ ] **Fake bankovní údaje** — platba převodem ukazuje "123456789 / 0800"
-- [ ] **Footer — otvírací doby neuvádí sobotu** (kontaktní stránka ano — "Sobota: Zavřeno")
-- [ ] **Homepage CTA** — "Prohlédnout nabídku" vede na `/kytice/`, mělo by vést na `/smutecni/` (hlavní obor)
-- [ ] **Mega menu featured product hardcoded** — "Kytice na rakev Ticho" napevno v navbar data
-- [ ] **Desktop nav label "Vazby"** — příliš obecný, doporučuji "Nabídka" nebo "Smuteční květiny"
-- [ ] **Product card hover overlay** — na mobilu se zobrazí permanentně, na desktopu zakrývá obrázek
+- [x] **Cart drawer — název produktu se ořezává** — `truncate` nahrazeno `line-clamp-2` pro dvouřádkový zobrazení
+- [x] **Checkout platba kartou** — fake formulář nahrazen textem "Budete přesměrováni na platební bránu"
+- [x] **Hardcoded číslo objednávky** — generuje se náhodné VK-{rok}-{číslo}
+- [x] **Fake bankovní údaje** — číslo účtu i VS zobrazují placeholder "— bude doplněno —"
+- [x] **Footer — otvírací doby neuvádí sobotu** — přidáno "So: Zavřeno"
+- [x] **Homepage CTA** — CTA nyní vede na `/smutecni/`
+- [x] **Mega menu featured product hardcoded** — featured product nyní čte z navbar.data.ts
+- [x] **Desktop nav label "Vazby"** — přejmenováno na "Nabídka"
+- [x] **Product card hover overlay** — hover efekty omezeny na `@media (hover: hover)`, na touch zařízeních se nezobrazují
 
 ---
 
