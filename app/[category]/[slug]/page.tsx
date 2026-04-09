@@ -11,6 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { ProductCard } from "@/components/product-card"
+import { CategoryFilters } from "@/components/category/CategoryFilters"
 import { ProductActions } from "@/components/product/ProductActions"
 import { ProductGallery } from "@/components/product-gallery"
 import { Breadcrumb } from "@/components/ui/breadcrumb"
@@ -125,43 +126,8 @@ function SubcategoryPage({ category, slug }: SubcategoryPageProps) {
 
       <section className="py-[var(--spacing-section-y)]">
         <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">
-          {/* Product count */}
-          <div className="mb-8 flex items-end justify-between">
-            <span className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
-              {subcategoryProducts.length}{" "}
-              {subcategoryProducts.length === 1 ? "produkt" : "produktů"}
-            </span>
-          </div>
-
-          {/* Filter bar */}
-          <div className="mb-10 flex flex-wrap items-center gap-3 border-y border-border py-4">
-            {["Typ vazby", "Cenový rozsah", "Barva", "Řazení"].map(
-              (filter) => (
-                <div
-                  key={filter}
-                  className="rounded-sm border border-border px-4 py-2 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:border-deep-plum-80 hover:text-foreground"
-                >
-                  {filter}
-                </div>
-              ),
-            )}
-          </div>
-
-          {/* Product grid */}
           {subcategoryProducts.length > 0 ? (
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {subcategoryProducts.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  image={product.image}
-                  title={product.name}
-                  price={product.price}
-                  badge={product.badge}
-                  slug={product.slug}
-                  category={product.category}
-                />
-              ))}
-            </div>
+            <CategoryFilters products={subcategoryProducts} />
           ) : (
             <div className="flex flex-col items-center gap-4 py-20 text-center">
               <p className="text-[length:var(--font-size-body-lg)] text-muted-foreground">
@@ -171,15 +137,6 @@ function SubcategoryPage({ category, slug }: SubcategoryPageProps) {
                 <Link href={`/${category}/`}>
                   Zpět na {categoryMeta.label.toLowerCase()}
                 </Link>
-              </Button>
-            </div>
-          )}
-
-          {/* Load more */}
-          {subcategoryProducts.length > 6 && (
-            <div className="mt-12 flex justify-center">
-              <Button variant="outline" size="md">
-                Načíst další
               </Button>
             </div>
           )}
