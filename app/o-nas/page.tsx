@@ -216,9 +216,16 @@ export default function ONasPage() {
       </section>
 
       {/* MAMUT */}
-      <section className="overflow-hidden bg-deep-plum py-[var(--spacing-section-y)]">
-        <div className="mx-auto grid max-w-[var(--max-width-content)] grid-cols-1 items-center gap-12 px-[var(--spacing-section-x)] lg:grid-cols-2">
-          <div className="flex flex-col gap-6">
+      <section className="relative overflow-hidden bg-deep-plum py-[var(--spacing-section-y)]">
+        <Image
+          src="/mamut-bg.png"
+          alt=""
+          fill
+          className="object-contain object-right opacity-10"
+          sizes="100vw"
+        />
+        <div className="relative z-10 mx-auto max-w-[var(--max-width-content)] px-[var(--spacing-section-x)]">
+          <div className="flex max-w-xl flex-col gap-6">
             <h2 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-neutral-white">
               Mamut je paměť.
               <br />
@@ -236,16 +243,6 @@ export default function ONasPage() {
                 které nekončí.
               </p>
             </div>
-          </div>
-          <div className="flex items-center justify-center">
-            <Image
-              src="/mamut-homepage.png"
-              alt="Mamut — maskot Vazby Květin"
-              width={1133}
-              height={1620}
-              className="h-auto w-full max-w-[480px] object-contain"
-              sizes="(min-width: 1024px) 35vw, 100vw"
-            />
           </div>
         </div>
       </section>
