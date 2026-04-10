@@ -167,13 +167,15 @@ export default function ONasPage() {
             </h2>
             <div className="flex flex-col gap-4 text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
               <p>
-                Nepracujeme ve velkém. Každá zakázka dostane čas a pozornost.
-                Nic nevyrábíme na sklad — vazby vznikají čerstvé, ručně, s
-                ohledem na příležitost.
+                Nepracujeme ve velkém. Každá zakázka dostane čas
+                <br />
+                a pozornost. Nic nevyrábíme na sklad — vazby vznikají
+                čerstvé, ručně, s ohledem na příležitost.
               </p>
               <p>
-                Pokud nevíte přesně co chcete, nevadí. Začneme otázkou, ne
-                ceníkem.
+                Pokud nevíte přesně co chcete, nevadí. Začneme otázkou,
+                <br />
+                ne ceníkem.
               </p>
             </div>
           </div>
@@ -214,12 +216,14 @@ export default function ONasPage() {
       </section>
 
       {/* 6. PROPOJENÍ S PEGAS */}
-      <section className="border-y border-border bg-deep-plum-10 py-[var(--spacing-section-y)]">
-        <div className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)] text-center">
+      <section className="py-[var(--spacing-section-y)]">
+        <div className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)]">
           <p className="text-[length:var(--font-size-body-lg)] leading-relaxed text-muted-foreground">
-            Jsme součástí pohřební služby PEGAS, a sdílíme stejný
-            přístup — klidný, jistý a bez zbytečného tlaku. Věříme, že
-            kvalita je poznat. A není potřeba ji vysvětlovat.
+            Jsme součástí pohřební služby PEGAS, a sdílíme stejný přístup — klidný,
+            <br />
+            jistý a bez zbytečného tlaku. Věříme, že kvalita je poznat.
+            <br />
+            A není potřeba ji vysvětlovat.
           </p>
           <div className="mt-8">
             <Button asChild size="md">

@@ -190,9 +190,6 @@ export default function SvatebniPage() {
           <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-3">
             {PROCESS_STEPS.map((step) => (
               <div key={step.number} className="flex flex-col gap-3">
-                <span className="font-mono text-[length:var(--font-size-h2)] font-[30] text-plum-50">
-                  {step.number}
-                </span>
                 <h3 className="font-heading text-[length:var(--font-size-h4)] font-[40] text-foreground">
                   {step.title}
                 </h3>
