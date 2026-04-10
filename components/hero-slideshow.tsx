@@ -34,6 +34,10 @@ function HeroSlideshow({ images, interval = 6000 }: HeroSlideshowProps) {
     return () => clearInterval(timer)
   }, [advance, interval, images.length])
 
+  const prev = useCallback(() => {
+    setActiveIndex((p) => (p - 1 + images.length) % images.length)
+  }, [images.length])
+
   return (
     <div className="absolute inset-0">
       {images.map((src, i) =>
@@ -66,6 +70,24 @@ function HeroSlideshow({ images, interval = 6000 }: HeroSlideshowProps) {
             sizes="100vw"
           />
         ),
+      )}
+
+      {/* Click zones: left = prev, right = next */}
+      {images.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={prev}
+            className="absolute inset-y-0 left-0 z-10 w-1/3 cursor-w-resize"
+            aria-label="Předchozí fotografie"
+          />
+          <button
+            type="button"
+            onClick={advance}
+            className="absolute inset-y-0 right-0 z-10 w-1/3 cursor-e-resize"
+            aria-label="Další fotografie"
+          />
+        </>
       )}
 
       {/* Slide indicators */}

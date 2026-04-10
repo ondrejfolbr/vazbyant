@@ -16,7 +16,7 @@ function Footer({ className }: FooterProps) {
     >
       {/* Brand tagline strip */}
       <div className="border-b border-deep-plum-70/30 bg-deep-plum-10 py-32 text-center">
-        <RotatingTagline className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)] text-[length:var(--font-size-h3)] text-foreground" />
+        <RotatingTagline className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)] text-[length:var(--font-size-h3)] tracking-wide text-foreground" />
       </div>
       <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] py-20 lg:py-28">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1fr_1fr]">
@@ -58,7 +58,7 @@ function Footer({ className }: FooterProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[length:var(--font-size-body)] text-neutral-white/70 transition-colors hover:text-neutral-white"
+                  className="text-[length:var(--font-size-body)] tracking-wide text-neutral-white/70 transition-colors hover:text-neutral-white"
                 >
                   {link.label}
                 </Link>

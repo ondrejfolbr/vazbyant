@@ -10,25 +10,6 @@
   position: relative;
 }
 
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 1px;
-  width: 100%;
-  background-color: currentColor;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 250ms var(--ease-default);
-}
-
-.nav-link:hover::after,
-.nav-link:focus-visible::after,
-.nav-link[aria-current="page"]::after {
-  transform: scaleX(1);
-}
-
 /* --- Hero fade-in stagger ----------------------------------------------- */
 
 @keyframes hero-fade-in {

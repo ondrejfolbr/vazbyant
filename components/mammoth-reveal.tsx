@@ -10,7 +10,7 @@ function MammothReveal() {
         {/* Left column — brand story */}
         <div className="flex flex-col gap-5">
           <h2 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
-            Květinářství, které rozumí chvílím, kdy na tom záleží.
+            Květinářství, které rozumí chvílím,<br />kdy na tom záleží.
           </h2>
           <p className="max-w-xl text-[length:var(--font-size-body-lg)] leading-relaxed text-muted-foreground">
             Známe prostředí loučení a víme, jak důležité je umět vyjádřit
