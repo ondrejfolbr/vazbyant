@@ -99,6 +99,26 @@ function Footer({ className }: FooterProps) {
         </div>
       </div>
 
+      {/* Legal links */}
+      <div className="border-t border-neutral-white/10">
+        <div className="mx-auto flex max-w-[var(--max-width-site)] flex-wrap items-center gap-x-6 gap-y-2 px-[var(--spacing-section-x)] py-4">
+          {[
+            { label: "Obchodní podmínky", href: "/obchodni-podminky" },
+            { label: "Ochrana osobních údajů", href: "/zasady-ochrany-osobnich-udaju" },
+            { label: "Cookies", href: "/cookies" },
+            { label: "Informace pro spotřebitele", href: "/informace-pro-spotrebitele" },
+          ].map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-[length:var(--font-size-caption)] text-neutral-white/40 transition-colors hover:text-neutral-white/70"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+
       {/* Bottom bar */}
       <div>
         <div className="mx-auto flex max-w-[var(--max-width-site)] flex-wrap items-center justify-between gap-4 px-[var(--spacing-section-x)] py-5">

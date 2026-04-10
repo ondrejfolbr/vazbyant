@@ -5,6 +5,8 @@ export interface Product {
   price: number
   category: string
   subcategory: string | null
+  /** Additional subcategories where this product should also appear (e.g. sets shown in "vence", "rakev"). */
+  alsoIn?: string[]
   badge: string | null
   image: string | null
   images: string[]
@@ -858,6 +860,156 @@ export const products: Product[] = [
     delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den. Set je nutné objednat min. 24 hodin předem.",
     care: "Jednotlivé aranžmá obsahují aranžovací hmotu — stačí dolévat vodu. Vydrží 5–7 dní.",
   },
+
+  // -- Věnce ze setů (samostatné produkty odkazující na set) --
+  {
+    id: 34,
+    name: "Věnec Vzpomínky",
+    slug: "smutecni-set-vzpominky",
+    price: 3490,
+    category: "smutecni",
+    subcategory: "vence",
+    badge: "Ze setu",
+    image: "/sety/vzpominky-venec.jpg",
+    images: ["/sety/vzpominky-venec.jpg", "/sety/vzpominky-hero.jpg"],
+    description:
+      "Barevný věnec z živých květin ze smuteční kolekce Vzpomínky. Živé barvy připomínají, že vzpomínky mají mnoho tónů. Dostupný také jako součást kompletního smutečního setu.",
+    composition: "Gerbery, růže, chryzantémy, statice, solidago, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Věnec obsahuje aranžovací hmotu — stačí dolévat vodu. Vydrží 5–7 dní.",
+  },
+  {
+    id: 35,
+    name: "Věnec Vděčnost",
+    slug: "smutecni-set-vdecnost",
+    price: 3490,
+    category: "smutecni",
+    subcategory: "vence",
+    badge: "Ze setu",
+    image: "/sety/vdecnost-venec-bila.jpg",
+    images: ["/sety/vdecnost-venec-bila.jpg", "/sety/vdecnost-venec-tmava.jpg", "/sety/vdecnost-celek.jpg"],
+    description:
+      "Věnec v jemné žluto-bílé paletě ze smuteční kolekce Vděčnost. Světlé tóny vytvářejí klidnou a harmonickou atmosféru. Dostupný také jako součást kompletního smutečního setu.",
+    composition: "Žluté a bílé růže, chryzantémy, gerbery, solidago, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Věnec obsahuje aranžovací hmotu — stačí dolévat vodu. Vydrží 5–7 dní.",
+  },
+  {
+    id: 36,
+    name: "Věnec Ticho",
+    slug: "smutecni-set-ticho",
+    price: 3490,
+    category: "smutecni",
+    subcategory: "vence",
+    badge: "Ze setu",
+    image: "/sety/ticho-3.jpg",
+    images: ["/sety/ticho-3.jpg", "/sety/ticho-hero.jpg"],
+    description:
+      "Věnec v čistě bílé skladbě ze smuteční kolekce Ticho. Působí klidně a důstojně. Dostupný také jako součást kompletního smutečního setu.",
+    composition: "Bílé gerbery, růže, chryzantémy, gypsophila, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Věnec obsahuje aranžovací hmotu — stačí dolévat vodu. Vydrží 5–7 dní.",
+  },
+
+  // -- Kytice na rakev ze setů --
+  {
+    id: 37,
+    name: "Kytice na rakev Vzpomínky",
+    slug: "smutecni-set-vzpominky",
+    price: 3990,
+    category: "smutecni",
+    subcategory: "rakev",
+    badge: "Ze setu",
+    image: "/sety/vzpominky-kytice-rakev.jpg",
+    images: ["/sety/vzpominky-kytice-rakev.jpg", "/sety/vzpominky-hero.jpg"],
+    description:
+      "Podélná kytice na rakev v živé barevné paletě ze smuteční kolekce Vzpomínky. Dostupná také jako součást kompletního smutečního setu.",
+    composition: "Gerbery, růže, chryzantémy, statice, solidago, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Kytici uchovávejte v čerstvé vodě. Vydrží 5–7 dní.",
+  },
+  {
+    id: 38,
+    name: "Kytice na rakev Vděčnost",
+    slug: "smutecni-set-vdecnost",
+    price: 3990,
+    category: "smutecni",
+    subcategory: "rakev",
+    badge: "Ze setu",
+    image: "/sety/vdecnost-kytice-rakev-3.jpg",
+    images: ["/sety/vdecnost-kytice-rakev-3.jpg", "/sety/vdecnost-celek.jpg"],
+    description:
+      "Podélná kytice na rakev v jemné žluto-bílé paletě ze smuteční kolekce Vděčnost. Dostupná také jako součást kompletního smutečního setu.",
+    composition: "Žluté a bílé růže, chryzantémy, gerbery, solidago, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Kytici uchovávejte v čerstvé vodě. Vydrží 5–7 dní.",
+  },
+  {
+    id: 39,
+    name: "Kytice na rakev Ticho",
+    slug: "smutecni-set-ticho",
+    price: 3990,
+    category: "smutecni",
+    subcategory: "rakev",
+    badge: "Ze setu",
+    image: "/sety/ticho-2.jpg",
+    images: ["/sety/ticho-2.jpg", "/sety/ticho-hero.jpg"],
+    description:
+      "Podélná kytice na rakev v čistě bílé skladbě ze smuteční kolekce Ticho. Dostupná také jako součást kompletního smutečního setu.",
+    composition: "Bílé gerbery, růže, chryzantémy, gypsophila, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Kytici uchovávejte v čerstvé vodě. Vydrží 5–7 dní.",
+  },
+
+  // -- Aranžmá do stojanů ze setů --
+  {
+    id: 40,
+    name: "Aranžmá do stojanu Vzpomínky",
+    slug: "smutecni-set-vzpominky",
+    price: 3290,
+    category: "smutecni",
+    subcategory: "stojany",
+    badge: "Ze setu",
+    image: "/sety/vzpominky-stojan.jpg",
+    images: ["/sety/vzpominky-stojan.jpg", "/sety/vzpominky-hero.jpg"],
+    description:
+      "Vysoké květinové aranžmá do stojanu v živé barevné paletě ze smuteční kolekce Vzpomínky. Dostupné také jako součást kompletního smutečního setu.",
+    composition: "Gerbery, růže, chryzantémy, statice, solidago, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Aranžmá obsahuje aranžovací hmotu — stačí dolévat vodu. Vydrží 5–7 dní.",
+  },
+  {
+    id: 41,
+    name: "Aranžmá do stojanu Vděčnost",
+    slug: "smutecni-set-vdecnost",
+    price: 3290,
+    category: "smutecni",
+    subcategory: "stojany",
+    badge: "Ze setu",
+    image: "/sety/vdecnost-stojan.jpg",
+    images: ["/sety/vdecnost-stojan.jpg", "/sety/vdecnost-celek.jpg"],
+    description:
+      "Vysoké květinové aranžmá do stojanu v jemné žluto-bílé paletě ze smuteční kolekce Vděčnost. Dostupné také jako součást kompletního smutečního setu.",
+    composition: "Žluté a bílé růže, chryzantémy, gerbery, solidago, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Aranžmá obsahuje aranžovací hmotu — stačí dolévat vodu. Vydrží 5–7 dní.",
+  },
+  {
+    id: 42,
+    name: "Aranžmá do stojanu Ticho",
+    slug: "smutecni-set-ticho",
+    price: 3290,
+    category: "smutecni",
+    subcategory: "stojany",
+    badge: "Ze setu",
+    image: "/sety/ticho-5.jpg",
+    images: ["/sety/ticho-5.jpg", "/sety/ticho-hero.jpg"],
+    description:
+      "Vysoké květinové aranžmá do stojanu v čistě bílé skladbě ze smuteční kolekce Ticho. Dostupné také jako součást kompletního smutečního setu.",
+    composition: "Bílé gerbery, růže, chryzantémy, gypsophila, zeleň.",
+    delivery: "Doručení v Praze do 4 hodin. Mimo Prahu následující pracovní den.",
+    care: "Aranžmá obsahuje aranžovací hmotu — stačí dolévat vodu. Vydrží 5–7 dní.",
+  },
 ]
 
 // ---------------------------------------------------------------------------
@@ -873,7 +1025,9 @@ export function getProductsBySubcategory(
   subcategory: string,
 ): Product[] {
   return products.filter(
-    (p) => p.category === category && p.subcategory === subcategory,
+    (p) =>
+      p.category === category &&
+      (p.subcategory === subcategory || p.alsoIn?.includes(subcategory)),
   )
 }
 

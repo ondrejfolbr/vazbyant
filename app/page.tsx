@@ -22,7 +22,7 @@ export default function Page() {
         subheading="Navrhujeme květiny pro chvíle, na kterých záleží."
         ctaText="Prohlédnout nabídku"
         ctaHref="/smutecni/"
-        backgroundImages={["/hero-home-2.jpg", "/hero-onas.png", "/hero-home.jpg", "/hero-lucni.png", "/zivot/zivot-4.jpg", "/hero-venec.jpg", "/hero-smutecni.jpg"]}
+        backgroundImages={["/hero-home-2.jpg", "/hero-onas.png", "/hero-home.jpg", "/zivot/zivot-4.jpg", "/hero-venec.jpg"]}
       />
 
       {/* Sekce 2: Vstupní rozcestník */}
@@ -32,7 +32,7 @@ export default function Page() {
             title="Smuteční květiny"
             subtitle="S respektem a pochopením"
             href="/smutecni/"
-            image="/category-kytice.jpg"
+            image="/category-smutecni.png"
           />
           <CategoryCard
             title="Květinové sety"
