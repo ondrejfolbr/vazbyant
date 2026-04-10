@@ -221,7 +221,7 @@ export default function ONasPage() {
           src="/mamut-bg.png"
           alt=""
           fill
-          className="object-contain object-right opacity-10"
+          className="object-contain object-right opacity-90"
           sizes="100vw"
         />
         <div className="relative z-10 mx-auto max-w-[var(--max-width-content)] px-[var(--spacing-section-x)]">
@@ -248,7 +248,7 @@ export default function ONasPage() {
       </section>
 
       {/* 6. PROPOJENÍ S PEGAS */}
-      <section className="py-[var(--spacing-section-y)]">
+      <section className="py-[120px]">
         <div className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)]">
           <p className="text-[length:var(--font-size-body-lg)] leading-relaxed text-muted-foreground">
             Jsme součástí pohřební služby PEGAS, a sdílíme stejný přístup — klidný,

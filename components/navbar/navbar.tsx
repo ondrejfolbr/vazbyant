@@ -3,6 +3,7 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 import { Logo } from "@/components/logo"
@@ -14,7 +15,13 @@ import type { MegaMenuCategory } from "@/components/navbar/navbar.data"
 import { CartTrigger } from "@/components/cart/CartTrigger"
 import { useProfileStore } from "@/store/profile-store"
 
+function isActive(pathname: string, href: string) {
+  const norm = (s: string) => s.replace(/\/+$/, "")
+  return norm(pathname) === norm(href) || pathname.startsWith(norm(href) + "/")
+}
+
 function NavBar() {
+  const pathname = usePathname()
   const [scrolled, setScrolled] = React.useState(false)
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const [activeMenu, setActiveMenu] = React.useState<string | null>(null)
@@ -85,8 +92,9 @@ function NavBar() {
                 <Link
                   href={cat.href}
                   className={cn(
-                    "nav-link rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-muted-foreground transition-colors duration-[var(--transition-fast)] hover:text-deep-plum",
-                    activeMenu === cat.label && "text-foreground",
+                    "nav-link rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-deep-plum-80 transition-colors duration-[var(--transition-fast)] hover:text-deep-plum",
+                    activeMenu === cat.label && "text-deep-plum",
+                    isActive(pathname, cat.href) && "text-deep-plum font-medium",
                   )}
                 >
                   {cat.label}
@@ -97,7 +105,10 @@ function NavBar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="nav-link rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-muted-foreground transition-colors duration-[var(--transition-fast)] hover:text-deep-plum"
+                className={cn(
+                  "nav-link rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-deep-plum-80 transition-colors duration-[var(--transition-fast)] hover:text-deep-plum",
+                  isActive(pathname, link.href) && "text-deep-plum font-medium",
+                )}
               >
                 {link.label}
               </Link>
@@ -109,7 +120,7 @@ function NavBar() {
             <button
               type="button"
               onClick={() => document.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: true }))}
-              className="flex size-10 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:bg-deep-plum-10 hover:text-foreground"
+              className="flex size-10 items-center justify-center rounded-sm text-deep-plum-80 transition-colors hover:bg-deep-plum-10 hover:text-deep-plum"
               aria-label="Vyhledávání (⌘K)"
             >
               <svg
@@ -193,7 +204,7 @@ function NavBar() {
       </header>
 
       {/* Mobile overlay */}
-      {mobileOpen && <MobileMenu onClose={() => setMobileOpen(false)} />}
+      {mobileOpen && <MobileMenu onClose={() => setMobileOpen(false)} pathname={pathname} />}
 
       {/* Spacer for fixed header */}
       <div className="h-16" />
@@ -234,7 +245,7 @@ function MegaMenuPanel({
                 {group.heading ? (
                   <Link
                     href={group.href}
-                    className="mb-2 text-[length:var(--font-size-body-sm)] font-bold tracking-wider text-foreground transition-colors hover:text-deep-plum"
+                    className="mb-2 text-[length:var(--font-size-body-sm)] font-bold text-deep-plum transition-colors hover:text-deep-plum-80"
                   >
                     {group.heading}
                   </Link>
@@ -245,7 +256,7 @@ function MegaMenuPanel({
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-sm py-1.5 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:text-deep-plum"
+                    className="rounded-sm py-1.5 text-[length:var(--font-size-body-sm)] text-deep-plum-80 transition-colors hover:text-deep-plum"
                   >
                     {item.label}
                   </Link>
@@ -259,7 +270,7 @@ function MegaMenuPanel({
               <Link
                 key={sub.href}
                 href={sub.href}
-                className="rounded-sm px-3 py-2 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:bg-deep-plum-10 hover:text-deep-plum"
+                className="rounded-sm px-3 py-2 text-[length:var(--font-size-body-sm)] text-deep-plum-80 transition-colors hover:bg-deep-plum-10 hover:text-deep-plum"
               >
                 {sub.label}
               </Link>
@@ -305,7 +316,7 @@ function MegaMenuPanel({
   )
 }
 
-function MobileMenu({ onClose }: { onClose: () => void }) {
+function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: string }) {
   return (
     <div className="fixed inset-0 z-40 flex flex-col bg-background pt-16">
       <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-6 py-6">
@@ -326,7 +337,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
                         <Link
                           href={group.href}
                           onClick={onClose}
-                          className="py-1.5 text-[length:var(--font-size-body)] font-[30] text-foreground transition-colors hover:text-deep-plum"
+                          className="py-1.5 text-[length:var(--font-size-body)] font-[30] text-deep-plum-80 transition-colors hover:text-deep-plum"
                         >
                           {group.heading}
                         </Link>
@@ -336,7 +347,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
                           key={item.href}
                           href={item.href}
                           onClick={onClose}
-                          className="py-1 pl-3 text-[length:var(--font-size-body-sm)] text-muted-foreground transition-colors hover:text-deep-plum"
+                          className="py-1 pl-3 text-[length:var(--font-size-body-sm)] text-deep-plum-80 transition-colors hover:text-deep-plum"
                         >
                           {item.label}
                         </Link>
@@ -351,7 +362,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
                       key={sub.href}
                       href={sub.href}
                       onClick={onClose}
-                      className="py-1.5 text-[length:var(--font-size-body)] text-muted-foreground transition-colors hover:text-deep-plum"
+                      className="py-1.5 text-[length:var(--font-size-body)] text-deep-plum-80 transition-colors hover:text-deep-plum"
                     >
                       {sub.label}
                     </Link>
@@ -366,7 +377,10 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
             key={link.label}
             href={link.href}
             onClick={onClose}
-            className="py-3 font-heading text-[length:var(--font-size-h3)] font-[40] text-foreground"
+            className={cn(
+              "py-3 font-heading text-[length:var(--font-size-h3)] font-[40] text-deep-plum-80 transition-colors hover:text-deep-plum",
+              isActive(pathname, link.href) && "text-deep-plum",
+            )}
           >
             {link.label}
           </Link>
