@@ -2,15 +2,22 @@
 
 import * as React from "react"
 
+import { cn } from "@/lib/utils"
+
 const BRAND_TAGLINES = [
-  "\u201EVazby mezi lidmi.\u201C",
-  "\u201EVazby, kter\u00E9 mluv\u00ED za v\u00E1s.\u201C",
-  "\u201EVazby pro \u017Eivot. Vazby pro lou\u010Den\u00ED.\u201C",
-  "\u201EKv\u011Btiny, kter\u00E9 tvo\u0159\u00ED nov\u00E9 vazby.\u201C",
-  "\u201EVazby v tichu. Vazby v radosti.\u201C",
+  "Vazby mezi lidmi.",
+  "Vazby, které mluví za vás.",
+  "Vazby pro život. Vazby pro loučení.",
+  "Květiny, které tvoří nové vazby.",
+  "Vazby v tichu. Vazby v radosti.",
 ]
 
-function RotatingTagline() {
+interface RotatingTaglineProps {
+  as?: "h1" | "p"
+  className?: string
+}
+
+function RotatingTagline({ as: Tag = "p", className }: RotatingTaglineProps) {
   const [index, setIndex] = React.useState(0)
   const [visible, setVisible] = React.useState(true)
 
@@ -26,12 +33,15 @@ function RotatingTagline() {
   }, [])
 
   return (
-    <p
-      className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)] font-heading text-[length:var(--font-size-h3)] leading-snug font-[40] text-foreground transition-opacity duration-400 ease-out"
+    <Tag
+      className={cn(
+        "font-heading leading-snug font-[40] transition-opacity duration-400 ease-out",
+        className,
+      )}
       style={{ opacity: visible ? 1 : 0 }}
     >
       {BRAND_TAGLINES[index]}
-    </p>
+    </Tag>
   )
 }
 

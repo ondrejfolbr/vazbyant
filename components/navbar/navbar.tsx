@@ -319,7 +319,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
                 {cat.label}
               </span>
               {hasGroups ? (
-                <div className="flex flex-col gap-4 pb-4 pl-4">
+                <div className="flex flex-col gap-1 pb-4 pl-4">
                   {groups.map((group, gi) => (
                     <div key={group.heading || `m-group-${gi}`} className="flex flex-col gap-1">
                       {group.heading && (

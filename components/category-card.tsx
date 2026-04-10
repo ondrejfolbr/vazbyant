@@ -48,13 +48,13 @@ function CategoryCard({
 
       {/* Text content */}
       <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-6">
-        <h3 className="font-heading text-[length:var(--font-size-h3)] leading-snug font-[40] text-neutral-white">
+        <h3 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-neutral-white">
           {title}
         </h3>
-        <p className="text-[length:var(--font-size-body-sm)] text-neutral-white/80">
+        <p className="text-[length:var(--font-size-body)] text-neutral-white/80">
           {subtitle}
         </p>
-        <span className="card-cta mt-2 self-start border-b border-neutral-white/40 pb-0.5 text-[length:var(--font-size-body-sm)] font-[30] text-neutral-white">
+        <span className="card-cta mt-2 self-start border-b border-neutral-white/40 pb-0.5 text-[length:var(--font-size-body)] font-[30] text-neutral-white">
           Prohlédnout
         </span>
       </div>
