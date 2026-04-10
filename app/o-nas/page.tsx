@@ -14,31 +14,19 @@ export default function ONasPage() {
   return (
     <main>
       {/* 1. HERO */}
-      <section className="relative flex min-h-[100vh] items-end overflow-hidden bg-neutral-100">
+      <section className="relative flex min-h-[100vh] items-end overflow-hidden bg-deep-plum">
         <Image
-          src="/mamut-onas-hero.png"
-          alt="Mamut — maskot Vazby Květin"
+          src="/o-nas-hero.jpg"
+          alt="Náš tým v květinářství"
           fill
           priority
-          className="object-contain"
+          className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-neutral-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-deep-plum/60 from-0% to-transparent to-50%" />
         <div className="relative z-10 mx-auto w-full max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] pb-[var(--spacing-section-y)]">
-          <h1 className="hero-stagger hero-stagger-1 max-w-2xl font-heading text-[length:var(--font-size-h1)] leading-relaxed font-[40] text-neutral-white">
-            Mamut je paměť.
-            <br />
-            To, co zůstává.
-            <br />
-            <br />
-            Stejně jako vzpomínky na ty,
-            <br />
-            kteří tu byli s námi.
-            <br />
-            <br />
-            Stejně jako vazby mezi lidmi,
-            <br />
-            které nekončí.
+          <h1 className="hero-stagger hero-stagger-1 max-w-2xl font-heading text-[length:var(--font-size-display)] leading-snug font-[40] text-neutral-white">
+            Každá vazba nese něco, co slova nedokážou.
           </h1>
         </div>
       </section>
@@ -71,7 +59,7 @@ export default function ONasPage() {
       </section>
 
       {/* 3. CO DĚLÁME */}
-      <section className="bg-deep-plum-10 py-[var(--spacing-section-y)]">
+      <section className="bg-white py-[var(--spacing-section-y)]">
         <div className="mx-auto max-w-[var(--max-width-content)] px-[var(--spacing-section-x)]">
           <h2 className="mb-10 font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-foreground">
             Každá příležitost si zaslouží svůj květ.
@@ -228,15 +216,15 @@ export default function ONasPage() {
       </section>
 
       {/* MAMUT */}
-      <section className="bg-deep-plum-10 py-[var(--spacing-section-y)]">
+      <section className="overflow-hidden bg-deep-plum py-[var(--spacing-section-y)]">
         <div className="mx-auto grid max-w-[var(--max-width-content)] grid-cols-1 items-center gap-12 px-[var(--spacing-section-x)] lg:grid-cols-2">
           <div className="flex flex-col gap-6">
-            <h2 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-foreground">
+            <h2 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-neutral-white">
               Mamut je paměť.
               <br />
               To, co zůstává.
             </h2>
-            <div className="flex flex-col gap-4 text-[length:var(--font-size-body-lg)] leading-relaxed text-muted-foreground">
+            <div className="flex flex-col gap-4 text-[length:var(--font-size-body-lg)] leading-relaxed text-neutral-white/80">
               <p>
                 Stejně jako vzpomínky na ty,
                 <br />
