@@ -25,8 +25,20 @@ export default function ONasPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-neutral-black/50" />
         <div className="relative z-10 mx-auto w-full max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] pb-[var(--spacing-section-y)]">
-          <h1 className="hero-stagger hero-stagger-1 max-w-2xl font-heading text-[length:var(--font-size-display)] leading-snug font-[40] text-neutral-white">
-            Každá vazba nese něco, co slova nedokážou.
+          <h1 className="hero-stagger hero-stagger-1 max-w-2xl font-heading text-[length:var(--font-size-h1)] leading-relaxed font-[40] text-neutral-white">
+            Mamut je paměť.
+            <br />
+            To, co zůstává.
+            <br />
+            <br />
+            Stejně jako vzpomínky na ty,
+            <br />
+            kteří tu byli s námi.
+            <br />
+            <br />
+            Stejně jako vazby mezi lidmi,
+            <br />
+            které nekončí.
           </h1>
         </div>
       </section>
