@@ -39,11 +39,13 @@ function CartDrawer() {
         ) : (
           <>
             {/* Scrollable items */}
-            <div className="flex-1 overflow-y-auto px-6">
+            <ul className="flex-1 list-none overflow-y-auto p-0 m-0 px-6">
               {items.map((item) => (
-                <CartItemRow key={`${item.productId}-${item.variant ?? ""}`} item={item} />
+                <li key={`${item.productId}-${item.variant ?? ""}`}>
+                  <CartItemRow item={item} />
+                </li>
               ))}
-            </div>
+            </ul>
 
             {/* Sticky summary */}
             <CartSummary />

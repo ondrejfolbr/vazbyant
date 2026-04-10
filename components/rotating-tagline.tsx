@@ -51,6 +51,8 @@ function RotatingTagline({ as: Tag = "p", className }: RotatingTaglineProps) {
         className,
       )}
       style={{ opacity: visible ? 1 : 0 }}
+      aria-live="polite"
+      aria-atomic="true"
     >
       {taglines[index].text}
     </Tag>

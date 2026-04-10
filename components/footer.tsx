@@ -25,44 +25,51 @@ function Footer({ className }: FooterProps) {
             <Link href="/" aria-label="Vazby Květin — domů">
               <Logo layout="stacked" variant="white" />
             </Link>
-            <div className="mt-4 flex items-center gap-5">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="flex items-center justify-center text-neutral-white transition-opacity duration-300 hover:opacity-70"
-              >
-                <svg width="27" height="27" viewBox="0 0 27 27" fill="none">
-                  <path d="M19.543 0C23.65 0 26.987 3.32 26.987 7.405v12.034c0 4.086-3.337 7.405-7.444 7.405H7.444C3.337 26.855 0 23.525 0 19.44V7.405C0 3.32 3.337 0 7.444 0h12.099ZM7.456 2.387a5.03 5.03 0 0 0-5.056 5.03v12.034a5.03 5.03 0 0 0 5.056 5.03h12.098a5.03 5.03 0 0 0 5.056-5.03V7.405a5.03 5.03 0 0 0-5.056-5.03H7.456v.012ZM13.494 6.395a7.027 7.027 0 1 1 0 14.055 7.027 7.027 0 0 1 0-14.055Zm0 2.42a4.607 4.607 0 1 0 0 9.214 4.607 4.607 0 0 0 0-9.214Z" fill="currentColor"/>
-                </svg>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="flex items-center justify-center text-neutral-white transition-opacity duration-300 hover:opacity-70"
-              >
-                <svg width="11" height="22" viewBox="0 0 11 22" fill="none">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M7.15 22V11.962h3.24l.484-3.909H7.14V5.556c0-1.136.3-1.903 1.867-1.903H11V.153A20.24 20.24 0 0 0 8.088 0C5.224 0 3.25 1.821 3.25 5.167v2.886H0v3.909h3.25V22h3.9Z" fill="currentColor"/>
-                </svg>
-              </a>
-            </div>
+            <ul className="mt-4 flex list-none items-center gap-5 p-0 m-0">
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="flex items-center justify-center text-neutral-white transition-opacity duration-300 hover:opacity-70"
+                >
+                  <svg width="27" height="27" viewBox="0 0 27 27" fill="none">
+                    <path d="M19.543 0C23.65 0 26.987 3.32 26.987 7.405v12.034c0 4.086-3.337 7.405-7.444 7.405H7.444C3.337 26.855 0 23.525 0 19.44V7.405C0 3.32 3.337 0 7.444 0h12.099ZM7.456 2.387a5.03 5.03 0 0 0-5.056 5.03v12.034a5.03 5.03 0 0 0 5.056 5.03h12.098a5.03 5.03 0 0 0 5.056-5.03V7.405a5.03 5.03 0 0 0-5.056-5.03H7.456v.012ZM13.494 6.395a7.027 7.027 0 1 1 0 14.055 7.027 7.027 0 0 1 0-14.055Zm0 2.42a4.607 4.607 0 1 0 0 9.214 4.607 4.607 0 0 0 0-9.214Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="flex items-center justify-center text-neutral-white transition-opacity duration-300 hover:opacity-70"
+                >
+                  <svg width="11" height="22" viewBox="0 0 11 22" fill="none">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M7.15 22V11.962h3.24l.484-3.909H7.14V5.556c0-1.136.3-1.903 1.867-1.903H11V.153A20.24 20.24 0 0 0 8.088 0C5.224 0 3.25 1.821 3.25 5.167v2.886H0v3.909h3.25V22h3.9Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Column 2: Navigation */}
           <div className="flex flex-col gap-5">
-            <nav className="flex flex-col gap-3">
-              {footerNav.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-[length:var(--font-size-body)] tracking-wide text-neutral-white/70 transition-all hover:text-neutral-white hover:font-medium"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <nav aria-label="Patičková navigace">
+              <ul className="flex list-none flex-col gap-3 p-0">
+                {footerNav.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-[length:var(--font-size-body)] tracking-wide text-neutral-white/70 transition-all hover:text-neutral-white hover:font-medium"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </nav>
           </div>
 
@@ -100,24 +107,25 @@ function Footer({ className }: FooterProps) {
       </div>
 
       {/* Legal links */}
-      <div className="border-t border-neutral-white/10">
-        <div className="mx-auto flex max-w-[var(--max-width-site)] flex-wrap items-center gap-x-6 gap-y-2 px-[var(--spacing-section-x)] py-4">
+      <nav className="border-t border-neutral-white/10" aria-label="Právní informace">
+        <ul className="mx-auto flex list-none max-w-[var(--max-width-site)] flex-wrap items-center gap-x-6 gap-y-2 p-0 px-[var(--spacing-section-x)] py-4">
           {[
             { label: "Obchodní podmínky", href: "/obchodni-podminky" },
             { label: "Ochrana osobních údajů", href: "/zasady-ochrany-osobnich-udaju" },
             { label: "Cookies", href: "/cookies" },
             { label: "Informace pro spotřebitele", href: "/informace-pro-spotrebitele" },
           ].map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-[length:var(--font-size-caption)] text-neutral-white/40 transition-colors hover:text-neutral-white/70"
-            >
-              {link.label}
-            </Link>
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="text-[length:var(--font-size-caption)] text-neutral-white/40 transition-colors hover:text-neutral-white/70"
+              >
+                {link.label}
+              </Link>
+            </li>
           ))}
-        </div>
-      </div>
+        </ul>
+      </nav>
 
       {/* Bottom bar */}
       <div>

@@ -63,22 +63,22 @@ const SERVICE_IMAGES: Record<string, string> = {
 }
 
 const GALLERY_IMAGES = [
-  "/svatebni-nevesta.jpg",
-  "/svatebni-kytice-detail.jpg",
-  "/svatebni-doplnky.jpg",
-  "/svatebni-aranzma.jpg",
-  "/svatebni-darkova.jpg",
-  "/svatebni-zlute.jpg",
+  { src: "/svatebni-nevesta.jpg", alt: "Nevěsta se svatební kyticí" },
+  { src: "/svatebni-kytice-detail.jpg", alt: "Detail svatební kytice z růží a pivoněk" },
+  { src: "/svatebni-doplnky.jpg", alt: "Svatební doplňky — korsáže a věnečky" },
+  { src: "/svatebni-aranzma.jpg", alt: "Květinová výzdoba obřadního místa" },
+  { src: "/svatebni-darkova.jpg", alt: "Dárková květinová vazba pro svatební hosty" },
+  { src: "/svatebni-zlute.jpg", alt: "Svatební aranžmá ze žlutých květin" },
 ]
 
 export default function SvatebniPage() {
   return (
-    <main>
+    <main id="main-content">
       {/* HERO */}
       <section className="relative flex min-h-[60vh] items-end overflow-hidden">
         <Image
           src="/svatebni-nevesta.jpg"
-          alt=""
+          alt="Nevěsta se svatební kyticí z bílých a růžových květin"
           fill
           priority
           className="object-cover"
@@ -156,14 +156,14 @@ export default function SvatebniPage() {
 
           {/* Gallery grid */}
           <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-3">
-            {GALLERY_IMAGES.map((img, i) => (
+            {GALLERY_IMAGES.map((img) => (
               <div
-                key={i}
+                key={img.src}
                 className="relative aspect-[4/3] overflow-hidden rounded-sm"
               >
                 <Image
-                  src={img}
-                  alt={`Svatební realizace ${i + 1}`}
+                  src={img.src}
+                  alt={img.alt}
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 33vw, 50vw"

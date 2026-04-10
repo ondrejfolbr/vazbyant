@@ -96,6 +96,7 @@ function HeroSlideshow({ images, interval = 6000 }: HeroSlideshowProps) {
           {images.map((_, i) => (
             <button
               key={i}
+              type="button"
               onClick={() => setActiveIndex(i)}
               aria-label={`Slide ${i + 1}`}
               className={cn(

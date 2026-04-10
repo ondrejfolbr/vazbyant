@@ -5,6 +5,7 @@ interface SectionHeadingProps {
   heading: string
   body?: string
   alignment?: "left" | "center"
+  as?: "h1" | "h2" | "h3"
   className?: string
 }
 
@@ -13,6 +14,7 @@ function SectionHeading({
   heading,
   body,
   alignment = "left",
+  as: Tag = "h2",
   className,
 }: SectionHeadingProps) {
   return (
@@ -28,9 +30,9 @@ function SectionHeading({
           {overline}
         </span>
       )}
-      <h2 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
+      <Tag className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
         {heading}
-      </h2>
+      </Tag>
       {body && (
         <p
           className={cn(

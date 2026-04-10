@@ -43,6 +43,7 @@ function HighlightSlider({ slides, interval = 6000 }: HighlightSliderProps) {
         {slides.length > 1 && (
           <>
             <button
+              type="button"
               onClick={prev}
               aria-label="Předchozí"
               className="absolute top-1/2 left-0 z-10 flex size-8 -translate-y-1/2 items-center justify-center rounded-md text-foreground transition-opacity duration-300 hover:opacity-70 lg:left-2"
@@ -52,6 +53,7 @@ function HighlightSlider({ slides, interval = 6000 }: HighlightSliderProps) {
               </svg>
             </button>
             <button
+              type="button"
               onClick={next}
               aria-label="Další"
               className="absolute top-1/2 right-0 z-10 flex size-8 -translate-y-1/2 items-center justify-center rounded-md text-foreground transition-opacity duration-300 hover:opacity-70 lg:right-2"
@@ -127,6 +129,7 @@ function HighlightSlider({ slides, interval = 6000 }: HighlightSliderProps) {
             {slides.map((_, i) => (
               <button
                 key={i}
+                type="button"
                 onClick={() => setActive(i)}
                 aria-label={`Slide ${i + 1}`}
                 className={cn(

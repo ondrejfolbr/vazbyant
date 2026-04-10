@@ -82,7 +82,7 @@ function NavBar() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-1 lg:flex" role="navigation">
+          <nav className="hidden items-center gap-1 lg:flex" aria-label="Hlavní navigace">
             {megaMenuCategories.map((cat) => (
               <div
                 key={cat.label}
@@ -139,6 +139,7 @@ function NavBar() {
             </button>
             <a
               href="tel:+420604585271"
+              aria-label="Zavolat na +420 604 585 271"
               className="hidden text-[length:var(--font-size-body)] font-[40] text-foreground transition-colors hover:text-foreground/70 md:block"
             >
               +420 604 585 271
@@ -252,38 +253,44 @@ function MegaMenuPanel({
                 ) : (
                   <div className="mb-2 h-[var(--font-size-body-sm)] leading-[var(--font-size-body-sm)]">&nbsp;</div>
                 )}
-                {group.items.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-sm py-1.5 text-[length:var(--font-size-body-sm)] text-deep-plum-80 transition-colors hover:text-deep-plum"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                <ul className="flex list-none flex-col gap-1 p-0 m-0">
+                  {group.items.map((item) => (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        className="rounded-sm py-1.5 text-[length:var(--font-size-body-sm)] text-deep-plum-80 transition-colors hover:text-deep-plum"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </>
         ) : (
-          <div className="col-span-3 grid grid-cols-3 gap-6">
+          <ul className="col-span-3 grid list-none grid-cols-3 gap-6 p-0 m-0">
             {category.subcategories.map((sub) => (
-              <Link
-                key={sub.href}
-                href={sub.href}
-                className="rounded-sm px-3 py-2 text-[length:var(--font-size-body-sm)] text-deep-plum-80 transition-colors hover:bg-deep-plum-10 hover:text-deep-plum"
-              >
-                {sub.label}
-              </Link>
+              <li key={sub.href}>
+                <Link
+                  href={sub.href}
+                  className="rounded-sm px-3 py-2 text-[length:var(--font-size-body-sm)] text-deep-plum-80 transition-colors hover:bg-deep-plum-10 hover:text-deep-plum"
+                >
+                  {sub.label}
+                </Link>
+              </li>
             ))}
             {category.cta && (
-              <Link
-                href={category.cta.href}
-                className="mt-2 inline-flex items-center rounded-sm border border-deep-plum px-4 py-2 text-[length:var(--font-size-body)] font-[30] text-deep-plum transition-colors hover:bg-deep-plum-10"
-              >
-                {category.cta.label}
-              </Link>
+              <li>
+                <Link
+                  href={category.cta.href}
+                  className="mt-2 inline-flex items-center rounded-sm border border-deep-plum px-4 py-2 text-[length:var(--font-size-body)] font-[30] text-deep-plum transition-colors hover:bg-deep-plum-10"
+                >
+                  {category.cta.label}
+                </Link>
+              </li>
             )}
-          </div>
+          </ul>
         )}
 
         {/* Featured product */}
@@ -317,74 +324,89 @@ function MegaMenuPanel({
 }
 
 function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: string }) {
-  return (
-    <div className="fixed inset-0 z-40 flex flex-col bg-background pt-16">
-      <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-6 py-6">
-        {megaMenuCategories.map((cat) => {
-          const groups = cat.groups ?? []
-          const hasGroups = groups.length > 0
+  React.useEffect(() => {
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === "Escape") onClose()
+    }
+    document.addEventListener("keydown", handleKey)
+    return () => document.removeEventListener("keydown", handleKey)
+  }, [onClose])
 
-          return (
-            <div key={cat.label} className="flex flex-col">
-              <span className="py-3 font-heading text-[length:var(--font-size-h3)] font-[40] text-foreground">
-                {cat.label}
-              </span>
-              {hasGroups ? (
-                <div className="flex flex-col gap-1 pb-4 pl-4">
-                  {groups.map((group, gi) => (
-                    <div key={group.heading || `m-group-${gi}`} className="flex flex-col gap-1">
-                      {group.heading && (
+  return (
+    <div className="fixed inset-0 z-40 flex flex-col bg-background pt-16" role="dialog" aria-modal="true" aria-label="Navigační menu">
+      <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-6 py-6" aria-label="Mobilní navigace">
+        <ul className="flex list-none flex-col gap-0 p-0 m-0">
+          {megaMenuCategories.map((cat) => {
+            const groups = cat.groups ?? []
+            const hasGroups = groups.length > 0
+
+            return (
+              <li key={cat.label} className="flex flex-col">
+                <span className="py-3 font-heading text-[length:var(--font-size-h3)] font-[40] text-foreground">
+                  {cat.label}
+                </span>
+                {hasGroups ? (
+                  <ul className="flex list-none flex-col gap-1 p-0 m-0 pb-4 pl-4">
+                    {groups.map((group, gi) => (
+                      <li key={group.heading || `m-group-${gi}`} className="flex flex-col gap-1">
+                        {group.heading && (
+                          <Link
+                            href={group.href}
+                            onClick={onClose}
+                            className="py-1.5 text-[length:var(--font-size-body)] font-[30] text-deep-plum-80 transition-colors hover:text-deep-plum"
+                          >
+                            {group.heading}
+                          </Link>
+                        )}
+                        <ul className="flex list-none flex-col gap-0 p-0 m-0">
+                          {group.items.map((item) => (
+                            <li key={item.href}>
+                              <Link
+                                href={item.href}
+                                onClick={onClose}
+                                className="block py-1 pl-3 text-[length:var(--font-size-body-sm)] text-deep-plum-80 transition-colors hover:text-deep-plum"
+                              >
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <ul className="flex list-none flex-col gap-1 p-0 m-0 pb-4 pl-4">
+                    {cat.subcategories.map((sub) => (
+                      <li key={sub.href}>
                         <Link
-                          href={group.href}
+                          href={sub.href}
                           onClick={onClose}
-                          className="py-1.5 text-[length:var(--font-size-body)] font-[30] text-deep-plum-80 transition-colors hover:text-deep-plum"
+                          className="py-1.5 text-[length:var(--font-size-body)] text-deep-plum-80 transition-colors hover:text-deep-plum"
                         >
-                          {group.heading}
+                          {sub.label}
                         </Link>
-                      )}
-                      {group.items.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={onClose}
-                          className="py-1 pl-3 text-[length:var(--font-size-body-sm)] text-deep-plum-80 transition-colors hover:text-deep-plum"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="flex flex-col gap-1 pb-4 pl-4">
-                  {cat.subcategories.map((sub) => (
-                    <Link
-                      key={sub.href}
-                      href={sub.href}
-                      onClick={onClose}
-                      className="py-1.5 text-[length:var(--font-size-body)] text-deep-plum-80 transition-colors hover:text-deep-plum"
-                    >
-                      {sub.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          )
-        })}
-        {simpleLinks.map((link) => (
-          <Link
-            key={link.label}
-            href={link.href}
-            onClick={onClose}
-            className={cn(
-              "py-3 font-heading text-[length:var(--font-size-h3)] font-[40] text-deep-plum-80 transition-colors hover:text-deep-plum",
-              isActive(pathname, link.href) && "text-deep-plum",
-            )}
-          >
-            {link.label}
-          </Link>
-        ))}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            )
+          })}
+          {simpleLinks.map((link) => (
+            <li key={link.label}>
+              <Link
+                href={link.href}
+                onClick={onClose}
+                className={cn(
+                  "py-3 font-heading text-[length:var(--font-size-h3)] font-[40] text-deep-plum-80 transition-colors hover:text-deep-plum",
+                  isActive(pathname, link.href) && "text-deep-plum",
+                )}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
       <div className="border-t border-border px-6 py-4">
         <a

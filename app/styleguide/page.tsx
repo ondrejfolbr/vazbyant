@@ -187,7 +187,7 @@ function ColorRow({
 
 export default function StyleguidePage() {
   return (
-    <main>
+    <main id="main-content">
       {/* ── Page header ──────────────────────────────────────── */}
       <section className="border-b border-border bg-deep-plum-10 px-[var(--spacing-section-x)] py-[var(--spacing-section-y)]">
         <div className="mx-auto max-w-[var(--max-width-content)]">

@@ -98,6 +98,7 @@ function SearchDialog() {
       {/* Dialog */}
       <div
         role="dialog"
+        aria-modal="true"
         aria-label="Vyhledávání"
         className="relative w-full max-w-lg rounded-sm border border-border bg-background shadow-2xl"
       >
@@ -124,6 +125,12 @@ function SearchDialog() {
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Hledat produkty..."
+            aria-label="Hledat produkty"
+            role="combobox"
+            aria-expanded={results.length > 0}
+            aria-controls="search-results"
+            aria-activedescendant={results[activeIndex] ? `search-result-${results[activeIndex].id}` : undefined}
+            autoComplete="off"
             className="flex-1 bg-transparent text-[length:var(--font-size-body)] text-foreground placeholder:text-muted-foreground/60 outline-none"
           />
           <button
@@ -137,7 +144,7 @@ function SearchDialog() {
         </div>
 
         {/* Results */}
-        <div className="max-h-80 overflow-y-auto p-2">
+        <div className="max-h-80 overflow-y-auto p-2" aria-live="polite">
           {query.trim() === "" ? (
             <p className="px-3 py-6 text-center text-[length:var(--font-size-body-sm)] text-muted-foreground">
               Zadejte hledaný výraz
@@ -147,10 +154,11 @@ function SearchDialog() {
               Žádné výsledky pro &ldquo;{query}&rdquo;
             </p>
           ) : (
-            <ul role="listbox">
+            <ul role="listbox" id="search-results">
               {results.map((product, i) => (
                 <li
                   key={product.id}
+                  id={`search-result-${product.id}`}
                   role="option"
                   aria-selected={i === activeIndex}
                   onClick={() => handleSelect(product)}

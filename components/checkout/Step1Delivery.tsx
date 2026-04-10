@@ -210,12 +210,14 @@ function Step1Delivery({ onNext, defaultValues }: Step1DeliveryProps) {
           Poznámka k objednávce
         </legend>
         <Textarea
+          id="checkout-note"
           {...register("note")}
           placeholder="Datum doručení, jméno zesnulého, přání na stuhu…"
           rows={3}
+          aria-describedby={errors.note ? "checkout-note-error" : undefined}
         />
         {errors.note && (
-          <p className="text-[length:var(--font-size-caption)] text-[var(--color-error)]">
+          <p id="checkout-note-error" role="alert" className="text-[length:var(--font-size-caption)] text-[var(--color-error)]">
             {errors.note.message}
           </p>
         )}
@@ -239,14 +241,23 @@ function FormField({
   error?: string
   children: React.ReactNode
 }) {
+  const id = React.useId()
+  const inputId = `${id}-input`
+  const errorId = `${id}-error`
+
   return (
     <div className="flex flex-col gap-1.5">
-      <Label className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
+      <Label htmlFor={inputId} className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
         {label}
       </Label>
-      {children}
+      {React.isValidElement(children)
+        ? React.cloneElement(children as React.ReactElement<Record<string, unknown>>, {
+            id: inputId,
+            "aria-describedby": error ? errorId : undefined,
+          })
+        : children}
       {error && (
-        <p className="text-[length:var(--font-size-caption)] text-[var(--color-error)]">
+        <p id={errorId} role="alert" className="text-[length:var(--font-size-caption)] text-[var(--color-error)]">
           {error}
         </p>
       )}

@@ -77,7 +77,7 @@ const BINDING_TYPES: Array<{ name: string; description: string }> = [
 
 export default function RadyATipyPage() {
   return (
-    <main>
+    <main id="main-content">
       {/* HERO */}
       <section className="relative flex min-h-[60vh] items-end overflow-hidden">
         <Image

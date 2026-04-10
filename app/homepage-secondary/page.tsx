@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -9,6 +10,10 @@ import { SectionHeading } from "@/components/ui/section-heading"
 import { Button } from "@/components/ui/button"
 
 import { products } from "@/lib/products.data"
+
+export const metadata: Metadata = {
+  title: "Vazby Květin — Květiny pro chvíle, na kterých záleží",
+}
 
 const heroCategories = [
   { title: "Smuteční\na pietní květiny", href: "/smutecni/", image: "/category-kytice.jpg" },
@@ -44,7 +49,7 @@ export default function HomepageSecondaryPage() {
   const featured = products.slice(0, 4)
 
   return (
-    <main>
+    <main id="main-content">
       {/* Section 1: Split Hero */}
       <HeroSplit
         headingLine1="Vazby pro život."
@@ -62,19 +67,20 @@ export default function HomepageSecondaryPage() {
             className="mb-12"
           />
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-4">
             {featured.map((product) => (
-              <ProductCard
-                key={product.id}
-                image={product.image}
-                title={product.name}
-                price={product.price}
-                badge={product.badge}
-                slug={product.slug}
-                category={product.category}
-              />
+              <li key={product.id}>
+                <ProductCard
+                  image={product.image}
+                  title={product.name}
+                  price={product.price}
+                  badge={product.badge}
+                  slug={product.slug}
+                  category={product.category}
+                />
+              </li>
             ))}
-          </div>
+          </ul>
 
           <div className="mt-10 flex justify-center">
             <Button asChild variant="secondary" size="md">

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function KosikPage() {
   return (
-    <main>
+    <main id="main-content">
       <section className="py-[var(--spacing-section-y)]">
         <div className="mx-auto max-w-[var(--max-width-content)] px-[var(--spacing-section-x)]">
           <h1 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">

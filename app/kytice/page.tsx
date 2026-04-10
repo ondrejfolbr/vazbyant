@@ -78,7 +78,7 @@ const KYTICE_GALLERY = [
 
 export default function KyticePage() {
   return (
-    <main>
+    <main id="main-content">
       {/* HERO */}
       <section className="relative flex min-h-[60vh] items-end overflow-hidden">
         <Image

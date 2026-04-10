@@ -26,6 +26,11 @@ export async function generateMetadata({
   return {
     title: meta.label,
     description: meta.description,
+    openGraph: {
+      title: meta.label,
+      description: meta.description,
+      images: meta.heroImage ? [{ url: meta.heroImage, alt: meta.label }] : undefined,
+    },
   }
 }
 
@@ -47,8 +52,24 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     label: s.meta.label,
   }))
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: meta.label,
+      },
+    ],
+  }
+
   return (
-    <main>
+    <main id="main-content">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Hero
         heading={meta.label}
         subheading={meta.description}

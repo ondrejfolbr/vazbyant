@@ -1,6 +1,6 @@
 export default function RootLoading() {
   return (
-    <main>
+    <main id="main-content">
       <div className="h-[280px] animate-pulse bg-muted" />
       <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] py-[var(--spacing-section-y)]">
         <div className="mb-8 h-8 w-64 animate-pulse rounded-sm bg-muted" />

@@ -102,6 +102,7 @@ function CategoryFilters({ products, subcategories }: CategoryFiltersProps) {
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value as SortOption)}
+            aria-label="Řazení produktů"
             className="rounded-sm border border-border bg-background px-3 py-1.5 text-[length:var(--font-size-body-sm)] text-muted-foreground focus:border-deep-plum focus:outline-none"
           >
             {SORT_OPTIONS.map((opt) => (
@@ -115,19 +116,20 @@ function CategoryFilters({ products, subcategories }: CategoryFiltersProps) {
 
       {/* Product grid */}
       {visible.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((product) => (
-            <ProductCard
-              key={product.id}
-              image={product.image}
-              title={product.name}
-              price={product.price}
-              badge={product.badge}
-              slug={product.slug}
-              category={product.category}
-            />
+            <li key={product.id}>
+              <ProductCard
+                image={product.image}
+                title={product.name}
+                price={product.price}
+                badge={product.badge}
+                slug={product.slug}
+                category={product.category}
+              />
+            </li>
           ))}
-        </div>
+        </ul>
       ) : (
         <div className="flex flex-col items-center gap-4 py-20 text-center">
           <p className="text-[length:var(--font-size-body-lg)] text-muted-foreground">

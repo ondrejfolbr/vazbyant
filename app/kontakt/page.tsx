@@ -68,11 +68,12 @@ const CONTACT_SECTIONS = [
 
 export default function KontaktPage() {
   return (
-    <main>
+    <main id="main-content">
       {/* Hero */}
       <section className="bg-deep-plum-10 py-[var(--spacing-section-y)]">
         <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">
           <SectionHeading
+            as="h1"
             overline="Kontakt"
             heading="Jsme tu pro vás."
             body="Ať potřebujete poradit s výběrem, domluvit doručení nebo cokoliv jiného — ozvěte se nám."

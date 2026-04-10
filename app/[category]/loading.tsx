@@ -1,6 +1,6 @@
 export default function CategoryLoading() {
   return (
-    <main>
+    <main id="main-content">
       <div className="h-[280px] animate-pulse bg-muted" />
       <section className="py-[var(--spacing-section-y)]">
         <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)]">

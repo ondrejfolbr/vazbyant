@@ -40,6 +40,11 @@ export async function generateMetadata({
     return {
       title: subcategoryMeta.label,
       description: subcategoryMeta.description,
+      openGraph: {
+        title: subcategoryMeta.label,
+        description: subcategoryMeta.description,
+        images: subcategoryMeta.heroImage ? [{ url: subcategoryMeta.heroImage, alt: subcategoryMeta.label }] : undefined,
+      },
     }
   }
 
@@ -50,10 +55,16 @@ export async function generateMetadata({
 
   const categoryMeta = categories[product.category]
   const categoryLabel = categoryMeta?.label ?? product.category
+  const desc = `${product.name} — ${categoryLabel}. ${product.description}`
 
   return {
     title: product.name,
-    description: `${product.name} — ${categoryLabel}. ${product.description}`,
+    description: desc,
+    openGraph: {
+      title: product.name,
+      description: desc,
+      images: product.image ? [{ url: product.image, alt: product.name }] : undefined,
+    },
   }
 }
 
@@ -107,7 +118,7 @@ function SubcategoryPage({ category, slug }: SubcategoryPageProps) {
   const subcategoryProducts = getProductsBySubcategory(category, slug)
 
   return (
-    <main>
+    <main id="main-content">
       {/* Breadcrumb-style header */}
       {subcategoryMeta.heroImage ? (
         <section className="relative">
@@ -121,9 +132,9 @@ function SubcategoryPage({ category, slug }: SubcategoryPageProps) {
                 ]}
                 className="mb-8 [&_a]:text-neutral-white/60 [&_a:hover]:text-neutral-white [&_span[aria-hidden]]:text-neutral-white/30 [&_span:last-child]:text-neutral-white"
               />
-              <h2 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-neutral-white">
+              <h1 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-neutral-white">
                 {subcategoryMeta.label}
-              </h2>
+              </h1>
               <p className="mt-4 max-w-xl text-[length:var(--font-size-body-lg)] leading-relaxed text-neutral-white/70">
                 {subcategoryMeta.description}
               </p>
@@ -216,8 +227,58 @@ function ProductDetailPage({ product }: ProductDetailPageProps) {
 
   const categoryLabel = categories[product.category]?.label ?? product.category
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: product.image ? `https://vazbykvetin.cz${product.image}` : undefined,
+    offers: {
+      "@type": "Offer",
+      price: product.price,
+      priceCurrency: "CZK",
+      availability: "https://schema.org/InStock",
+    },
+  }
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: categoryLabel,
+        item: `https://vazbykvetin.cz/${product.category}/`,
+      },
+      ...(subcategoryLabel && subcategoryHref
+        ? [
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: subcategoryLabel,
+              item: `https://vazbykvetin.cz${subcategoryHref}`,
+            },
+          ]
+        : []),
+      {
+        "@type": "ListItem",
+        position: subcategoryLabel ? 3 : 2,
+        name: product.name,
+      },
+    ],
+  }
+
   return (
-    <main>
+    <main id="main-content">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] py-12">
         <Breadcrumb
           items={[

@@ -107,6 +107,8 @@ function LoginView({ onLogin }: { onLogin: () => void }) {
           <input
             type="email"
             placeholder="vas@email.cz"
+            autoComplete="email"
+            required
             className="rounded-sm border border-border bg-background px-4 py-2.5 text-[length:var(--font-size-body)] text-foreground placeholder:text-muted-foreground focus:border-deep-plum focus:outline-none"
           />
         </label>
@@ -117,6 +119,8 @@ function LoginView({ onLogin }: { onLogin: () => void }) {
           <input
             type="password"
             placeholder="••••••••"
+            autoComplete="current-password"
+            required
             className="rounded-sm border border-border bg-background px-4 py-2.5 text-[length:var(--font-size-body)] text-foreground placeholder:text-muted-foreground focus:border-deep-plum focus:outline-none"
           />
         </label>
@@ -171,11 +175,15 @@ function LoggedInView({
 
   return (
     <div className="flex flex-1 flex-col gap-0 overflow-hidden px-6">
-      <div className="flex gap-1 border-b border-border">
+      <div className="flex gap-1 border-b border-border" role="tablist" aria-label="Sekce účtu">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             type="button"
+            role="tab"
+            aria-selected={activeTab === tab.id}
+            aria-controls={`tabpanel-${tab.id}`}
+            id={`tab-${tab.id}`}
             onClick={() => onTabChange(tab.id)}
             className={`px-4 py-2.5 text-[length:var(--font-size-body-sm)] transition-colors ${
               activeTab === tab.id
@@ -188,7 +196,7 @@ function LoggedInView({
         ))}
       </div>
 
-      <div className="flex-1 overflow-y-auto py-6">
+      <div className="flex-1 overflow-y-auto py-6" role="tabpanel" id={`tabpanel-${activeTab}`} aria-labelledby={`tab-${activeTab}`}>
         {activeTab === "profile" && <ProfileTab />}
         {activeTab === "orders" && <OrdersTab />}
         {activeTab === "subscription" && <SubscriptionTab />}
@@ -320,14 +328,20 @@ function InfoRow({ label, value }: { label: string; value: string }) {
 
 function SettingRow({ label, checked }: { label: string; checked: boolean }) {
   return (
-    <label className="flex items-center justify-between py-1">
+    <label className="flex cursor-pointer items-center justify-between py-1">
       <span className="text-[length:var(--font-size-body-sm)] text-foreground">
         {label}
       </span>
+      <input
+        type="checkbox"
+        defaultChecked={checked}
+        className="sr-only peer"
+      />
       <div
-        className={`flex h-5 w-9 cursor-pointer items-center rounded-full px-0.5 transition-colors ${
+        className={`flex h-5 w-9 items-center rounded-full px-0.5 transition-colors ${
           checked ? "bg-deep-plum" : "bg-border"
-        }`}
+        } peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2`}
+        aria-hidden="true"
       >
         <div
           className={`size-4 rounded-full bg-neutral-white shadow-sm transition-transform ${

@@ -15,7 +15,7 @@ export default function Page() {
   const featured = products.slice(0, 4)
 
   return (
-    <main>
+    <main id="main-content">
       {/* Sekce 1: Hero */}
       <Hero
         heading={<>Vazby pro život.<br />Vazby pro loučení.</>}
@@ -27,26 +27,32 @@ export default function Page() {
 
       {/* Sekce 2: Vstupní rozcestník */}
       <section className="py-[var(--spacing-section-y)]">
-        <div className="mx-auto grid max-w-[var(--max-width-site)] grid-cols-1 gap-6 px-[var(--spacing-section-x)] md:grid-cols-3">
-          <CategoryCard
-            title="Smuteční květiny"
-            subtitle="S respektem a pochopením"
-            href="/smutecni/"
-            image="/category-smutecni.png"
-          />
-          <CategoryCard
-            title="Květinové sety"
-            subtitle="Kompletní květinový servis"
-            href="/smutecni/"
-            image="/category-sety.jpg"
-          />
-          <CategoryCard
-            title="Věnce"
-            subtitle="Důstojná vzpomínka"
-            href="/smutecni/vence/"
-            image="/category-vence-fialovy.jpg"
-          />
-        </div>
+        <ul className="mx-auto grid list-none max-w-[var(--max-width-site)] grid-cols-1 gap-6 p-0 px-[var(--spacing-section-x)] md:grid-cols-3">
+          <li>
+            <CategoryCard
+              title="Smuteční květiny"
+              subtitle="S respektem a pochopením"
+              href="/smutecni/"
+              image="/category-smutecni.png"
+            />
+          </li>
+          <li>
+            <CategoryCard
+              title="Květinové sety"
+              subtitle="Kompletní květinový servis"
+              href="/smutecni/"
+              image="/category-sety.jpg"
+            />
+          </li>
+          <li>
+            <CategoryCard
+              title="Věnce"
+              subtitle="Důstojná vzpomínka"
+              href="/smutecni/vence/"
+              image="/category-vence-fialovy.jpg"
+            />
+          </li>
+        </ul>
       </section>
 
       {/* Sekce 3: Vybrané produkty */}
@@ -57,19 +63,20 @@ export default function Page() {
             alignment="center"
             className="mb-12"
           />
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-4">
             {featured.map((product) => (
-              <ProductCard
-                key={product.id}
-                image={product.image}
-                title={product.name}
-                price={product.price}
-                badge={product.badge}
-                slug={product.slug}
-                category={product.category}
-              />
+              <li key={product.id}>
+                <ProductCard
+                  image={product.image}
+                  title={product.name}
+                  price={product.price}
+                  badge={product.badge}
+                  slug={product.slug}
+                  category={product.category}
+                />
+              </li>
             ))}
-          </div>
+          </ul>
           <div className="mt-10 flex justify-center">
             <Button asChild size="md">
               <Link href="/kytice/">Zobrazit vše</Link>

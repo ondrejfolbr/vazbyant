@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PotvrzeniPage() {
   return (
-    <main>
+    <main id="main-content">
       <section className="flex min-h-[60vh] items-center py-[var(--spacing-section-y)]">
         <div className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)] text-center">
           <ConfirmationContent />

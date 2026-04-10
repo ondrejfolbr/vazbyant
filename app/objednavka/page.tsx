@@ -9,9 +9,10 @@ export const metadata: Metadata = {
 
 export default function ObjednavkaPage() {
   return (
-    <main>
+    <main id="main-content">
       <section className="py-[var(--spacing-section-y)]">
         <div className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)]">
+          <h1 className="sr-only">Objednávka</h1>
           <CheckoutFlow />
         </div>
       </section>

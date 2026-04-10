@@ -1,6 +1,6 @@
 export default function SlugLoading() {
   return (
-    <main>
+    <main id="main-content">
       <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] py-12">
         <div className="mb-4 flex items-center gap-2">
           <div className="h-4 w-12 animate-pulse rounded-sm bg-muted" />

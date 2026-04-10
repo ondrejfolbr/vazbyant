@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ONasPage() {
   return (
-    <main>
+    <main id="main-content">
       {/* 1. HERO */}
       <section className="relative flex min-h-[100vh] items-end overflow-hidden bg-deep-plum">
         <Image

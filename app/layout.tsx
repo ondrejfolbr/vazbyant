@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   description:
     "Smuteční, svatební a dárkové květiny s doručením po Praze. Součást ekosystému pohřební služby PEGAS.",
   metadataBase: new URL("https://vazbykvetin.cz"),
+  alternates: {
+    canonical: "./",
+  },
   robots: {
     index: true,
     follow: true,
@@ -23,12 +26,13 @@ export const metadata: Metadata = {
     title: "Vazby Květin — Květiny pro chvíle, na kterých záleží",
     description:
       "Smuteční, svatební a dárkové květiny s doručením po Praze. Součást ekosystému pohřební služby PEGAS.",
+    url: "./",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Vazby Květin",
+        alt: "Vazby Květin — smuteční a svatební květiny",
       },
     ],
   },
@@ -122,6 +126,12 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-deep-plum focus:px-4 focus:py-2 focus:text-neutral-white focus:outline-none"
+          >
+            Přeskočit na obsah
+          </a>
           <NavBar />
           {children}
           <Footer />

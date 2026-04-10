@@ -34,6 +34,13 @@ export function ProductGallery({ images, alt }: ProductGalleryProps) {
       window.removeEventListener("gallery-select", handleGallerySelect)
   }, [images.length])
 
+  const closeBtnRef = useCallback(
+    (node: HTMLButtonElement | null) => {
+      if (node && lightboxOpen) node.focus()
+    },
+    [lightboxOpen],
+  )
+
   useEffect(() => {
     if (!lightboxOpen) return
     function handleKey(e: KeyboardEvent) {
@@ -93,6 +100,8 @@ export function ProductGallery({ images, alt }: ProductGalleryProps) {
                 key={src}
                 type="button"
                 onClick={() => setActiveIndex(i)}
+                aria-label={`Zobrazit foto ${i + 1}`}
+                aria-current={i === activeIndex ? "true" : undefined}
                 className={cn(
                   "relative aspect-square overflow-hidden transition-opacity",
                   i === activeIndex
@@ -124,6 +133,7 @@ export function ProductGallery({ images, alt }: ProductGalleryProps) {
         >
           {/* Close button */}
           <button
+            ref={closeBtnRef}
             type="button"
             onClick={() => setLightboxOpen(false)}
             className="absolute top-4 right-4 z-10 flex size-10 items-center justify-center text-neutral-white/80 transition-colors hover:text-neutral-white"

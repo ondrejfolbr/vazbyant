@@ -1,9 +1,11 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 
+import { Button } from "@/components/ui/button"
 import { useCart } from "@/hooks/use-cart"
 import { StepIndicator } from "@/components/checkout/StepIndicator"
 import { Step1Delivery } from "@/components/checkout/Step1Delivery"
@@ -28,6 +30,11 @@ function CheckoutFlow() {
         <p className="text-[length:var(--font-size-body)] text-muted-foreground">
           Přidejte produkty pro dokončení objednávky.
         </p>
+        <div className="mt-4">
+          <Button asChild size="lg">
+            <Link href="/smutecni/">Prohlédnout nabídku</Link>
+          </Button>
+        </div>
       </div>
     )
   }

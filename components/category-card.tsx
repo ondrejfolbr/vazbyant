@@ -19,46 +19,45 @@ function CategoryCard({
   className,
 }: CategoryCardProps) {
   return (
-    <Link
-      href={href}
-      className={cn(
-        "group relative block aspect-[3/4] overflow-hidden rounded-sm",
-        className,
-      )}
-    >
-      {/* Image */}
-      {image ? (
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="card-image object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
-          sizes="(min-width: 768px) 33vw, 100vw"
-        />
-      ) : (
-        <div className="card-image absolute inset-0 bg-deep-plum-80">
-          <div className="flex h-full items-center justify-center text-[length:var(--font-size-body-sm)] text-deep-plum-70">
-            Foto kategorie
+    <article className={className}>
+      <Link
+        href={href}
+        className="group relative block aspect-[3/4] overflow-hidden rounded-sm"
+      >
+        {/* Image */}
+        {image ? (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="card-image object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+            sizes="(min-width: 768px) 33vw, 100vw"
+          />
+        ) : (
+          <div className="card-image absolute inset-0 bg-deep-plum-80">
+            <div className="flex h-full items-center justify-center text-[length:var(--font-size-body-sm)] text-deep-plum-70">
+              Foto kategorie
+            </div>
           </div>
+        )}
+
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-40% to-neutral-black/70" />
+
+        {/* Text content */}
+        <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-6">
+          <h3 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-neutral-white">
+            {title}
+          </h3>
+          <p className="text-[length:var(--font-size-body)] text-neutral-white/80">
+            {subtitle}
+          </p>
+          <span className="card-cta mt-3 inline-flex items-center self-start bg-deep-plum px-5 py-2 text-[length:var(--font-size-body-sm)] font-medium tracking-wide text-neutral-white transition-colors group-hover:bg-deep-plum-90">
+            Prohlédnout
+          </span>
         </div>
-      )}
-
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-40% to-neutral-black/70" />
-
-      {/* Text content */}
-      <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-6">
-        <h3 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-neutral-white">
-          {title}
-        </h3>
-        <p className="text-[length:var(--font-size-body)] text-neutral-white/80">
-          {subtitle}
-        </p>
-        <span className="card-cta mt-3 inline-flex items-center self-start bg-deep-plum px-5 py-2 text-[length:var(--font-size-body-sm)] font-medium tracking-wide text-neutral-white transition-colors group-hover:bg-deep-plum-90">
-          Prohlédnout
-        </span>
-      </div>
-    </Link>
+      </Link>
+    </article>
   )
 }
 
