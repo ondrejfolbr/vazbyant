@@ -57,21 +57,18 @@ const PROCESS_STEPS: Array<{
 ]
 
 const SERVICE_IMAGES: Record<string, string> = {
-  "Svatební kytice":
-    "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
-  "Dekorace obřadu":
-    "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80",
-  Doplňky:
-    "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80",
+  "Svatební kytice": "/svatebni-kytice-detail.jpg",
+  "Dekorace obřadu": "/svatebni-aranzma.jpg",
+  Doplňky: "/svatebni-doplnky.jpg",
 }
 
 const GALLERY_IMAGES = [
-  "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=80",
-  "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80",
-  "https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=600&q=80",
-  "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80",
-  "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&q=80",
-  "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&q=80",
+  "/svatebni-nevesta.jpg",
+  "/svatebni-kytice-detail.jpg",
+  "/svatebni-doplnky.jpg",
+  "/svatebni-aranzma.jpg",
+  "/svatebni-darkova.jpg",
+  "/svatebni-zlute.jpg",
 ]
 
 export default function SvatebniPage() {
@@ -80,7 +77,7 @@ export default function SvatebniPage() {
       {/* HERO */}
       <section className="relative flex min-h-[60vh] items-end overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80"
+          src="/svatebni-nevesta.jpg"
           alt=""
           fill
           priority

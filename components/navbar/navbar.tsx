@@ -85,7 +85,7 @@ function NavBar() {
                 <Link
                   href={cat.href}
                   className={cn(
-                    "nav-link rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-muted-foreground transition-all duration-[var(--transition-fast)] hover:font-[40] hover:text-deep-plum",
+                    "nav-link rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-muted-foreground transition-colors duration-[var(--transition-fast)] hover:text-deep-plum",
                     activeMenu === cat.label && "text-foreground",
                   )}
                 >
@@ -97,7 +97,7 @@ function NavBar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="nav-link rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-muted-foreground transition-all duration-[var(--transition-fast)] hover:font-[40] hover:text-deep-plum"
+                className="nav-link rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-muted-foreground transition-colors duration-[var(--transition-fast)] hover:text-deep-plum"
               >
                 {link.label}
               </Link>

@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
+import { ImageSlider } from "@/components/image-slider"
 
 export const metadata: Metadata = {
   title: "Rady a tipy",
@@ -80,7 +81,7 @@ export default function RadyATipyPage() {
       {/* HERO */}
       <section className="relative flex min-h-[60vh] items-end overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=1920&q=80"
+          src="/rady-kytice.png"
           alt=""
           fill
           priority
@@ -177,7 +178,7 @@ export default function RadyATipyPage() {
               {BINDING_TYPES.map((item) => (
                 <div
                   key={item.name}
-                  className="border-l-2 border-plum-50 py-2 pl-6"
+                  className="py-2"
                 >
                   <h3 className="font-heading text-[length:var(--font-size-h4)] font-[40] text-foreground">
                     {item.name}
@@ -189,25 +190,18 @@ export default function RadyATipyPage() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-4 lg:sticky lg:top-24">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
-              <Image
-                src="/rady-venec.png"
-                alt="Smuteční věnec s fialovými a žlutými květy"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-              <Image
-                src="/rady-dekorace.png"
-                alt="Pietní dekorace — srdce a kříž z bílých květin"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
-            </div>
+          <div className="lg:sticky lg:top-24">
+            <ImageSlider
+              aspectRatio="aspect-square"
+              interval={5000}
+              images={[
+                { src: "/rady-venec.png", alt: "Smuteční věnec s fialovými a žlutými květy" },
+                { src: "/rady-dekorace.png", alt: "Pietní dekorace — srdce a kříž z bílých květin" },
+                { src: "/rady-kytice.png", alt: "Smuteční kytice v tmavém balení" },
+                { src: "/rady-obrad.png", alt: "Květinová výzdoba obřadní síně" },
+                { src: "/rady-floristka.png", alt: "Floristka připravuje smuteční kytici" },
+              ]}
+            />
           </div>
         </div>
       </section>

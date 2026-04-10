@@ -58,7 +58,7 @@ function Footer({ className }: FooterProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[length:var(--font-size-body)] tracking-wide text-neutral-white/70 transition-colors hover:text-neutral-white"
+                  className="text-[length:var(--font-size-body)] tracking-wide text-neutral-white/70 transition-all hover:text-neutral-white hover:font-medium"
                 >
                   {link.label}
                 </Link>
