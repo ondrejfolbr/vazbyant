@@ -865,7 +865,7 @@ export const products: Product[] = [
   {
     id: 34,
     name: "Věnec Vzpomínky",
-    slug: "smutecni-set-vzpominky",
+    slug: "venec-vzpominky",
     price: 3490,
     category: "smutecni",
     subcategory: "vence",
@@ -881,7 +881,7 @@ export const products: Product[] = [
   {
     id: 35,
     name: "Věnec Vděčnost",
-    slug: "smutecni-set-vdecnost",
+    slug: "venec-vdecnost",
     price: 3490,
     category: "smutecni",
     subcategory: "vence",
@@ -897,7 +897,7 @@ export const products: Product[] = [
   {
     id: 36,
     name: "Věnec Ticho",
-    slug: "smutecni-set-ticho",
+    slug: "venec-ticho",
     price: 3490,
     category: "smutecni",
     subcategory: "vence",
@@ -915,7 +915,7 @@ export const products: Product[] = [
   {
     id: 37,
     name: "Kytice na rakev Vzpomínky",
-    slug: "smutecni-set-vzpominky",
+    slug: "kytice-rakev-vzpominky",
     price: 3990,
     category: "smutecni",
     subcategory: "rakev",
@@ -931,7 +931,7 @@ export const products: Product[] = [
   {
     id: 38,
     name: "Kytice na rakev Vděčnost",
-    slug: "smutecni-set-vdecnost",
+    slug: "kytice-rakev-vdecnost",
     price: 3990,
     category: "smutecni",
     subcategory: "rakev",
@@ -947,7 +947,7 @@ export const products: Product[] = [
   {
     id: 39,
     name: "Kytice na rakev Ticho",
-    slug: "smutecni-set-ticho",
+    slug: "kytice-rakev-ticho",
     price: 3990,
     category: "smutecni",
     subcategory: "rakev",
@@ -965,7 +965,7 @@ export const products: Product[] = [
   {
     id: 40,
     name: "Aranžmá do stojanu Vzpomínky",
-    slug: "smutecni-set-vzpominky",
+    slug: "aranzma-stojan-vzpominky",
     price: 3290,
     category: "smutecni",
     subcategory: "stojany",
@@ -981,7 +981,7 @@ export const products: Product[] = [
   {
     id: 41,
     name: "Aranžmá do stojanu Vděčnost",
-    slug: "smutecni-set-vdecnost",
+    slug: "aranzma-stojan-vdecnost",
     price: 3290,
     category: "smutecni",
     subcategory: "stojany",
@@ -997,7 +997,7 @@ export const products: Product[] = [
   {
     id: 42,
     name: "Aranžmá do stojanu Ticho",
-    slug: "smutecni-set-ticho",
+    slug: "aranzma-stojan-ticho",
     price: 3290,
     category: "smutecni",
     subcategory: "stojany",
