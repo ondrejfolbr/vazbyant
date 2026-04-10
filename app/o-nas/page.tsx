@@ -23,7 +23,7 @@ export default function ONasPage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep-plum/60 from-0% to-transparent to-50%" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-black/20 from-30% to-neutral-black/75" />
         <div className="relative z-10 mx-auto w-full max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] pb-[var(--spacing-section-y)]">
           <h1 className="hero-stagger hero-stagger-1 max-w-2xl font-heading text-[length:var(--font-size-display)] leading-snug font-[40] text-neutral-white">
             Každá vazba nese něco, co slova nedokážou.
