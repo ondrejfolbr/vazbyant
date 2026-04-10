@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 
 import { SectionHeading } from "@/components/ui/section-heading"
 
@@ -110,6 +111,21 @@ export default function KontaktPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Photo */}
+      <section className="py-[var(--spacing-section-y)]">
+        <div className="mx-auto max-w-[var(--max-width-content)] px-[var(--spacing-section-x)]">
+          <div className="relative aspect-[21/9] overflow-hidden rounded-sm">
+            <Image
+              src="/zivot/zivot-9.jpg"
+              alt="Naše vazárna — floristky při práci"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
         </div>
       </section>
 
