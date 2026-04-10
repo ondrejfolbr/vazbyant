@@ -100,15 +100,26 @@ export default function RadyATipyPage() {
 
       {/* INTRO */}
       <section className="py-[var(--spacing-section-y)]">
-        <div className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)]">
-          <h2 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-foreground">
-            Smuteční květiny a etiketa
-          </h2>
-          <p className="mt-6 text-[length:var(--font-size-body-lg)] leading-relaxed text-muted-foreground">
-            Rozloučení je jednou z nejtěžších chvil. A právě proto by výběr
-            květin neměl být dalším zdrojem stresu. Tady najdete vše, co
-            potřebujete vědět — klidně, srozumitelně, bez zbytečného tlaku.
-          </p>
+        <div className="mx-auto grid max-w-[var(--max-width-content)] grid-cols-1 items-center gap-12 px-[var(--spacing-section-x)] lg:grid-cols-2">
+          <div>
+            <h2 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-foreground">
+              Smuteční květiny a etiketa
+            </h2>
+            <p className="mt-6 text-[length:var(--font-size-body-lg)] leading-relaxed text-muted-foreground">
+              Rozloučení je jednou z nejtěžších chvil. A právě proto by výběr
+              květin neměl být dalším zdrojem stresu. Tady najdete vše, co
+              potřebujete vědět — klidně, srozumitelně, bez zbytečného tlaku.
+            </p>
+          </div>
+          <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+            <Image
+              src="/rady-kytice.png"
+              alt="Smuteční kytice v tmavém balení"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          </div>
         </div>
       </section>
 
@@ -150,31 +161,53 @@ export default function RadyATipyPage() {
 
       {/* DRUHY VAZEB */}
       <section className="py-[var(--spacing-section-y)]">
-        <div className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)]">
-          <span className="text-[length:var(--font-size-overline)] font-[40] uppercase tracking-widest text-plum-50">
-            Druhy vazeb
-          </span>
-          <h2 className="mt-4 font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
-            Druhy smutečních vazeb
-          </h2>
-          <p className="mt-6 text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
-            Každá vazba má svůj účel a místo v obřadu.
-          </p>
+        <div className="mx-auto grid max-w-[var(--max-width-content)] grid-cols-1 items-start gap-12 px-[var(--spacing-section-x)] lg:grid-cols-2">
+          <div>
+            <span className="text-[length:var(--font-size-overline)] font-[40] uppercase tracking-widest text-plum-50">
+              Druhy vazeb
+            </span>
+            <h2 className="mt-4 font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
+              Druhy smutečních vazeb
+            </h2>
+            <p className="mt-6 text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
+              Každá vazba má svůj účel a místo v obřadu.
+            </p>
 
-          <div className="mt-10 flex flex-col gap-6">
-            {BINDING_TYPES.map((item) => (
-              <div
-                key={item.name}
-                className="border-l-2 border-plum-50 py-2 pl-6"
-              >
-                <h3 className="font-heading text-[length:var(--font-size-h4)] font-[40] text-foreground">
-                  {item.name}
-                </h3>
-                <p className="mt-2 text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+            <div className="mt-10 flex flex-col gap-6">
+              {BINDING_TYPES.map((item) => (
+                <div
+                  key={item.name}
+                  className="border-l-2 border-plum-50 py-2 pl-6"
+                >
+                  <h3 className="font-heading text-[length:var(--font-size-h4)] font-[40] text-foreground">
+                    {item.name}
+                  </h3>
+                  <p className="mt-2 text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 lg:sticky lg:top-24">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+              <Image
+                src="/rady-venec.png"
+                alt="Smuteční věnec s fialovými a žlutými květy"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+              <Image
+                src="/rady-dekorace.png"
+                alt="Pietní dekorace — srdce a kříž z bílých květin"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -222,15 +255,27 @@ export default function RadyATipyPage() {
 
       {/* SYMBOLIKA KVĚTIN */}
       <section className="py-[var(--spacing-section-y)]">
-        <div className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)]">
-          <span className="text-[length:var(--font-size-overline)] font-[40] uppercase tracking-widest text-plum-50">
-            Symbolika
-          </span>
-          <h2 className="mt-4 font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
-            Oblíbené květiny a jejich symbolika
-          </h2>
+        <div className="mx-auto max-w-[var(--max-width-content)] px-[var(--spacing-section-x)]">
+          <div className="mx-auto max-w-[var(--max-width-narrow)]">
+            <span className="text-[length:var(--font-size-overline)] font-[40] uppercase tracking-widest text-plum-50">
+              Symbolika
+            </span>
+            <h2 className="mt-4 font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
+              Oblíbené květiny a jejich symbolika
+            </h2>
+          </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="relative mt-10 aspect-[21/9] overflow-hidden rounded-sm">
+            <Image
+              src="/rady-floristka.png"
+              alt="Floristka připravuje smuteční kytici"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+
+          <div className="mx-auto mt-10 grid max-w-[var(--max-width-narrow)] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {FLOWERS.map((flower) => (
               <div key={flower.name} className="flex flex-col gap-2">
                 <h3 className="font-heading text-[length:var(--font-size-h4)] font-[40] text-foreground">
@@ -316,41 +361,63 @@ export default function RadyATipyPage() {
 
       {/* PŘEDÁNÍ KVĚTIN */}
       <section className="py-[var(--spacing-section-y)]">
-        <div className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)]">
-          <span className="text-[length:var(--font-size-overline)] font-[40] uppercase tracking-widest text-plum-50">
-            Prakticky
-          </span>
-          <h2 className="mt-4 font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
-            Jak kytici na pohřbu předat
-          </h2>
-          <p className="mt-6 text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
-            Smuteční květiny by měly být v obřadní síni s dostatečným
-            předstihem, aby je květinář stihl naaranžovat. Domluvte se s
-            pohřební službou na detailech včas.
-          </p>
-          <p className="mt-4 text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
-            Dobří floristé květiny dopraví přímo na místo a zajistí aranžování
-            v obřadní místnosti.
-          </p>
+        <div className="mx-auto grid max-w-[var(--max-width-content)] grid-cols-1 items-center gap-12 px-[var(--spacing-section-x)] lg:grid-cols-2">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-sm lg:order-2">
+            <Image
+              src="/rady-predani.png"
+              alt="Předání smutečních květin"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          </div>
+          <div className="lg:order-1">
+            <span className="text-[length:var(--font-size-overline)] font-[40] uppercase tracking-widest text-plum-50">
+              Prakticky
+            </span>
+            <h2 className="mt-4 font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
+              Jak kytici na pohřbu předat
+            </h2>
+            <p className="mt-6 text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
+              Smuteční květiny by měly být v obřadní síni s dostatečným
+              předstihem, aby je květinář stihl naaranžovat. Domluvte se s
+              pohřební službou na detailech včas.
+            </p>
+            <p className="mt-4 text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
+              Dobří floristé květiny dopraví přímo na místo a zajistí aranžování
+              v obřadní místnosti.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* HISTORIE */}
       <section className="border-y border-border bg-deep-plum-10 py-[var(--spacing-section-y)]">
-        <div className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)]">
-          <span className="text-[length:var(--font-size-overline)] font-[40] uppercase tracking-widest text-plum-50">
-            Historie
-          </span>
-          <h2 className="mt-4 font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
-            Historie smutečních květin
-          </h2>
-          <p className="mt-6 text-[length:var(--font-size-body-lg)] leading-relaxed text-muted-foreground">
-            Zvyk uctívat zemřelé květinami sahá k neolitickým kulturám. Tradice
-            zdobení hrobů se k nám dostala ve 13. století spolu s
-            křesťanstvím. V 17. století vznikl zvyk pokládání věnců — tehdy
-            ještě z nekvetoucích rostlin, jako je vavřín nebo jmelí. Od 19.
-            století se začaly používat pestřejší, kvetoucí varianty se stuhou.
-          </p>
+        <div className="mx-auto max-w-[var(--max-width-content)] px-[var(--spacing-section-x)]">
+          <div className="mx-auto max-w-[var(--max-width-narrow)]">
+            <span className="text-[length:var(--font-size-overline)] font-[40] uppercase tracking-widest text-plum-50">
+              Historie
+            </span>
+            <h2 className="mt-4 font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
+              Historie smutečních květin
+            </h2>
+            <p className="mt-6 text-[length:var(--font-size-body-lg)] leading-relaxed text-muted-foreground">
+              Zvyk uctívat zemřelé květinami sahá k neolitickým kulturám. Tradice
+              zdobení hrobů se k nám dostala ve 13. století spolu s
+              křesťanstvím. V 17. století vznikl zvyk pokládání věnců — tehdy
+              ještě z nekvetoucích rostlin, jako je vavřín nebo jmelí. Od 19.
+              století se začaly používat pestřejší, kvetoucí varianty se stuhou.
+            </p>
+          </div>
+          <div className="relative mt-10 aspect-[21/9] overflow-hidden rounded-sm">
+            <Image
+              src="/rady-obrad.png"
+              alt="Květinová výzdoba obřadní síně"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
         </div>
       </section>
 
