@@ -126,9 +126,14 @@ function SearchDialog() {
             placeholder="Hledat produkty..."
             className="flex-1 bg-transparent text-[length:var(--font-size-body)] text-foreground placeholder:text-muted-foreground/60 outline-none"
           />
-          <kbd className="rounded bg-muted px-2 py-0.5 text-[length:var(--font-size-caption)] text-muted-foreground">
-            ESC
-          </kbd>
+          <button
+            type="button"
+            onClick={() => setOpen(false)}
+            className="rounded p-1 text-muted-foreground transition-colors hover:text-foreground"
+            aria-label="Zavřít vyhledávání"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
         </div>
 
         {/* Results */}
