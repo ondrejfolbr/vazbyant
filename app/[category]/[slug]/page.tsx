@@ -113,13 +113,13 @@ function SubcategoryPage({ category, slug }: SubcategoryPageProps) {
         <section className="relative">
           <div className="mx-auto grid max-w-[var(--max-width-site)] lg:grid-cols-[3fr_2fr]">
             {/* Left — dark plum with white text */}
-            <div className="flex flex-col justify-center bg-deep-plum px-[var(--spacing-section-x)] py-[var(--spacing-section-y)]">
+            <div className="flex flex-col justify-center bg-deep-plum px-[var(--spacing-section-x)] pt-8 pb-[var(--spacing-section-y)]">
               <Breadcrumb
                 items={[
                   { label: categoryMeta.label, href: `/${category}/` },
                   { label: subcategoryMeta.label },
                 ]}
-                className="mb-4 [&_a]:text-neutral-white/60 [&_a:hover]:text-neutral-white [&_span[aria-hidden]]:text-neutral-white/30 [&_span:last-child]:text-neutral-white"
+                className="mb-8 [&_a]:text-neutral-white/60 [&_a:hover]:text-neutral-white [&_span[aria-hidden]]:text-neutral-white/30 [&_span:last-child]:text-neutral-white"
               />
               <h2 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-neutral-white">
                 {subcategoryMeta.label}

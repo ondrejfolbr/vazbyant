@@ -85,7 +85,7 @@ function NavBar() {
                 <Link
                   href={cat.href}
                   className={cn(
-                    "nav-link rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-muted-foreground transition-colors duration-[var(--transition-fast)] hover:text-foreground",
+                    "nav-link rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-muted-foreground transition-all duration-[var(--transition-fast)] hover:font-[40] hover:text-deep-plum",
                     activeMenu === cat.label && "text-foreground",
                   )}
                 >
@@ -97,7 +97,7 @@ function NavBar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="nav-link rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-muted-foreground transition-colors duration-[var(--transition-fast)] hover:text-foreground"
+                className="nav-link rounded-sm px-3 py-2 text-[length:var(--font-size-body)] font-[30] text-muted-foreground transition-all duration-[var(--transition-fast)] hover:font-[40] hover:text-deep-plum"
               >
                 {link.label}
               </Link>
@@ -234,7 +234,7 @@ function MegaMenuPanel({
                 {group.heading ? (
                   <Link
                     href={group.href}
-                    className="mb-2 text-[length:var(--font-size-body-sm)] font-bold text-foreground transition-colors hover:text-deep-plum"
+                    className="mb-2 text-[length:var(--font-size-body-sm)] font-bold tracking-wider text-foreground transition-colors hover:text-deep-plum"
                   >
                     {group.heading}
                   </Link>

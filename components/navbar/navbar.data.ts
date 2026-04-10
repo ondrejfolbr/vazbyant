@@ -35,6 +35,7 @@ export const megaMenuCategories: MegaMenuCategory[] = [
         heading: "Smuteční & pietní květiny",
         href: "/smutecni/",
         items: [
+          { label: "Smuteční sety", href: "/smutecni/sety/" },
           { label: "Kytice na rakev", href: "/smutecni/rakev/" },
           { label: "Exkluzivní smuteční vazby", href: "/smutecni/exkluzivni/" },
           { label: "Kytice na položení", href: "/smutecni/polozeni/" },
@@ -51,7 +52,6 @@ export const megaMenuCategories: MegaMenuCategory[] = [
           { label: "Květiny k výročí úmrtí", href: "/smutecni/vyroci/" },
           { label: "Květiny k rozloučení / VIP", href: "/smutecni/vip/" },
           { label: "Květinové koše", href: "/smutecni/kose/" },
-          { label: "Smuteční sety", href: "/smutecni/sety/" },
         ],
       },
       {
