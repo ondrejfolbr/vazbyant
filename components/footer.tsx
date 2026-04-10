@@ -8,11 +8,27 @@ interface FooterProps {
   className?: string
 }
 
+const BRAND_TAGLINES = [
+  "\u201EVazby mezi lidmi.\u201C",
+  "\u201EVazby, kter\u00E9 mluv\u00ED za v\u00E1s.\u201C",
+  "\u201EVazby pro \u017Eivot. Vazby pro lou\u010Den\u00ED.\u201C",
+  "\u201EKv\u011Btiny, kter\u00E9 tvo\u0159\u00ED nov\u00E9 vazby.\u201C",
+  "\u201EVazby v tichu. Vazby v radosti.\u201C",
+]
+
 function Footer({ className }: FooterProps) {
+  const tagline = BRAND_TAGLINES[new Date().getDay() % BRAND_TAGLINES.length]
+
   return (
     <footer
       className={cn("bg-deep-plum", className)}
     >
+      {/* Brand tagline strip */}
+      <div className="border-b border-deep-plum-70/30 bg-deep-plum-10 py-8 text-center">
+        <p className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)] font-heading text-[length:var(--font-size-h3)] leading-snug font-[40] text-foreground">
+          {tagline}
+        </p>
+      </div>
       <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] py-20 lg:py-28">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1fr_1fr]">
           {/* Column 1: Logo + social */}

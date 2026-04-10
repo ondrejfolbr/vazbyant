@@ -163,7 +163,7 @@ export default function ONasPage() {
           </div>
           <div className="flex flex-col gap-6 lg:order-1">
             <h2 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-foreground">
-              Začneme otázkou, ne ceníkem.
+              Začneme otázkou.
             </h2>
             <div className="flex flex-col gap-4 text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
               <p>
@@ -180,13 +180,46 @@ export default function ONasPage() {
         </div>
       </section>
 
-      {/* 5. PROPOJENÍ S PEGAS */}
+      {/* 5. ZE ŽIVOTA VAZÁRNY */}
+      <section className="py-[var(--spacing-section-y)]">
+        <div className="mx-auto max-w-[var(--max-width-content)] px-[var(--spacing-section-x)]">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:gap-4">
+            {[
+              { src: "/zivot/zivot-2.jpg", alt: "Detail květinové vazby" },
+              { src: "/zivot/zivot-3.jpg", alt: "Příprava aranžmá" },
+              { src: "/zivot/zivot-4.jpg", alt: "Floristka při práci" },
+              { src: "/zivot/zivot-5.jpg", alt: "Výběr květin" },
+              { src: "/zivot/zivot-6.jpg", alt: "Dokončování vazby" },
+              { src: "/zivot/zivot-7.jpg", alt: "Finální aranžmá" },
+              { src: "/zivot/zivot-8.jpg", alt: "Čerstvé květiny" },
+              { src: "/zivot/zivot-9.jpg", alt: "Naše vazárna" },
+            ].map((photo, i) => (
+              <div
+                key={photo.src}
+                className={`relative overflow-hidden rounded-sm ${
+                  i === 0 ? "col-span-2 row-span-2 aspect-square md:aspect-[4/3]" : "aspect-[4/3]"
+                }`}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover"
+                  sizes={i === 0 ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 50vw"}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. PROPOJENÍ S PEGAS */}
       <section className="border-y border-border bg-deep-plum-10 py-[var(--spacing-section-y)]">
         <div className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)] text-center">
           <p className="text-[length:var(--font-size-body-lg)] leading-relaxed text-muted-foreground">
-            Jako součást PEGASE sdílíme stejný přístup: tiché, pevné, bez
-            zbytečného tlaku. Věříme, že kvalita se pozná — a nemusí se
-            vysvětlovat.
+            Jsme součástí pohřební služby PEGAS, a sdílíme stejný
+            přístup — klidný, jistý a bez zbytečného tlaku. Věříme, že
+            kvalita je poznat. A není potřeba ji vysvětlovat.
           </p>
           <div className="mt-8">
             <Button asChild size="md">

@@ -13,7 +13,6 @@ import {
 import { Button } from "@/components/ui/button"
 import { useProfileStore } from "@/store/profile-store"
 
-// Sample data for logged-in state
 const SAMPLE_USER = {
   name: "Jana Nováková",
   email: "jana.novakova@email.cz",
@@ -50,22 +49,20 @@ const SAMPLE_SUBSCRIPTION = {
   nextDelivery: "15. 4. 2026",
   frequency: "Měsíčně",
   price: 1290,
-  active: true,
 }
 
-type Tab = "profile" | "orders" | "subscription" | "login"
+type Tab = "profile" | "orders" | "subscription"
 
 function ProfileDrawer() {
   const { isDrawerOpen, closeDrawer } = useProfileStore()
   const [isLoggedIn, setIsLoggedIn] = React.useState(false)
-  const [activeTab, setActiveTab] = React.useState<Tab>("login")
+  const [activeTab, setActiveTab] = React.useState<Tab>("profile")
 
-  // Reset to appropriate tab when opening
   React.useEffect(() => {
     if (isDrawerOpen) {
-      setActiveTab(isLoggedIn ? "profile" : "login")
+      setActiveTab("profile")
     }
-  }, [isDrawerOpen, isLoggedIn])
+  }, [isDrawerOpen])
 
   return (
     <Sheet open={isDrawerOpen} onOpenChange={(open) => !open && closeDrawer()}>
@@ -101,7 +98,7 @@ function ProfileDrawer() {
 
 function LoginView({ onLogin }: { onLogin: () => void }) {
   return (
-    <div className="flex flex-1 flex-col gap-6 pt-4">
+    <div className="flex flex-1 flex-col gap-6 px-6 pt-4">
       <div className="flex flex-col gap-4">
         <label className="flex flex-col gap-1.5">
           <span className="text-[length:var(--font-size-body-sm)] font-[30] text-foreground">
@@ -173,8 +170,7 @@ function LoggedInView({
   ]
 
   return (
-    <div className="flex flex-1 flex-col gap-0 overflow-hidden">
-      {/* Tab navigation */}
+    <div className="flex flex-1 flex-col gap-0 overflow-hidden px-6">
       <div className="flex gap-1 border-b border-border">
         {tabs.map((tab) => (
           <button
@@ -192,14 +188,12 @@ function LoggedInView({
         ))}
       </div>
 
-      {/* Tab content */}
       <div className="flex-1 overflow-y-auto py-6">
         {activeTab === "profile" && <ProfileTab />}
         {activeTab === "orders" && <OrdersTab />}
         {activeTab === "subscription" && <SubscriptionTab />}
       </div>
 
-      {/* Logout */}
       <div className="border-t border-border pt-4 pb-2">
         <button
           type="button"
@@ -216,30 +210,58 @@ function LoggedInView({
 // --- Profile tab ---
 
 function ProfileTab() {
+  const [isEditing, setIsEditing] = React.useState(false)
+  const [form, setForm] = React.useState({
+    name: SAMPLE_USER.name,
+    email: SAMPLE_USER.email,
+    phone: SAMPLE_USER.phone,
+    address: SAMPLE_USER.address,
+  })
+
+  if (isEditing) {
+    return (
+      <div className="flex flex-col gap-5">
+        <EditField label="Jméno" value={form.name} onChange={(v) => setForm({ ...form, name: v })} />
+        <EditField label="E-mail" value={form.email} onChange={(v) => setForm({ ...form, email: v })} type="email" />
+        <EditField label="Telefon" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} type="tel" />
+        <EditField label="Doručovací adresa" value={form.address} onChange={(v) => setForm({ ...form, address: v })} />
+
+        <div className="flex gap-3 pt-2">
+          <Button size="md" onClick={() => setIsEditing(false)}>
+            Uložit změny
+          </Button>
+          <Button variant="secondary" size="md" onClick={() => setIsEditing(false)}>
+            Zrušit
+          </Button>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center gap-4">
         <div className="flex size-14 items-center justify-center rounded-full bg-deep-plum-10">
           <span className="text-[length:var(--font-size-h3)] font-[40] text-deep-plum">
-            {SAMPLE_USER.name.charAt(0)}
+            {form.name.charAt(0)}
           </span>
         </div>
         <div>
           <p className="text-[length:var(--font-size-body)] font-[30] text-foreground">
-            {SAMPLE_USER.name}
+            {form.name}
           </p>
           <p className="text-[length:var(--font-size-body-sm)] text-muted-foreground">
-            {SAMPLE_USER.email}
+            {form.email}
           </p>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
-        <InfoRow label="Telefon" value={SAMPLE_USER.phone} />
-        <InfoRow label="Doručovací adresa" value={SAMPLE_USER.address} />
+        <InfoRow label="Telefon" value={form.phone} />
+        <InfoRow label="Doručovací adresa" value={form.address} />
       </div>
 
-      <Button variant="secondary" size="md" className="self-start">
+      <Button variant="secondary" size="md" className="self-start" onClick={() => setIsEditing(true)}>
         Upravit údaje
       </Button>
 
@@ -254,6 +276,32 @@ function ProfileTab() {
         </div>
       </div>
     </div>
+  )
+}
+
+function EditField({
+  label,
+  value,
+  onChange,
+  type = "text",
+}: {
+  label: string
+  value: string
+  onChange: (value: string) => void
+  type?: string
+}) {
+  return (
+    <label className="flex flex-col gap-1.5">
+      <span className="text-[length:var(--font-size-body-sm)] font-[30] text-foreground">
+        {label}
+      </span>
+      <input
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="rounded-sm border border-border bg-background px-4 py-2.5 text-[length:var(--font-size-body)] text-foreground focus:border-deep-plum focus:outline-none"
+      />
+    </label>
   )
 }
 

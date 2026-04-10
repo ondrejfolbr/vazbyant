@@ -41,7 +41,7 @@ function CartDrawer() {
             {/* Scrollable items */}
             <div className="flex-1 overflow-y-auto px-6">
               {items.map((item) => (
-                <CartItemRow key={item.productId} item={item} />
+                <CartItemRow key={`${item.productId}-${item.variant ?? ""}`} item={item} />
               ))}
             </div>
 

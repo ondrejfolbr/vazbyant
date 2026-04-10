@@ -92,7 +92,7 @@ export default function Page() {
               </Button>
             </div>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex flex-col items-center gap-8 text-center">
             <Image
               src="/mamut-homepage.png"
               alt="Mamut — maskot Vazby Květin"
@@ -101,6 +101,13 @@ export default function Page() {
               className="h-auto w-full max-w-[360px] object-contain"
               sizes="(min-width: 1024px) 35vw, 100vw"
             />
+            <p className="max-w-xs text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
+              Mamut je pam{"\u011B"}{"\u0165"}. To, co z{"\u016F"}st{"\u00E1"}v{"\u00E1"}.
+              <br />
+              Stejn{"\u011B"} jako vzpom{"\u00ED"}nky na ty, kte{"\u0159"}{"\u00ED"} tu byli s n{"\u00E1"}mi.
+              <br />
+              Stejn{"\u011B"} jako vazby mezi lidmi, kter{"\u00E9"} nekon{"\u010D"}{"\u00ED"}.
+            </p>
           </div>
         </div>
       </section>

@@ -11,10 +11,32 @@ export const metadata: Metadata = {
   description:
     "Smuteční, svatební a dárkové květiny s doručením po Praze. Součást ekosystému pohřební služby PEGAS.",
   metadataBase: new URL("https://vazbykvetin.cz"),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     type: "website",
     locale: "cs_CZ",
     siteName: "Vazby Květin",
+    title: "Vazby Květin — Květiny pro chvíle, na kterých záleží",
+    description:
+      "Smuteční, svatební a dárkové květiny s doručením po Praze. Součást ekosystému pohřební služby PEGAS.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Vazby Květin",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vazby Květin — Květiny pro chvíle, na kterých záleží",
+    description:
+      "Smuteční, svatební a dárkové květiny s doručením po Praze. Součást ekosystému pohřební služby PEGAS.",
   },
 }
 import { ThemeProvider } from "@/components/theme-provider"
@@ -56,6 +78,47 @@ export default function RootLayout({
     >
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/dnw8jfr.css" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Florist",
+              "name": "Vazby Květin",
+              "url": "https://vazbykvetin.cz",
+              "telephone": "+420604585271",
+              "email": "info@vazbykvetin.cz",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Mirošovická 704",
+                "addressLocality": "Mnichovice",
+                "postalCode": "251 64",
+                "addressCountry": "CZ",
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "07:00",
+                  "closes": "15:30",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Sunday",
+                  "opens": "07:00",
+                  "closes": "12:00",
+                },
+              ],
+              "description":
+                "Smuteční, svatební a dárkové květiny s doručením po Praze. Součást ekosystému pohřební služby PEGAS.",
+              "parentOrganization": {
+                "@type": "Organization",
+                "name": "PEGAS pohřební služba",
+                "url": "https://pohrebpegas.cz",
+              },
+            }),
+          }}
+        />
       </head>
       <body>
         <ThemeProvider>

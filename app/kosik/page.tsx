@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 
-import { SectionHeading } from "@/components/ui/section-heading"
 import { CartPageContent } from "@/components/cart/CartPageContent"
 
 export const metadata: Metadata = {
@@ -13,7 +12,9 @@ export default function KosikPage() {
     <main>
       <section className="py-[var(--spacing-section-y)]">
         <div className="mx-auto max-w-[var(--max-width-content)] px-[var(--spacing-section-x)]">
-          <SectionHeading heading="Vaše vazby" />
+          <h1 className="font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-foreground">
+            Vaše vazby
+          </h1>
           <div className="mt-12">
             <CartPageContent />
           </div>

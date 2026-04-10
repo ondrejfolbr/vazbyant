@@ -102,7 +102,7 @@ export default function SvatebniPage() {
       <section className="py-[var(--spacing-section-y)]">
         <div className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)]">
           <h2 className="font-heading text-[length:var(--font-size-h1)] leading-snug font-[40] text-foreground">
-            Květiny, které podtrhnou váš den — ne katalog.
+            Květiny, které podtrhnou váš den.
           </h2>
           <p className="mt-6 text-[length:var(--font-size-body-lg)] leading-relaxed text-muted-foreground">
             Každá svatba je jiná a květiny by to měly odrážet. Nepracujeme ze
