@@ -86,7 +86,7 @@ function Footer({ className }: FooterProps) {
                 href="tel:+420604585271"
                 className="transition-colors hover:text-neutral-white"
               >
-                604 585 271
+                +420 604 585 271
               </a>
               <a
                 href="mailto:info@vazbykvetin.cz"

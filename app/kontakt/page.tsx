@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/section-heading"
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Kontaktujte nás — Vazby Květin, Mirošovická 704, Mnichovice. Objednávky a dotazy na 604 585 271.",
+    "Kontaktujte nás — Vazby Květin, Mirošovická 704, Mnichovice. Objednávky a dotazy na +420 604 585 271.",
 }
 
 const CONTACT_SECTIONS = [
@@ -20,7 +20,7 @@ const CONTACT_SECTIONS = [
       },
       {
         heading: "Vedoucí výroby květin a objednávky e-shop",
-        content: "604 585 271",
+        content: "+420 604 585 271",
         href: "tel:+420604585271",
       },
       {

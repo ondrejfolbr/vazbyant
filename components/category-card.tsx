@@ -54,7 +54,7 @@ function CategoryCard({
         <p className="text-[length:var(--font-size-body)] text-neutral-white/80">
           {subtitle}
         </p>
-        <span className="card-cta mt-2 self-start border-b border-neutral-white/40 pb-0.5 text-[length:var(--font-size-body)] font-[30] text-neutral-white">
+        <span className="card-cta mt-3 inline-flex items-center self-start bg-deep-plum px-5 py-2 text-[length:var(--font-size-body-sm)] font-medium tracking-wide text-neutral-white transition-colors group-hover:bg-deep-plum-90">
           Prohlédnout
         </span>
       </div>

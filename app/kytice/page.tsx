@@ -220,7 +220,7 @@ export default function KyticePage() {
               <Link href="/kontakt/">Objednat kytici</Link>
             </Button>
             <Button asChild variant="secondary" size="lg">
-              <a href="tel:+420604585271">Zavolat 604 585 271</a>
+              <a href="tel:+420604585271">Zavolat +420 604 585 271</a>
             </Button>
           </div>
         </div>

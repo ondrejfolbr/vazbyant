@@ -42,7 +42,7 @@ export default function InformaceProSpotrebitelePage() {
                 href="tel:+420604585271"
                 className="text-foreground underline underline-offset-4 transition-colors hover:text-deep-plum"
               >
-                604 585 271
+                +420 604 585 271
               </a>
               <br />
               E-mail:{" "}

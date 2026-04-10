@@ -23,7 +23,7 @@ export default function ZasadyOchranyPage() {
               Správcem osobních údajů je společnost VAZBY KVĚTIN s.r.o., se
               sídlem Mirošovická 704, 251 64 Mnichovice, IČO: — bude doplněno —
               (dále jen &quot;správce&quot;). Kontakt: info@vazbykvetin.cz, tel.
-              604 585 271.
+              +420 604 585 271.
             </p>
           </section>
 
@@ -128,7 +128,7 @@ export default function ZasadyOchranyPage() {
             </h2>
             <p>
               S dotazy ohledně zpracování osobních údajů se můžete obrátit na
-              e-mail info@vazbykvetin.cz nebo telefonicky na 604 585 271.
+              e-mail info@vazbykvetin.cz nebo telefonicky na +420 604 585 271.
             </p>
           </section>
         </div>

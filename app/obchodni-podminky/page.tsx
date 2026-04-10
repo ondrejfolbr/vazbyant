@@ -33,7 +33,7 @@ export default function ObchodniPodminkyPage() {
             </h2>
             <p className="mb-3">
               Objednávku je možné učinit prostřednictvím internetového obchodu,
-              telefonicky na čísle 604 585 271, nebo e-mailem na adrese
+              telefonicky na čísle +420 604 585 271, nebo e-mailem na adrese
               info@vazbykvetin.cz.
             </p>
             <p className="mb-3">
@@ -90,7 +90,7 @@ export default function ObchodniPodminkyPage() {
               neprodleně, nejpozději do 24 hodin od převzetí.
             </p>
             <p>
-              Reklamaci je možné uplatnit telefonicky na čísle 604 585 271 nebo
+              Reklamaci je možné uplatnit telefonicky na čísle +420 604 585 271 nebo
               e-mailem na info@vazbykvetin.cz. K reklamaci prosím přiložte
               fotografii zboží.
             </p>
