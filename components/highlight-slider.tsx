@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 
 interface HighlightSlide {
   heading: string
+  body?: string
   ctaText: string
   ctaHref: string
   image: string
@@ -79,6 +80,11 @@ function HighlightSlider({ slides, interval = 6000 }: HighlightSliderProps) {
                     <h3 className="max-w-sm font-heading text-[length:var(--font-size-h2)] leading-snug font-[40] text-neutral-white">
                       {slide.heading}
                     </h3>
+                    {slide.body && (
+                      <p className="max-w-sm text-[length:var(--font-size-body)] leading-relaxed text-neutral-white/70">
+                        {slide.body}
+                      </p>
+                    )}
                     <Link
                       href={slide.ctaHref}
                       className="group inline-flex items-center gap-3 text-[length:var(--font-size-body)] text-neutral-white/70 transition-colors hover:text-neutral-white"

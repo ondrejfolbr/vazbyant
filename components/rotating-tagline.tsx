@@ -5,11 +5,11 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 const BRAND_TAGLINES = [
-  "Vazby mezi lidmi.",
-  "Vazby, které mluví za vás.",
-  "Vazby pro život. Vazby pro loučení.",
-  "Květiny, které tvoří nové vazby.",
-  "Vazby v tichu. Vazby v radosti.",
+  "\u201EVazby mezi lidmi.\u201C",
+  "\u201EVazby, kter\u00E9 mluv\u00ED za v\u00E1s.\u201C",
+  "\u201EVazby pro \u017Eivot. Vazby pro lou\u010Den\u00ED.\u201C",
+  "\u201EKv\u011Btiny, kter\u00E9 tvo\u0159\u00ED nov\u00E9 vazby.\u201C",
+  "\u201EVazby v tichu. Vazby v radosti.\u201C",
 ]
 
 interface RotatingTaglineProps {

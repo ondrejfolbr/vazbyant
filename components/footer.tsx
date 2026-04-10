@@ -15,7 +15,7 @@ function Footer({ className }: FooterProps) {
       className={cn("bg-deep-plum", className)}
     >
       {/* Brand tagline strip */}
-      <div className="border-b border-deep-plum-70/30 bg-deep-plum-10 py-16 text-center">
+      <div className="border-b border-deep-plum-70/30 bg-deep-plum-10 py-32 text-center">
         <RotatingTagline className="mx-auto max-w-[var(--max-width-narrow)] px-[var(--spacing-section-x)] text-[length:var(--font-size-h3)] text-foreground" />
       </div>
       <div className="mx-auto max-w-[var(--max-width-site)] px-[var(--spacing-section-x)] py-20 lg:py-28">

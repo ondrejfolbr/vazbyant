@@ -105,7 +105,7 @@ function NavBar() {
           </nav>
 
           {/* Utility nav */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1">
             <button
               type="button"
               onClick={() => document.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: true }))}

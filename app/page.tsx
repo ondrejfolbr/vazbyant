@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Hero } from "@/components/hero"
+import { MammothReveal } from "@/components/mammoth-reveal"
 import { CategoryCard } from "@/components/category-card"
 import { ProductCard } from "@/components/product-card"
 import { SectionHeading } from "@/components/ui/section-heading"
@@ -17,11 +18,11 @@ export default function Page() {
     <main>
       {/* Sekce 1: Hero */}
       <Hero
-        heading="Vazby pro život. Vazby pro loučení."
+        heading={<>Vazby pro život.<br />Vazby pro loučení.</>}
         subheading="Navrhujeme květiny pro chvíle, na kterých záleží."
         ctaText="Prohlédnout nabídku"
         ctaHref="/smutecni/"
-        backgroundImage="/hero-home-2.jpg"
+        backgroundImages={["/hero-home-2.jpg", "/hero-home.jpg", "/hero-smutecni.jpg"]}
       />
 
       {/* Sekce 2: Vstupní rozcestník */}
@@ -77,58 +78,29 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Sekce 4: Brand story */}
-      <section className="py-[calc(var(--spacing-section-y)*0.7)]">
-        <div className="mx-auto grid max-w-[70%] grid-cols-1 items-center gap-6 px-[var(--spacing-section-x)] lg:grid-cols-2">
-          <div className="flex flex-col gap-5">
-            <SectionHeading
-              overline="O nás"
-              heading="Květinářství, které rozumí chvílím, kdy na tom záleží."
-              body="Známe prostředí loučení a víme, jak důležité je umět vyjádřit pocity ve chvílích, kdy na tom záleží. Budujeme květinářství, které těmto situacím rozumí. Neprodáváme jen květiny — nabízíme způsob, jak něco říct, když slova nestačí."
-            />
-            <div>
-              <Button asChild size="md">
-                <Link href="/o-nas/">Více o nás</Link>
-              </Button>
-            </div>
-          </div>
-          <div className="flex flex-col items-center gap-8 text-center">
-            <Image
-              src="/mamut-homepage.png"
-              alt="Mamut — maskot Vazby Květin"
-              width={1133}
-              height={1620}
-              className="h-auto w-full max-w-[360px] object-contain"
-              sizes="(min-width: 1024px) 35vw, 100vw"
-            />
-            <p className="max-w-xs text-[length:var(--font-size-body)] leading-relaxed text-muted-foreground">
-              Mamut je pam{"\u011B"}{"\u0165"}. To, co z{"\u016F"}st{"\u00E1"}v{"\u00E1"}.
-              <br />
-              Stejn{"\u011B"} jako vzpom{"\u00ED"}nky na ty, kte{"\u0159"}{"\u00ED"} tu byli s n{"\u00E1"}mi.
-              <br />
-              Stejn{"\u011B"} jako vazby mezi lidmi, kter{"\u00E9"} nekon{"\u010D"}{"\u00ED"}.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Sekce 4: Brand story with mammoth reveal */}
+      <MammothReveal />
 
       {/* Sekce 6: Highlight slider */}
       <HighlightSlider
         slides={[
           {
             heading: "Letní kolekce 2026",
+            body: "Čerstvé sezónní kytice z lokálních květin. Každý týden nová nabídka podle toho, co právě kvete.",
             ctaText: "Zobrazit nabídku",
             ctaHref: "/kytice/sezonni/",
             image: "/category-sety.jpg",
           },
           {
             heading: "Smuteční věnce s osobním věnováním",
+            body: "Každý věnec vážeme ručně a na míru. Přidáme stuhu s textem, který za vás řekne to důležité.",
             ctaText: "Prohlédnout věnce",
             ctaHref: "/smutecni/vence/",
             image: "/category-vence-fialovy.jpg",
           },
           {
             heading: "Květinové sety pro kompletní rozloučení",
+            body: "Kytice na rakev, aranžmá do stojanů a pietní dekorace — vše sladěné a připravené na klíč.",
             ctaText: "Zjistit více",
             ctaHref: "/smutecni/",
             image: "/about-photo.jpg",

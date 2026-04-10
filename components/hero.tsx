@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { HeroSlideshow } from "@/components/hero-slideshow"
 
 interface HeroProps {
-  heading: string
+  heading: React.ReactNode
   subheading?: string
   ctaText?: string
   ctaHref?: string
@@ -33,7 +33,7 @@ function Hero({
     <section
       className={cn(
         "relative flex items-end overflow-hidden",
-        variant === "full" ? "min-h-screen" : "min-h-[60vh]",
+        variant === "full" ? "min-h-[75vh]" : "min-h-[60vh]",
         className,
       )}
     >
@@ -62,7 +62,7 @@ function Hero({
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex w-full max-w-[var(--max-width-site)] flex-col gap-5 px-[var(--spacing-section-x)] pb-[var(--spacing-section-y)]">
-        <h1 className="hero-stagger hero-stagger-1 max-w-3xl font-heading text-[length:var(--font-size-display)] leading-snug font-[40] text-neutral-white">
+        <h1 className="hero-stagger hero-stagger-1 max-w-3xl font-heading text-[length:var(--font-size-display-xl)] leading-snug font-[40] text-neutral-white">
           {heading}
         </h1>
         {subheading && (
